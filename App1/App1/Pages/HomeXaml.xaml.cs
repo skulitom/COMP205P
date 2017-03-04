@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using Xamarin.Forms;
+using App1.ViewModels;
 
 namespace App1.Pages
 {
@@ -13,6 +14,14 @@ namespace App1.Pages
         public HomeXaml()
         {
             InitializeComponent();
+
+            BindingContext = new HomeViewModel();
+        }
+
+        public void PremiumButton_Clicked(object sender, EventArgs e)
+        {
+            //await Navigation.PushModalAsync(new PremiumBondsXaml());
+
         }
     }
 }

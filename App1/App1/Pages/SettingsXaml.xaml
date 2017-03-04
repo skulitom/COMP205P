@@ -1,6 +1,30 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="App1.Pages.SettingsXaml">
-  <Label Text="{Binding MainText}" VerticalOptions="Center" HorizontalOptions="Center" />
+             x:Class="App1.Pages.SettingsXaml"
+             Title="Settings">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="AquaButtonStyle"
+                   TargetType="Button">
+                <Setter Property="BackgroundColor"
+                        Value="Aqua"></Setter>
+                <Setter Property="TextColor"
+                        Value="Black"></Setter>
+                <Setter Property="HeightRequest"
+                        Value="70"></Setter>
+                <Setter Property="Margin"
+                        Value="-5"></Setter>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <StackLayout VerticalOptions="Center">
+
+
+        <Button Text="Change My Password" Style="{StaticResource AquaButtonStyle}"/>
+        <Button Text="Security Question" Style="{StaticResource AquaButtonStyle}"/>
+        <Button Text="Language" Style="{StaticResource AquaButtonStyle}"/>
+        <Button Text="Notifications" Style="{StaticResource AquaButtonStyle}"/>
+        <Button Text="Sign Out" Style="{StaticResource AquaButtonStyle}"/>
+    </StackLayout>
 </ContentPage>

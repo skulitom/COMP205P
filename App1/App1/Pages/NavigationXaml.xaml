@@ -5,14 +5,25 @@
              xmlns:local="clr-namespace:App1.Pages;assembly=App1">
   <MasterDetailPage.Master>
     <ContentPage Title="Menu">
-      <StackLayout Orientation="Vertical">
+        <ContentPage.Resources>
+            <ResourceDictionary>
+                <Style x:Key="AquaButtonStyle"
+                TargetType="Button">
+                    <Setter Property="BackgroundColor"
+                    Value="Aqua"></Setter>
+                    <Setter Property="TextColor"
+                    Value="Black"></Setter>
+                </Style>
+            </ResourceDictionary>
+        </ContentPage.Resources>
+        <StackLayout Orientation="Vertical">
         
         <Label Text="John Snow" Margin="20" HorizontalTextAlignment="Center"></Label>
-        <Button Text="Home"></Button>
-        <Button Text="Accounts"></Button>
-        <Button Text="Products"></Button>
-        <Button Text="Settings"></Button>
-        <Button Text="Contact Us"></Button>
+        <Button Text="Home" Clicked="HomeButton_Clicked" Style="{StaticResource AquaButtonStyle}"></Button>
+        <Button Text="Accounts" Clicked="Accounts_Clicked" Style="{StaticResource AquaButtonStyle}"></Button>
+        <Button Text="Products" Clicked="Products_Clicked" Style="{StaticResource AquaButtonStyle}"></Button>
+        <Button Text="Settings" Clicked="SettingsButton_Clicked" Style="{StaticResource AquaButtonStyle}"></Button>
+        <Button Text="Contact Us" Clicked="Contactus_Clicked" Style="{StaticResource AquaButtonStyle}"></Button>
       </StackLayout>
     </ContentPage>
   </MasterDetailPage.Master>

@@ -1,11 +1,33 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="App1.Pages.LoginXaml">
-  <StackLayout VerticalOptions="Center">
-    <Image Source="Images/nsi-logo.png" />
-    <Entry Placeholder="username"></Entry>
-    <Entry Placeholder="password" IsPassword="True"></Entry>
-    <Button Text="Sign In" Clicked="Button_OnClicked"></Button>
-  </StackLayout>
+             x:Class="App1.Pages.LoginXaml"
+             Title="Login">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="AquaButtonStyle"
+                   TargetType="Button">
+                <Setter Property="BackgroundColor"
+                        Value="Aqua"></Setter>
+                <Setter Property="TextColor"
+                        Value="Black"></Setter>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <Grid BackgroundColor="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="300"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Image Source="nsilogo.png"  Aspect="AspectFit"/>
+        <StackLayout VerticalOptions="Center"
+            BackgroundColor="#EEEEEE"
+            Padding="60"
+            Grid.Row="1">
+            <Entry Placeholder="username" ></Entry>
+            <Entry Placeholder="password" IsPassword="True" ></Entry>
+            <Button Text="Sign In" Clicked="Button_OnClicked" Style="{StaticResource AquaButtonStyle}"></Button>
+        </StackLayout>
+    </Grid>
 </ContentPage>
