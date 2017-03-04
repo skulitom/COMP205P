@@ -19,8 +19,6 @@
         </ResourceDictionary>
     </ContentPage.Resources>
     <StackLayout VerticalOptions="Center">
-
-
         <Button Text="Change My Password" Style="{StaticResource AquaButtonStyle}"/>
         <Button Text="Security Question" Style="{StaticResource AquaButtonStyle}"/>
         <Button Text="Language" Style="{StaticResource AquaButtonStyle}"/>
