@@ -15,6 +15,58 @@ namespace App1.Pages
 		public ProductsXaml ()
 		{
 			InitializeComponent ();
-		}
-	}
+            var products = new List<Products> {
+                new Products ("Shared Premium Bonds", "Come together with friends and put money fourth to increase your chances of winning "),
+                new Products ("Premium Bonds", "1.25%. Rate used to clculate prize fund. The odds of each £1 unit are 30,000 to 1 each month. The rate and odds are variable"),
+                new Products ("Direct Saver", "0.80% gross/AER, variable"),
+                new Products ("Direct ISA", "1.00% tax-free/AER,variable"),
+                new Products ("Income Bonds", "1.00% gross/AER, variable"),
+                new Products ("Childrens Bonds", "2.50% tax-free/AER, guaranteed for 5 years"),
+                new Products ("Investment Account", "0.45% gross/AER,varaible")
+            };
+            listView.ItemsSource = products;
+        }
+        void OnItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            var products = e.SelectedItem as Products;
+
+            if (products == null)
+            {
+                return;
+            }
+
+            ContentPage page = null;
+
+            switch (products.Name)
+            {
+                case "Shared Premium Bonds":
+                    page = new SPSXaml();
+                    break;
+                case "Premium Bonds":
+                    page = new PSXaml();
+                    break;
+                case "Direct Saver":
+                    page = new DSXaml();
+                    break;
+                case "Direct ISA":
+                    page = new DISAXaml();
+                    break;
+                case "Income Bonds":
+                    page = new IBXaml();
+                    break;
+                case "Childrens Bonds":
+                    page = new CBXaml();
+                    break;
+                case "Investment Account":
+                    page = new IAXaml();
+                    break;
+                default:
+                    page = new ProductsXaml();
+                    break;
+            }
+
+            page.BindingContext = products;
+            Navigation.PushAsync(page);
+        }
+    }
 }

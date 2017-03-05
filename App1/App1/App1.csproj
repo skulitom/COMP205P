@@ -41,12 +41,27 @@
     <Compile Include="Pages\AccountsXaml.xaml.cs">
       <DependentUpon>AccountsXaml.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\CBXaml.xaml.cs">
+      <DependentUpon>CBXaml.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Constants.cs" />
     <Compile Include="Pages\ContactusXaml.xaml.cs">
       <DependentUpon>ContactusXaml.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\DISAXaml.xaml.cs">
+      <DependentUpon>DISAXaml.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\DSXaml.xaml.cs">
+      <DependentUpon>DSXaml.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\HomeXaml.xaml.cs">
       <DependentUpon>HomeXaml.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\IAXaml.xaml.cs">
+      <DependentUpon>IAXaml.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\IBXaml.xaml.cs">
+      <DependentUpon>IBXaml.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\LoginXaml.xaml.cs">
       <DependentUpon>LoginXaml.xaml</DependentUpon>
@@ -57,14 +72,21 @@
     <Compile Include="Pages\PremiumBondsXaml.xaml.cs">
       <DependentUpon>PremiumBondsXaml.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Products.cs" />
     <Compile Include="Pages\ProductsXaml.xaml.cs">
       <DependentUpon>ProductsXaml.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PSXaml.xaml.cs">
+      <DependentUpon>PSXaml.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\SettingsXaml.xaml.cs">
       <DependentUpon>SettingsXaml.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\SignUpXaml.xaml.cs">
       <DependentUpon>SignUpXaml.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SPSXaml.xaml.cs">
+      <DependentUpon>SPSXaml.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -146,6 +168,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="front.png" />
     <Content Include="Images\Winter.jpg" />
   </ItemGroup>
   <ItemGroup>
@@ -156,6 +179,48 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Pages\SignUpXaml.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\PSXaml.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\SPSXaml.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\DISAXaml.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\DSXaml.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\IBXaml.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\CBXaml.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\IAXaml.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

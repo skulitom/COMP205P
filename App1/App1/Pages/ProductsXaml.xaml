@@ -3,5 +3,22 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="App1.Pages.ProductsXaml"
              Title="Products">
-    <Label Text="Products" VerticalOptions="Center" HorizontalOptions="Center" />
+    <StackLayout Padding="0,20,0,0">
+        <ListView x:Name="listView" SeparatorVisibility="Default" HasUnevenRows="true" ItemSelected="OnItemSelected">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="Fill">
+                            <StackLayout Orientation="Vertical">
+                                <Label Text="{Binding Name}" FontAttributes="Bold" FontSize="Medium" HorizontalOptions="Start" VerticalOptions="Start"/>
+                                <Label Text="{Binding Description}" FontAttributes="Italic" FontSize="Small" HorizontalOptions="Start" VerticalOptions="Center"/>
+                            </StackLayout>
+                            <Image Source="front.png" HorizontalOptions="End" Aspect="AspectFit" WidthRequest="50" HeightRequest="50"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+
 </ContentPage>
