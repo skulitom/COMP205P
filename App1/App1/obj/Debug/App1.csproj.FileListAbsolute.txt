@@ -19,31 +19,6 @@ C:\Users\artem\OneDrive\Documents\Visual Studio 2015\Projects\App1\App1\App1\obj
 C:\Users\artem\OneDrive\Documents\Visual Studio 2015\Projects\App1\App1\App1\obj\Debug\App1.Pages.SettingsXaml.xaml.g.cs
 C:\Users\artem\OneDrive\Documents\Visual Studio 2015\Projects\App1\App1\App1\obj\Debug\App1.dll.mdb
 C:\Users\artem\OneDrive\Documents\Visual Studio 2015\Projects\App1\App1\App1\bin\Debug\App1.dll.mdb
-D:\DEV\COMP205P\App1\App1\bin\Debug\App1.dll
-D:\DEV\COMP205P\App1\App1\bin\Debug\App1.pdb
-D:\DEV\COMP205P\App1\App1\bin\Debug\Xamarin.Forms.Core.dll
-D:\DEV\COMP205P\App1\App1\bin\Debug\Xamarin.Forms.Platform.dll
-D:\DEV\COMP205P\App1\App1\bin\Debug\Xamarin.Forms.Xaml.dll
-D:\DEV\COMP205P\App1\App1\bin\Debug\Xamarin.Forms.Core.pdb
-D:\DEV\COMP205P\App1\App1\bin\Debug\Xamarin.Forms.Core.xml
-D:\DEV\COMP205P\App1\App1\bin\Debug\Xamarin.Forms.Platform.pdb
-D:\DEV\COMP205P\App1\App1\bin\Debug\Xamarin.Forms.Xaml.pdb
-D:\DEV\COMP205P\App1\App1\bin\Debug\Xamarin.Forms.Xaml.xml
-D:\DEV\COMP205P\App1\App1\obj\Debug\App1.Pages.LoginXaml.xaml.g.cs
-D:\DEV\COMP205P\App1\App1\obj\Debug\App1.Pages.HomeXaml.xaml.g.cs
-D:\DEV\COMP205P\App1\App1\obj\Debug\App1.Pages.NavigationXaml.xaml.g.cs
-D:\DEV\COMP205P\App1\App1\obj\Debug\App1.Pages.ContactusXaml.xaml.g.cs
-D:\DEV\COMP205P\App1\App1\obj\Debug\App1.Pages.AccountsXaml.xaml.g.cs
-D:\DEV\COMP205P\App1\App1\obj\Debug\App1.Pages.SettingsXaml.xaml.g.cs
-D:\DEV\COMP205P\App1\App1\obj\Debug\App1.dll
-D:\DEV\COMP205P\App1\App1\obj\Debug\App1.pdb
-D:\DEV\COMP205P\App1\App1\obj\Debug\App1.csprojResolveAssemblyReference.cache
-D:\DEV\COMP205P\App1\App1\obj\Debug\App1.Properties.Resources.resources
-D:\DEV\COMP205P\App1\App1\obj\Debug\App1.csproj.GenerateResource.Cache
-D:\DEV\COMP205P\App1\App1\obj\Debug\App1.Pages.ProductsXaml.xaml.g.cs
-D:\DEV\COMP205P\App1\App1\obj\Debug\App1.Pages.PremiumBondsXaml.xaml.g.cs
-D:\DEV\COMP205P\App1\App1\obj\Debug\App1.dll.mdb
-D:\DEV\COMP205P\App1\App1\bin\Debug\App1.dll.mdb
 C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\COMP205P\App1\App1\bin\Debug\App1.dll
 C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\COMP205P\App1\App1\bin\Debug\App1.pdb
 C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\COMP205P\App1\App1\bin\Debug\Xamarin.Forms.Core.dll
@@ -70,3 +45,29 @@ C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\COMP205P\App1\App1\obj\Deb
 C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\COMP205P\App1\App1\obj\Debug\App1.Pages.SignUpXaml.xaml.g.cs
 C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\COMP205P\App1\App1\obj\Debug\App1.dll.mdb
 C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\COMP205P\App1\App1\bin\Debug\App1.dll.mdb
+D:\DEV\COMP205P\App1\App1\bin\Debug\App1.dll
+D:\DEV\COMP205P\App1\App1\bin\Debug\App1.pdb
+D:\DEV\COMP205P\App1\App1\bin\Debug\Xamarin.Forms.Core.dll
+D:\DEV\COMP205P\App1\App1\bin\Debug\Xamarin.Forms.Platform.dll
+D:\DEV\COMP205P\App1\App1\bin\Debug\Xamarin.Forms.Xaml.dll
+D:\DEV\COMP205P\App1\App1\bin\Debug\Xamarin.Forms.Core.pdb
+D:\DEV\COMP205P\App1\App1\bin\Debug\Xamarin.Forms.Core.xml
+D:\DEV\COMP205P\App1\App1\bin\Debug\Xamarin.Forms.Platform.pdb
+D:\DEV\COMP205P\App1\App1\bin\Debug\Xamarin.Forms.Xaml.pdb
+D:\DEV\COMP205P\App1\App1\bin\Debug\Xamarin.Forms.Xaml.xml
+D:\DEV\COMP205P\App1\App1\obj\Debug\App1.csprojResolveAssemblyReference.cache
+D:\DEV\COMP205P\App1\App1\obj\Debug\App1.Properties.Resources.resources
+D:\DEV\COMP205P\App1\App1\obj\Debug\App1.csproj.GenerateResource.Cache
+D:\DEV\COMP205P\App1\App1\obj\Debug\App1.Pages.LoginXaml.xaml.g.cs
+D:\DEV\COMP205P\App1\App1\obj\Debug\App1.Pages.HomeXaml.xaml.g.cs
+D:\DEV\COMP205P\App1\App1\obj\Debug\App1.Pages.NavigationXaml.xaml.g.cs
+D:\DEV\COMP205P\App1\App1\obj\Debug\App1.Pages.ContactusXaml.xaml.g.cs
+D:\DEV\COMP205P\App1\App1\obj\Debug\App1.Pages.AccountsXaml.xaml.g.cs
+D:\DEV\COMP205P\App1\App1\obj\Debug\App1.Pages.SettingsXaml.xaml.g.cs
+D:\DEV\COMP205P\App1\App1\obj\Debug\App1.Pages.ProductsXaml.xaml.g.cs
+D:\DEV\COMP205P\App1\App1\obj\Debug\App1.Pages.PremiumBondsXaml.xaml.g.cs
+D:\DEV\COMP205P\App1\App1\obj\Debug\App1.Pages.SignUpXaml.xaml.g.cs
+D:\DEV\COMP205P\App1\App1\obj\Debug\App1.dll
+D:\DEV\COMP205P\App1\App1\obj\Debug\App1.pdb
+D:\DEV\COMP205P\App1\App1\obj\Debug\App1.dll.mdb
+D:\DEV\COMP205P\App1\App1\bin\Debug\App1.dll.mdb

@@ -33,7 +33,7 @@ namespace App1.Pages
             if (isValid)
             {
                 App.IsUserLoggedIn = true;
-                Navigation.InsertPageBefore(new HomeXaml(), this);
+                Navigation.InsertPageBefore(new NavigationXaml(), this);
                 await Navigation.PopAsync();
             }
             else
