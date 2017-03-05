@@ -14,12 +14,38 @@ namespace App1.Pages
         public LoginXaml()
         {
             InitializeComponent();
-            
         }
 
-        private void Button_OnClicked(object sender, EventArgs e)
+        async void OnSignUpButtonClicked(object sender, EventArgs e)
         {
-            Navigation.PushModalAsync(new NavigationXaml());
+            await Navigation.PushAsync(new SignUpXaml());
+        }
+
+        async void OnLoginButtonClicked(object sender, EventArgs e)
+        {
+            var user = new User
+            {
+                Username = usernameEntry.Text,
+                Password = passwordEntry.Text
+            };
+
+            var isValid = AreCredentialsCorrect(user);
+            if (isValid)
+            {
+                App.IsUserLoggedIn = true;
+                Navigation.InsertPageBefore(new HomeXaml(), this);
+                await Navigation.PopAsync();
+            }
+            else
+            {
+                messageLabel.Text = "Login failed";
+                passwordEntry.Text = string.Empty;
+            }
+        }
+
+        bool AreCredentialsCorrect(User user)
+        {
+            return user.Username == Constants.Username && user.Password == Constants.Password;
         }
     }
 }

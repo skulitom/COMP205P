@@ -9,11 +9,18 @@ namespace App1
 {
     public class App : Application
     {
+        public static bool IsUserLoggedIn { get; set; }
         public App()
         {
             // The root page of your application
-
-            MainPage = new NavigationPage(new LoginXaml());
+            if (!IsUserLoggedIn)
+            {
+                MainPage = new NavigationPage(new LoginXaml());
+            }
+            else
+            {
+                MainPage = new NavigationPage(new HomeXaml());
+            }
         }
 
         protected override void OnStart()

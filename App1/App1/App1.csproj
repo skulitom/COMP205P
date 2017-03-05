@@ -41,6 +41,7 @@
     <Compile Include="Pages\AccountsXaml.xaml.cs">
       <DependentUpon>AccountsXaml.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Constants.cs" />
     <Compile Include="Pages\ContactusXaml.xaml.cs">
       <DependentUpon>ContactusXaml.xaml</DependentUpon>
     </Compile>
@@ -62,6 +63,10 @@
     <Compile Include="Pages\SettingsXaml.xaml.cs">
       <DependentUpon>SettingsXaml.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\SignUpXaml.xaml.cs">
+      <DependentUpon>SignUpXaml.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -145,6 +150,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Pages\PremiumBondsXaml.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\SignUpXaml.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
