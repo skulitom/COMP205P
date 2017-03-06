@@ -3,5 +3,33 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="App1.Pages.AccountsXaml"
              Title="Accounts">
-  <Label Text="Accounts" VerticalOptions="Center" HorizontalOptions="Center" />
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="AquaButtonStyle"
+                   TargetType="Button">
+                <Setter Property="BackgroundColor"
+                        Value="Aqua"></Setter>
+                <Setter Property="TextColor"
+                        Value="Black"></Setter>
+                <Setter Property="HeightRequest"
+                        Value="70"></Setter>
+                <Setter Property="Margin"
+                        Value="-5"></Setter>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ScrollView>
+        <ListView x:Name="listView" SeparatorVisibility="Default" HasUnevenRows="true" ItemSelected="OnItemSelected">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Vertical" Grid.Column="0">
+                            <Label Text="{Binding Name}" FontAttributes="Bold" FontSize="Medium" HorizontalOptions="Start" VerticalOptions="Start"/>
+                            <Label Text="{Binding ProductNo}" FontAttributes="Italic" FontSize="Small" HorizontalOptions="Start" VerticalOptions="Center"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </ScrollView>
 </ContentPage>

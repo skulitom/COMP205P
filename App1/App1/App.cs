@@ -19,7 +19,7 @@ namespace App1
             }
             else
             {
-                MainPage = new NavigationPage(new HomeXaml());
+                MainPage = new NavigationPage(new NavigationXaml());
             }
         }
 

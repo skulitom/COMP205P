@@ -18,11 +18,16 @@
             </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
-    <StackLayout VerticalOptions="Center">
-        <Button Text="Change My Password" Style="{StaticResource AquaButtonStyle}"/>
-        <Button Text="Security Question" Style="{StaticResource AquaButtonStyle}"/>
-        <Button Text="Language" Style="{StaticResource AquaButtonStyle}"/>
-        <Button Text="Notifications" Style="{StaticResource AquaButtonStyle}"/>
-        <Button Text="Sign Out" Style="{StaticResource AquaButtonStyle}"/>
-    </StackLayout>
+    <ScrollView>
+        <StackLayout>
+            <Button Text="Change My Username" Style="{StaticResource AquaButtonStyle}"/>
+            <Button Text="Change My Email" Style="{StaticResource AquaButtonStyle}"/>
+            <Button Text="Change My Password" Style="{StaticResource AquaButtonStyle}"/>
+            <Button Text="Change My Profile Picture" Style="{StaticResource AquaButtonStyle}"/>
+            <Button Text="Security Question" Style="{StaticResource AquaButtonStyle}"/>
+            <Button Text="Language" Style="{StaticResource AquaButtonStyle}"/>
+            <Button Text="Notifications" Style="{StaticResource AquaButtonStyle}"/>
+            <Button Text="Sign Out" Style="{StaticResource AquaButtonStyle}"/>
+        </StackLayout>
+    </ScrollView>
 </ContentPage>

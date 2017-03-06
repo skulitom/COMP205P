@@ -19,6 +19,7 @@ namespace App1.Pages
         {
 
             this.Detail = new Pages.SettingsXaml();
+            this.Title = this.Detail.Title;
             // change to the detail page
             this.IsPresented = false;
         }
@@ -27,6 +28,7 @@ namespace App1.Pages
         {
 
             this.Detail = new Pages.HomeXaml();
+            this.Title = this.Detail.Title;
             // change to the detail page
             this.IsPresented = false;
         }
@@ -35,6 +37,7 @@ namespace App1.Pages
         {
 
             this.Detail = new Pages.ContactusXaml();
+            this.Title = this.Detail.Title;
             // change to the detail page
             this.IsPresented = false;
         }
@@ -43,14 +46,15 @@ namespace App1.Pages
         {
 
             this.Detail = new Pages.AccountsXaml();
+            this.Title = this.Detail.Title;
             // change to the detail page
             this.IsPresented = false;
         }
 
         public void Products_Clicked(object sender, EventArgs e)
         {
-
             this.Detail = new Pages.ProductsXaml();
+            this.Title = this.Detail.Title;
             // change to the detail page
             this.IsPresented = false;
         }

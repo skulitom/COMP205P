@@ -8,13 +8,20 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <StackLayout Orientation="Horizontal" HorizontalOptions="Fill">
-                            <StackLayout Orientation="Vertical">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="300"/>
+                                <ColumnDefinition Width="50"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <StackLayout Orientation="Vertical" Grid.Column="0">
                                 <Label Text="{Binding Name}" FontAttributes="Bold" FontSize="Medium" HorizontalOptions="Start" VerticalOptions="Start"/>
                                 <Label Text="{Binding Description}" FontAttributes="Italic" FontSize="Small" HorizontalOptions="Start" VerticalOptions="Center"/>
                             </StackLayout>
-                            <Image Source="front.png" HorizontalOptions="End" Aspect="AspectFit" WidthRequest="50" HeightRequest="50"/>
-                        </StackLayout>
+                            <StackLayout Grid.Column="1">
+                                <Image Source="front.png" Aspect="AspectFit"/>
+                            </StackLayout>
+                        </Grid>
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>

@@ -14,10 +14,36 @@ namespace App1.Pages
 
         public string Description { get; private set; }
 
+        public int ProductNo { get; private set; }
+
+        public float InterestRate { get; private set; }
+
+        public int MinDeposit { get; private set; }
+
+        public int MaxDeposit { get; private set; }
+
+        public Products(string name)
+        {
+            Name = name;
+        }
+
         public Products(string name, string description)
         {
             Name = name;
             Description = description;
+        }
+
+        public Products(string name, int productNo)
+        {
+            Name = name;
+            ProductNo = productNo;
+        }
+
+        public Products(string name, string description, int productNo)
+        {
+            Name = name;
+            Description = description;
+            productNo = ProductNo;
         }
 
         public override string ToString()

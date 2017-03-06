@@ -26,25 +26,30 @@
                         Value="20"></Setter>
                 <Setter Property="TextColor"
                         Value="Black"></Setter>
-                
+
             </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
-    <Grid BackgroundColor="White">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="200"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
-        <Image Source="Winter.jpg"  Aspect="Fill" />
-        <Label Style="{StaticResource TitleLabelStyle}" Text="{Binding HomeModel.userName}"/>
-        <StackLayout VerticalOptions="Center" Grid.Row="1">
-
-
-            <Button Text="Premium Bonds" Style="{StaticResource AquaButtonStyle}"/>
-            <Button Text="Direct Saver" Style="{StaticResource AquaButtonStyle}"/>
-            <Button Text="Direct ISA" Style="{StaticResource AquaButtonStyle}"/>
-            <Button Text="Income Bonds" Style="{StaticResource AquaButtonStyle}"/>
-            <Button Text="Investment Account" Style="{StaticResource AquaButtonStyle}"/>
-        </StackLayout>
+    <Grid BackgroundColor="White" Padding="0" Margin="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="200" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Image Source="Winter.jpg" Aspect="Fill" />
+            <Label Style="{StaticResource TitleLabelStyle}" Text="{Binding HomeModel.userName}"/>
+        <ScrollView Padding="0" Grid.Row="1">
+            <ListView x:Name="listView" SeparatorVisibility="Default" HasUnevenRows="true" ItemSelected="OnItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Vertical" Grid.Column="0">
+                                <Label Text="{Binding Name}" FontAttributes="Bold" FontSize="Medium" HorizontalOptions="Start" VerticalOptions="Start"/>
+                                <Label Text="{Binding ProductNo}" FontAttributes="Italic" FontSize="Small" HorizontalOptions="Start" VerticalOptions="Center"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </ScrollView>
     </Grid>
 </ContentPage>
