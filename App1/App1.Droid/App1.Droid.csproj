@@ -176,12 +176,6 @@
   <ItemGroup>
     <AndroidResource Include="Resources\drawable-xxhdpi\Winter.jpg" />
   </ItemGroup>
-  <ItemGroup>
-    <Content Include="Resources\drawable-hdpi\front.png" />
-    <Content Include="Resources\drawable-xhdpi\front.png" />
-    <Content Include="Resources\drawable-xxhdpi\front.png" />
-    <Content Include="Resources\drawable\front.png" />
-  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

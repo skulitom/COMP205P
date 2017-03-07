@@ -35,16 +35,12 @@
                         <ViewCell>
                             <StackLayout HorizontalOptions="FillAndExpand" Padding="10">
                                 <Grid HorizontalOptions="FillAndExpand">
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="1*" />
-                                        <RowDefinition Height="1*" />
-                                    </Grid.RowDefinitions>
                                     <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="4*" />
-                                        <ColumnDefinition Width="1*" />
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="Auto" />
                                     </Grid.ColumnDefinitions>
                                     <Label Text="{Binding Name}" Style="{StaticResource PrimaryCellLabel}"/>
-                                    <Label Text=">" Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" Style="{StaticResource SecondaryCellLabel}"/>
+                                    <Label Text=">" Grid.Column="1" Style="{StaticResource SecondaryCellLabel}"/>
                                 </Grid>
                             </StackLayout>
                         </ViewCell>

@@ -12,6 +12,7 @@ namespace App1.Pages
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class ProductsXaml : ContentPage
 	{
+        string temp;
 		public ProductsXaml ()
 		{
 			InitializeComponent ();
@@ -40,33 +41,42 @@ namespace App1.Pages
             switch (products.Name)
             {
                 case "Shared Premium Bonds":
+                    temp = "Shared Premium Bonds";
                     page = new SPSXaml();
                     break;
                 case "Premium Bonds":
+                    temp = "Premium Bonds";
                     page = new PSXaml();
                     break;
                 case "Direct Saver":
+                    temp = "Direct Saver";
                     page = new DSXaml();
                     break;
                 case "Direct ISA":
+                    temp = "Direct ISA";
                     page = new DISAXaml();
                     break;
                 case "Income Bonds":
+                    temp = "Income Bonds";
                     page = new IBXaml();
                     break;
                 case "Childrens Bonds":
+                    temp = "Childrens Bonds";
                     page = new CBXaml();
                     break;
                 case "Investment Account":
+                    temp = "Investment Account";
                     page = new IAXaml();
                     break;
                 default:
                     page = new ProductsXaml();
                     break;
             }
-
+            
             page.BindingContext = products;
+            page.Title = temp;
             Navigation.PushAsync(page);
+            
         }
     }
 }

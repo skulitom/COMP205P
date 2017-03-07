@@ -26,6 +26,15 @@ namespace App1.Pages {
         private global::Xamarin.Forms.Entry emailEntry;
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.Picker pickerLanguage;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.Picker pickerChangeSecurityQuestion;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.Entry answer;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private global::Xamarin.Forms.Label messageLabel;
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
@@ -34,6 +43,9 @@ namespace App1.Pages {
             usernameEntry = this.FindByName<global::Xamarin.Forms.Entry>("usernameEntry");
             passwordEntry = this.FindByName<global::Xamarin.Forms.Entry>("passwordEntry");
             emailEntry = this.FindByName<global::Xamarin.Forms.Entry>("emailEntry");
+            pickerLanguage = this.FindByName<global::Xamarin.Forms.Picker>("pickerLanguage");
+            pickerChangeSecurityQuestion = this.FindByName<global::Xamarin.Forms.Picker>("pickerChangeSecurityQuestion");
+            answer = this.FindByName<global::Xamarin.Forms.Entry>("answer");
             messageLabel = this.FindByName<global::Xamarin.Forms.Label>("messageLabel");
         }
     }

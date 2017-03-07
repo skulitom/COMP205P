@@ -16,5 +16,10 @@ namespace App1.Pages
         {
             InitializeComponent();
         }
+
+        private void Picker_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //Store locally and pull when starting the app
+        }
     }
 }

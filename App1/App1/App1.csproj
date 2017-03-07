@@ -206,7 +206,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="front.png" />
     <Content Include="Images\Winter.jpg" />
   </ItemGroup>
   <ItemGroup>

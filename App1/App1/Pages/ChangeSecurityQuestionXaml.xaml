@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="App1.Pages.ChangeSecurityQuestionXaml">
+             x:Class="App1.Pages.ChangeSecurityQuestionXaml"
+             Title="Security Question">
     <ContentPage.Resources>
         <ResourceDictionary>
             <Style x:Key="LargeLabel"
@@ -26,7 +27,20 @@
     </ContentPage.Resources>
     <StackLayout BackgroundColor="#EEEEEE"
                 Padding="60">
-
+        <Label Text="Select your security question" Style="{StaticResource LargeLabel}"></Label>
+        <Picker x:Name="pickerChangeSecurityQuestion" Title="Select a Question" SelectedIndexChanged="Picker_SelectedIndexChanged">
+            <Picker.Items>
+                <x:String>What is your first pets name?</x:String>
+                <x:String>What is your fathers madien name?</x:String>
+                <x:String>What is the name of the first school you attended?</x:String>
+                <x:String>What is your Mother madien name?</x:String>
+                <x:String>What is the address of your birth house?</x:String>
+            </Picker.Items>
+        </Picker>
+        <Label Text="Answer your question" Style="{StaticResource LargeLabel}" />
+        <Entry x:Name="secretanswer" Placeholder="Answer" />
+        <Button Text="Save Changes" Clicked="OnChangeQuestionButtonClicked" Style="{StaticResource AquaButtonStyle}"/>
+        <Label x:Name="questionMessageLabel" />
     </StackLayout>
 
 </ContentPage>

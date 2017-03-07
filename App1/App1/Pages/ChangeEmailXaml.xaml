@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="App1.Pages.ChangeEmailXaml">
+             x:Class="App1.Pages.ChangeEmailXaml"
+             Title="Change Email">
     <ContentPage.Resources>
     <ResourceDictionary>
         <Style x:Key="LargeLabel"
@@ -24,10 +25,9 @@
         </Style>
     </ResourceDictionary>
 </ContentPage.Resources>
-<StackLayout BackgroundColor="#EEEEEE"
+    <StackLayout BackgroundColor="#EEEEEE"
             Padding="60">
-
-    <Label Text=" Change Email" Style="{StaticResource LargeLabel}" />
+        <Label Text=" Change Email" Style="{StaticResource LargeLabel}" />
     <Entry x:Name="settingsEmailEntry" Placeholder="email" />
     <Entry x:Name="repeatEmailEntry" Placeholder="repeat email" />
     <Button Text="Change Email" Clicked="OnChangeEmailButtonClicked" Style="{StaticResource AquaButtonStyle}"/>

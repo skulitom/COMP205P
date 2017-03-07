@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="App1.Pages.ChangeLanguageXaml">
+             x:Class="App1.Pages.ChangeLanguageXaml"
+             Title="Language">
     <ContentPage.Resources>
     <ResourceDictionary>
         <Style x:Key="LargeLabel"
@@ -26,6 +27,17 @@
 </ContentPage.Resources>
 <StackLayout BackgroundColor="#EEEEEE"
             Padding="60">
-
-</StackLayout>
+        <Label Text="Select your language" Style="{StaticResource LargeLabel}"></Label>
+        <Picker Title="Select a Language" SelectedIndexChanged="Picker_SelectedIndexChanged">
+            <Picker.Items>
+                <x:String>English</x:String>
+                <x:String>Russian</x:String>
+                <x:String>Spansish</x:String>
+                <x:String>Chinese</x:String>
+                <x:String>Hindi</x:String>
+                <x:String>Bahasa Melayu</x:String>
+                <x:String>Tamil</x:String>
+            </Picker.Items>
+        </Picker>
+    </StackLayout>
 </ContentPage>

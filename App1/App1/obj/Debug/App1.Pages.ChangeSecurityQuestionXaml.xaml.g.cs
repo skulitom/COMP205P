@@ -17,8 +17,20 @@ namespace App1.Pages {
     public partial class ChangeSecurityQuestionXaml : global::Xamarin.Forms.ContentPage {
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.Picker pickerChangeSecurityQuestion;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.Entry secretanswer;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.Label questionMessageLabel;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private void InitializeComponent() {
             this.LoadFromXaml(typeof(ChangeSecurityQuestionXaml));
+            pickerChangeSecurityQuestion = this.FindByName<global::Xamarin.Forms.Picker>("pickerChangeSecurityQuestion");
+            secretanswer = this.FindByName<global::Xamarin.Forms.Entry>("secretanswer");
+            questionMessageLabel = this.FindByName<global::Xamarin.Forms.Label>("questionMessageLabel");
         }
     }
 }
