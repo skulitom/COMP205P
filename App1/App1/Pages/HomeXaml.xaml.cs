@@ -14,6 +14,7 @@ namespace App1.Pages
         public HomeXaml()
         {
             InitializeComponent();
+            
             var products = new List<Products> {
                 new Products ("Shared Premium Bonds", 1234),
                 new Products ("Premium Bonds", 1234),

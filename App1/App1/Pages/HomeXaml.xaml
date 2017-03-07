@@ -5,28 +5,45 @@
              Title="Home Page">
     <ContentPage.Resources>
         <ResourceDictionary>
-            <Style x:Key="AquaButtonStyle"
-                   TargetType="Button">
-                <Setter Property="BackgroundColor"
-                        Value="Aqua"></Setter>
-                <Setter Property="TextColor"
-                        Value="Black"></Setter>
-                <Setter Property="HeightRequest"
-                        Value="70"></Setter>
-                <Setter Property="Margin"
-                        Value="-5"></Setter>
-            </Style>
             <Style x:Key="TitleLabelStyle"
-                   TargetType="Label">
+               TargetType="Label">
                 <Setter Property="HorizontalTextAlignment"
-                        Value="Center"></Setter>
+                    Value="Center"></Setter>
                 <Setter Property="VerticalTextAlignment"
-                        Value="End"></Setter>
+                    Value="End"></Setter>
                 <Setter Property="FontSize"
-                        Value="20"></Setter>
+                    Value="20"></Setter>
                 <Setter Property="TextColor"
-                        Value="Black"></Setter>
+                    Value="Black"></Setter>
+            </Style>
 
+            <Style x:Key="PrimaryCellLabel"
+               TargetType="Label">
+                <Setter Property="FontAttributes"
+                    Value="Bold"></Setter>
+                <Setter Property="TextColor"
+                    Value="Black"></Setter>
+                <Setter Property="FontSize"
+                    Value="Medium"></Setter>
+                <Setter Property="Margin"
+                    Value="5"></Setter>
+                <Setter Property="HorizontalOptions"
+                    Value="Start"></Setter>
+                <Setter Property="VerticalOptions"
+                    Value="Start"></Setter>
+            </Style>
+            <Style x:Key="SecondaryCellLabel"
+               TargetType="Label">
+                <Setter Property="FontAttributes"
+                    Value="Italic"></Setter>
+                <Setter Property="FontSize"
+                    Value="Small"></Setter>
+                <Setter Property="Margin"
+                    Value="5"></Setter>
+                <Setter Property="HorizontalOptions"
+                    Value="Start"></Setter>
+                <Setter Property="VerticalOptions"
+                    Value="Center"></Setter>
             </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
@@ -48,8 +65,8 @@
                                         <ColumnDefinition Width="*" />
                                         <ColumnDefinition Width="Auto" />
                                     </Grid.ColumnDefinitions>
-                                    <Label x:Name="TextLabel" Grid.Column="0" Text="{Binding Name}" VerticalOptions="Center" FontSize="20"/>
-                                    <Label x:Name="RightTextLabel" Grid.Column="1" VerticalOptions="Center" Text="{Binding ProductNo}" FontSize="20"/>
+                                    <Label x:Name="TextLabel" Grid.Column="0" Text="{Binding Name}" Style="{StaticResource PrimaryCellLabel}"/>
+                                    <Label x:Name="RightTextLabel" Grid.Column="1" Text="{Binding ProductNo}" Style="{StaticResource SecondaryCellLabel}"/>
                                 </Grid>
                             </StackLayout>
                         </ViewCell>

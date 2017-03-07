@@ -3,9 +3,45 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="App1.Pages.NavigationXaml"
              xmlns:local="clr-namespace:App1.Pages;assembly=App1"
+             MasterBehavior="Popover"
+             BackgroundColor="#222222"
              Title="Home Page">
-  <MasterDetailPage.Master>
-        <ContentPage Title="Menu">
+    <MasterDetailPage.Master>
+        <ContentPage Title="Menu" BackgroundColor="#333333">
+            <ContentPage.Resources>
+                <ResourceDictionary>
+                    <Style x:Key="TitleCellLabel"
+           TargetType="Label">
+                        <Setter Property="TextColor"
+                Value="Aqua"></Setter>
+                        <Setter Property="HorizontalOptions"
+                Value="Center"></Setter>
+                        <Setter Property="VerticalOptions"
+                Value="Center"></Setter>
+                        <Setter Property="FontSize"
+                Value="20"></Setter>
+                        <Setter Property="LineBreakMode"
+                Value="NoWrap"></Setter>
+                        <Setter Property="Margin"
+                Value="0,20,0,20"></Setter>
+                    </Style>
+                    <Style x:Key="NavigatorCellLabel"
+           TargetType="Label">
+                        <Setter Property="TextColor"
+                Value="White"></Setter>
+                        <Setter Property="Margin"
+                Value="5"></Setter>
+                        <Setter Property="HorizontalOptions"
+                Value="Center"></Setter>
+                        <Setter Property="VerticalOptions"
+                Value="Center"></Setter>
+                        <Setter Property="FontSize"
+                Value="20"></Setter>
+                        <Setter Property="LineBreakMode"
+                Value="NoWrap"></Setter>
+                    </Style>
+                </ResourceDictionary>
+            </ContentPage.Resources>
             <StackLayout Orientation="Vertical">
                 <Grid HorizontalOptions="FillAndExpand"  RowSpacing="1">
                     <Grid.RowDefinitions>
@@ -16,28 +52,28 @@
                         <RowDefinition Height="*" />
                         <RowDefinition Height="*" />
                     </Grid.RowDefinitions>
-                    <Label Grid.Row="0" Grid.Column="0" Text="Jhon Snow" VerticalOptions="Center" HorizontalOptions="Center" FontSize="20" LineBreakMode="NoWrap" Margin="0,0,0,20"/>
-                    <Label Grid.Row="1" Grid.Column="0" Text="Home" VerticalOptions="Center" HorizontalOptions="Center" FontSize="20" LineBreakMode="NoWrap" >
+                    <Label Grid.Row="0" Grid.Column="0" Text="John Snow" Style="{StaticResource TitleCellLabel}"/>
+                    <Label Grid.Row="1" Grid.Column="0" Text="Home" Style="{StaticResource NavigatorCellLabel}" >
                         <Label.GestureRecognizers>
                             <TapGestureRecognizer Tapped="HomeButton_Clicked" />
                         </Label.GestureRecognizers>
                     </Label>
-                    <Label Grid.Row="2" Grid.Column="0" Text="Accounts" VerticalOptions="Center" HorizontalOptions="Center" FontSize="20" LineBreakMode="NoWrap" >
+                    <Label Grid.Row="2" Grid.Column="0" Text="Accounts" Style="{StaticResource NavigatorCellLabel}" >
                     <Label.GestureRecognizers>
                         <TapGestureRecognizer Tapped="Accounts_Clicked" />
                     </Label.GestureRecognizers>
                     </Label>
-                    <Label Grid.Row="3" Grid.Column="0" Text="Products" VerticalOptions="Center" HorizontalOptions="Center" FontSize="20" LineBreakMode="NoWrap" >
+                    <Label Grid.Row="3" Grid.Column="0" Text="Products" Style="{StaticResource NavigatorCellLabel}" >
                     <Label.GestureRecognizers>
                         <TapGestureRecognizer Tapped="Products_Clicked" />
                     </Label.GestureRecognizers>
                     </Label>
-                    <Label Grid.Row="4" Grid.Column="0" Text="Settings" VerticalOptions="Center" HorizontalOptions="Center" FontSize="20" LineBreakMode="NoWrap" >
+                    <Label Grid.Row="4" Grid.Column="0" Text="Settings" Style="{StaticResource NavigatorCellLabel}" >
                     <Label.GestureRecognizers>
                         <TapGestureRecognizer Tapped="SettingsButton_Clicked" />
                     </Label.GestureRecognizers>
                     </Label>
-                    <Label Grid.Row="5" Grid.Column="0" Text="Contact Us" VerticalOptions="Center" HorizontalOptions="Center" FontSize="20" LineBreakMode="NoWrap" >
+                    <Label Grid.Row="5" Grid.Column="0" Text="Contact Us" Style="{StaticResource NavigatorCellLabel}" >
                     <Label.GestureRecognizers>
                         <TapGestureRecognizer Tapped="Contactus_Clicked" />
                     </Label.GestureRecognizers>

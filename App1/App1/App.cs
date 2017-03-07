@@ -13,6 +13,12 @@ namespace App1
         public App()
         {
             // The root page of your application
+            Current.Resources = new ResourceDictionary();
+            Color xamarin_color = Color.FromHex("#222222");
+            var navigationStyle = new Style(typeof(NavigationPage));
+            var barBackgroundColorSetter = new Setter { Property = NavigationPage.BarBackgroundColorProperty, Value = xamarin_color };
+            navigationStyle.Setters.Add(barBackgroundColorSetter);
+            Current.Resources.Add(navigationStyle);
             if (!IsUserLoggedIn)
             {
                 MainPage = new NavigationPage(new LoginXaml());

@@ -13,6 +13,7 @@ namespace App1.Pages
         public NavigationXaml()
         {
             InitializeComponent();
+            
         }
 
         public void SettingsButton_Clicked(object sender, EventArgs e)
