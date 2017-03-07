@@ -22,15 +22,18 @@ namespace App1.Pages
 
         public int MaxDeposit { get; private set; }
 
+        public string Image { get; private set; }
+
         public Products(string name)
         {
             Name = name;
         }
 
-        public Products(string name, string description)
+        public Products(string name, string description, string image)
         {
             Name = name;
             Description = description;
+            Image = image;
         }
 
         public Products(string name, int productNo)

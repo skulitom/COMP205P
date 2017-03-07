@@ -3,6 +3,21 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="App1.Pages.ContactusXaml"
              Title="Contact Us">
-  <Label Text="Contact Us" VerticalOptions="Center" HorizontalOptions="Center" />
-    
+    <ScrollView>
+        <StackLayout Orientation="Vertical">
+            <Label Text="How do I get in touch?" FontSize="30" FontAttributes="Bold" Margin="0,0,0,10"/>
+            <Label Text="Can't find what you're looking for? Get in touch and we'll be happy to help." Margin="0,0,0,5" /> 
+            <Label Text="Tweet us" FontSize="20" FontAttributes="Bold" Margin="0,0,0,10"/>
+            <Label Text="Find us on Twitter @nsandihelp." Margin="0,0,0,5" />
+            <Label Text="Tweet us for any general questions or comments about NS&amp;I and we'll aim to respond within the hour." Margin="0,0,0,5" />
+            <Label Text="For your security, don't use this for any specific queries about your own accounts or investments." Margin="0,0,0,5" />
+            <Label Text="Phone us" FontSize="20" FontAttributes="Bold" Margin="0,0,0,10"/>
+            <Label Text="Need a form?" FontSize="20" FontAttributes="Bold" Margin="0,0,0,10"/>
+            <Label Text="You can download and print our most popular forms from our website." Margin="0,0,0,5" />
+            <Label Text="Email us" FontSize="20" FontAttributes="Bold" Margin="0,0,0,10"/>
+            <Label Text="Use our contact form for any general questions or comments about NS&amp;I. We'll aim to email you a reply within 24 hours." Margin="0,0,0,5" />
+            <Label Text="For your security, don't use this form for any specific queries about your own accounts or investments." Margin="0,0,0,5" />
+            <Label Text="Write to us" FontSize="20" FontAttributes="Bold" Margin="0,0,0,10"/>
+        </StackLayout>
+    </ScrollView>
 </ContentPage>

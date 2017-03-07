@@ -30,21 +30,27 @@
             </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
-    <Grid BackgroundColor="White" Padding="0" Margin="0">
+    <Grid BackgroundColor="White">
             <Grid.RowDefinitions>
                 <RowDefinition Height="200" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
             <Image Source="Winter.jpg" Aspect="Fill" />
             <Label Style="{StaticResource TitleLabelStyle}" Text="{Binding HomeModel.userName}"/>
-        <ScrollView Padding="0" Grid.Row="1">
+        <ScrollView Grid.Row="1">
             <ListView x:Name="listView" SeparatorVisibility="Default" HasUnevenRows="true" ItemSelected="OnItemSelected">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <StackLayout Orientation="Vertical" Grid.Column="0">
-                                <Label Text="{Binding Name}" FontAttributes="Bold" FontSize="Medium" HorizontalOptions="Start" VerticalOptions="Start"/>
-                                <Label Text="{Binding ProductNo}" FontAttributes="Italic" FontSize="Small" HorizontalOptions="Start" VerticalOptions="Center"/>
+                            <StackLayout HorizontalOptions="FillAndExpand" Padding="10">
+                                <Grid HorizontalOptions="FillAndExpand">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="Auto" />
+                                    </Grid.ColumnDefinitions>
+                                    <Label x:Name="TextLabel" Grid.Column="0" Text="{Binding Name}" VerticalOptions="Center" FontSize="20"/>
+                                    <Label x:Name="RightTextLabel" Grid.Column="1" VerticalOptions="Center" Text="{Binding ProductNo}" FontSize="20"/>
+                                </Grid>
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>

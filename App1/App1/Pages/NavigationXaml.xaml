@@ -5,27 +5,45 @@
              xmlns:local="clr-namespace:App1.Pages;assembly=App1"
              Title="Home Page">
   <MasterDetailPage.Master>
-    <ContentPage Title="Menu">
-        <ContentPage.Resources>
-            <ResourceDictionary>
-                <Style x:Key="AquaButtonStyle"
-                TargetType="Button">
-                    <Setter Property="BackgroundColor"
-                    Value="Aqua"></Setter>
-                    <Setter Property="TextColor"
-                    Value="Black"></Setter>
-                </Style>
-            </ResourceDictionary>
-        </ContentPage.Resources>
-        <StackLayout Orientation="Vertical">
-        
-        <Label Text="John Snow" Margin="20" HorizontalTextAlignment="Center"></Label>
-        <Button Text="Home" Clicked="HomeButton_Clicked" Style="{StaticResource AquaButtonStyle}"></Button>
-        <Button Text="Accounts" Clicked="Accounts_Clicked" Style="{StaticResource AquaButtonStyle}"></Button>
-        <Button Text="Products" Clicked="Products_Clicked" Style="{StaticResource AquaButtonStyle}"></Button>
-        <Button Text="Settings" Clicked="SettingsButton_Clicked" Style="{StaticResource AquaButtonStyle}"></Button>
-        <Button Text="Contact Us" Clicked="Contactus_Clicked" Style="{StaticResource AquaButtonStyle}"></Button>
-      </StackLayout>
+        <ContentPage Title="Menu">
+            <StackLayout Orientation="Vertical">
+                <Grid HorizontalOptions="FillAndExpand"  RowSpacing="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Label Grid.Row="0" Grid.Column="0" Text="Jhon Snow" VerticalOptions="Center" HorizontalOptions="Center" FontSize="20" LineBreakMode="NoWrap" Margin="0,0,0,20"/>
+                    <Label Grid.Row="1" Grid.Column="0" Text="Home" VerticalOptions="Center" HorizontalOptions="Center" FontSize="20" LineBreakMode="NoWrap" >
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="HomeButton_Clicked" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                    <Label Grid.Row="2" Grid.Column="0" Text="Accounts" VerticalOptions="Center" HorizontalOptions="Center" FontSize="20" LineBreakMode="NoWrap" >
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Accounts_Clicked" />
+                    </Label.GestureRecognizers>
+                    </Label>
+                    <Label Grid.Row="3" Grid.Column="0" Text="Products" VerticalOptions="Center" HorizontalOptions="Center" FontSize="20" LineBreakMode="NoWrap" >
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Products_Clicked" />
+                    </Label.GestureRecognizers>
+                    </Label>
+                    <Label Grid.Row="4" Grid.Column="0" Text="Settings" VerticalOptions="Center" HorizontalOptions="Center" FontSize="20" LineBreakMode="NoWrap" >
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="SettingsButton_Clicked" />
+                    </Label.GestureRecognizers>
+                    </Label>
+                    <Label Grid.Row="5" Grid.Column="0" Text="Contact Us" VerticalOptions="Center" HorizontalOptions="Center" FontSize="20" LineBreakMode="NoWrap" >
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Contactus_Clicked" />
+                    </Label.GestureRecognizers>
+                    </Label>
+                </Grid>
+            </StackLayout>
     </ContentPage>
   </MasterDetailPage.Master>
     

@@ -14,5 +14,10 @@ namespace App1.Pages
         {
             InitializeComponent();
         }
+
+        public void nothing(object sender, EventArgs e)
+        {
+
+        }
     }
 }

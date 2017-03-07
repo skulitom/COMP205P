@@ -3,33 +3,31 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="App1.Pages.AccountsXaml"
              Title="Accounts">
-    <ContentPage.Resources>
-        <ResourceDictionary>
-            <Style x:Key="AquaButtonStyle"
-                   TargetType="Button">
-                <Setter Property="BackgroundColor"
-                        Value="Aqua"></Setter>
-                <Setter Property="TextColor"
-                        Value="Black"></Setter>
-                <Setter Property="HeightRequest"
-                        Value="70"></Setter>
-                <Setter Property="Margin"
-                        Value="-5"></Setter>
-            </Style>
-        </ResourceDictionary>
-    </ContentPage.Resources>
     <ScrollView>
-        <ListView x:Name="listView" SeparatorVisibility="Default" HasUnevenRows="true" ItemSelected="OnItemSelected">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <StackLayout Orientation="Vertical" Grid.Column="0">
-                            <Label Text="{Binding Name}" FontAttributes="Bold" FontSize="Medium" HorizontalOptions="Start" VerticalOptions="Start"/>
-                            <Label Text="{Binding ProductNo}" FontAttributes="Italic" FontSize="Small" HorizontalOptions="Start" VerticalOptions="Center"/>
-                        </StackLayout>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+        <StackLayout Padding="0,20,0,0">
+            <ListView x:Name="listView" SeparatorVisibility="Default" HasUnevenRows="true" ItemSelected="OnItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout HorizontalOptions="FillAndExpand" Padding="10">
+                                <Grid HorizontalOptions="FillAndExpand">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="1*" />
+                                        <RowDefinition Height="1*" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="4*" />
+                                        <ColumnDefinition Width="1*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Label Text="{Binding Name}" FontSize="20" LineBreakMode="NoWrap"/>
+                                    <Label Text="AC no: 5478" Grid.Row="1" Grid.Column="0" HorizontalOptions="FillAndExpand" FontSize="20"/>
+                                    <Label Text="{Binding ProductNo}" Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" HorizontalOptions="CenterAndExpand" FontSize="20" VerticalOptions="Center"/>
+                                </Grid>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
     </ScrollView>
 </ContentPage>
