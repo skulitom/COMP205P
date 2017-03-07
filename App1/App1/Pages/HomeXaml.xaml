@@ -5,16 +5,33 @@
              Title="Home Page">
     <ContentPage.Resources>
         <ResourceDictionary>
-            <Style x:Key="AquaButtonStyle"
-                   TargetType="Button">
-                <Setter Property="BackgroundColor"
-                        Value="Aqua"></Setter>
+            <Style x:Key="PrimaryCellLabel"
+                   TargetType="Label">
+                <Setter Property="FontAttributes"
+                        Value="Bold"></Setter>
                 <Setter Property="TextColor"
                         Value="Black"></Setter>
-                <Setter Property="HeightRequest"
-                        Value="70"></Setter>
+                <Setter Property="FontSize"
+                        Value="Medium"></Setter>
                 <Setter Property="Margin"
-                        Value="-5"></Setter>
+                        Value="5"></Setter>
+                <Setter Property="HorizontalOptions"
+                        Value="Start"></Setter>
+                <Setter Property="VerticalOptions"
+                        Value="Start"></Setter>
+            </Style>
+            <Style x:Key="SecondaryCellLabel"
+                   TargetType="Label">
+                <Setter Property="FontAttributes"
+                        Value="Italic"></Setter>
+                <Setter Property="FontSize"
+                        Value="Small"></Setter>
+                <Setter Property="Margin"
+                        Value="5"></Setter>
+                <Setter Property="HorizontalOptions"
+                        Value="Start"></Setter>
+                <Setter Property="VerticalOptions"
+                        Value="Center"></Setter>
             </Style>
             <Style x:Key="TitleLabelStyle"
                    TargetType="Label">
@@ -42,9 +59,9 @@
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <StackLayout Orientation="Vertical" Grid.Column="0">
-                                <Label Text="{Binding Name}" FontAttributes="Bold" FontSize="Medium" HorizontalOptions="Start" VerticalOptions="Start"/>
-                                <Label Text="{Binding ProductNo}" FontAttributes="Italic" FontSize="Small" HorizontalOptions="Start" VerticalOptions="Center"/>
+                            <StackLayout Orientation="Vertical" Grid.Column="0" BackgroundColor="#EEEEFF">
+                                <Label Text="{Binding Name}" Style="{StaticResource PrimaryCellLabel}"/>
+                                <Label Text="{Binding ProductNo}" Style="{StaticResource SecondaryCellLabel}"/>
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>

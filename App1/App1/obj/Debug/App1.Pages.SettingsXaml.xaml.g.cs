@@ -17,8 +17,44 @@ namespace App1.Pages {
     public partial class SettingsXaml : global::Xamarin.Forms.ContentPage {
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.Entry settingsUsernameEntry;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.Entry repeatUsernameEntry;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.Label nameMessageLabel;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.Entry settingsPasswordEntry;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.Entry repeatPasswordEntry;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.Label passwordMessageLabel;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.Entry settingsEmailEntry;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.Entry repeatEmailEntry;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.Label emailMessageLabel;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private void InitializeComponent() {
             this.LoadFromXaml(typeof(SettingsXaml));
+            settingsUsernameEntry = this.FindByName<global::Xamarin.Forms.Entry>("settingsUsernameEntry");
+            repeatUsernameEntry = this.FindByName<global::Xamarin.Forms.Entry>("repeatUsernameEntry");
+            nameMessageLabel = this.FindByName<global::Xamarin.Forms.Label>("nameMessageLabel");
+            settingsPasswordEntry = this.FindByName<global::Xamarin.Forms.Entry>("settingsPasswordEntry");
+            repeatPasswordEntry = this.FindByName<global::Xamarin.Forms.Entry>("repeatPasswordEntry");
+            passwordMessageLabel = this.FindByName<global::Xamarin.Forms.Label>("passwordMessageLabel");
+            settingsEmailEntry = this.FindByName<global::Xamarin.Forms.Entry>("settingsEmailEntry");
+            repeatEmailEntry = this.FindByName<global::Xamarin.Forms.Entry>("repeatEmailEntry");
+            emailMessageLabel = this.FindByName<global::Xamarin.Forms.Label>("emailMessageLabel");
         }
     }
 }

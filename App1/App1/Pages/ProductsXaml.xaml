@@ -3,25 +3,52 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="App1.Pages.ProductsXaml"
              Title="Products">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="PrimaryCellLabel"
+                   TargetType="Label">
+                <Setter Property="FontAttributes"
+                        Value="Bold"></Setter>
+                <Setter Property="TextColor"
+                        Value="Black"></Setter>
+                <Setter Property="FontSize"
+                        Value="Medium"></Setter>
+                <Setter Property="Margin"
+                        Value="5"></Setter>
+                <Setter Property="HorizontalOptions"
+                        Value="Start"></Setter>
+                <Setter Property="VerticalOptions"
+                        Value="Start"></Setter>
+            </Style>
+            <Style x:Key="SecondaryCellLabel"
+                   TargetType="Label">
+                <Setter Property="FontAttributes"
+                        Value="Italic"></Setter>
+                <Setter Property="FontSize"
+                        Value="Small"></Setter>
+                <Setter Property="Margin"
+                        Value="5"></Setter>
+                <Setter Property="HorizontalOptions"
+                        Value="Start"></Setter>
+                <Setter Property="VerticalOptions"
+                        Value="Center"></Setter>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <StackLayout Padding="0,20,0,0">
         <ListView x:Name="listView" SeparatorVisibility="Default" HasUnevenRows="true" ItemSelected="OnItemSelected">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="300"/>
-                                <ColumnDefinition Width="50"/>
-                                <ColumnDefinition Width="*"/>
-                            </Grid.ColumnDefinitions>
-                            <StackLayout Orientation="Vertical" Grid.Column="0">
-                                <Label Text="{Binding Name}" FontAttributes="Bold" FontSize="Medium" HorizontalOptions="Start" VerticalOptions="Start"/>
-                                <Label Text="{Binding Description}" FontAttributes="Italic" FontSize="Small" HorizontalOptions="Start" VerticalOptions="Center"/>
+                        <StackLayout BackgroundColor="#eee"
+                        Orientation="Vertical">
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="{Binding Name}" Style="{StaticResource PrimaryCellLabel}"/>
+                                <Label Text="{Binding Description}" Style="{StaticResource SecondaryCellLabel}"/>
+
+                                <Image Source="front.png" IsVisible="True" Aspect="AspectFit"/>
                             </StackLayout>
-                            <StackLayout Grid.Column="1">
-                                <Image Source="front.png" Aspect="AspectFit"/>
-                            </StackLayout>
-                        </Grid>
+                        </StackLayout>
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>

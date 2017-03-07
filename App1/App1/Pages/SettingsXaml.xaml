@@ -5,29 +5,46 @@
              Title="Settings">
     <ContentPage.Resources>
         <ResourceDictionary>
+            <Style x:Key="LargeLabel"
+                   TargetType="Label">
+                <Setter Property="FontSize"
+                        Value="Large"></Setter>
+                <Setter Property="TextColor"
+                        Value="Black"></Setter>
+                <Setter Property="Margin"
+                        Value="5"></Setter>
+                <Setter Property="HorizontalOptions"
+                        Value="Center"></Setter>
+            </Style>
             <Style x:Key="AquaButtonStyle"
                    TargetType="Button">
                 <Setter Property="BackgroundColor"
                         Value="Aqua"></Setter>
                 <Setter Property="TextColor"
                         Value="Black"></Setter>
-                <Setter Property="HeightRequest"
-                        Value="70"></Setter>
-                <Setter Property="Margin"
-                        Value="-5"></Setter>
             </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
     <ScrollView>
-        <StackLayout>
-            <Button Text="Change My Username" Style="{StaticResource AquaButtonStyle}"/>
-            <Button Text="Change My Email" Style="{StaticResource AquaButtonStyle}"/>
-            <Button Text="Change My Password" Style="{StaticResource AquaButtonStyle}"/>
-            <Button Text="Change My Profile Picture" Style="{StaticResource AquaButtonStyle}"/>
-            <Button Text="Security Question" Style="{StaticResource AquaButtonStyle}"/>
-            <Button Text="Language" Style="{StaticResource AquaButtonStyle}"/>
-            <Button Text="Notifications" Style="{StaticResource AquaButtonStyle}"/>
-            <Button Text="Sign Out" Style="{StaticResource AquaButtonStyle}"/>
+        <StackLayout BackgroundColor="#EEEEEE"
+            Padding="60">
+            <Label Text=" Change Username" Style="{StaticResource LargeLabel}" />
+            <Entry x:Name="settingsUsernameEntry" Placeholder="username" />
+            <Entry x:Name="repeatUsernameEntry" Placeholder="repeat username" />
+            <Button Text="Change Name" Clicked="OnChangeNameButtonClicked" Style="{StaticResource AquaButtonStyle}"/>
+            <Label x:Name="nameMessageLabel" />
+
+            <Label Text=" Change Password" Style="{StaticResource LargeLabel}" />
+            <Entry x:Name="settingsPasswordEntry" Placeholder="password" IsPassword="true" />
+            <Entry x:Name="repeatPasswordEntry" Placeholder="repeat password" IsPassword="true" />
+            <Button Text="Change Password" Clicked="OnChangePasswordButtonClicked" Style="{StaticResource AquaButtonStyle}"/>
+            <Label x:Name="passwordMessageLabel" />
+
+            <Label Text=" Change Email" Style="{StaticResource LargeLabel}" />
+            <Entry x:Name="settingsEmailEntry" Placeholder="email" />
+            <Entry x:Name="repeatEmailEntry" Placeholder="repeat email" />
+            <Button Text="Change Email" Clicked="OnChangeEmailButtonClicked" Style="{StaticResource AquaButtonStyle}"/>
+            <Label x:Name="emailMessageLabel" />
         </StackLayout>
     </ScrollView>
 </ContentPage>

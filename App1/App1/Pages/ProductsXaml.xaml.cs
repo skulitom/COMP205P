@@ -25,6 +25,7 @@ namespace App1.Pages
                 new Products ("Investment Account", "0.45% gross/AER,varaible")
             };
             listView.ItemsSource = products;
+            listView.ItemTemplate = new DataTemplate(typeof(CustomCell));
         }
         void OnItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
@@ -67,6 +68,38 @@ namespace App1.Pages
 
             page.BindingContext = products;
             Navigation.PushAsync(page);
+        }
+    }
+
+    public class CustomCell : ViewCell
+    {
+        public CustomCell()
+        {
+            //instantiate each of our views
+            var image = new Image();
+            StackLayout cellWrapper = new StackLayout();
+            StackLayout horizontalLayout = new StackLayout();
+            Label left = new Label();
+            Label right = new Label();
+
+            //set bindings
+            left.SetBinding(Label.TextProperty, "title");
+            right.SetBinding(Label.TextProperty, "subtitle");
+            image.SetBinding(Image.SourceProperty, "image");
+
+            //Set properties for desired design
+            cellWrapper.BackgroundColor = Color.FromHex("#eee");
+            horizontalLayout.Orientation = StackOrientation.Horizontal;
+            right.HorizontalOptions = LayoutOptions.EndAndExpand;
+            left.TextColor = Color.FromHex("#f35e20");
+            right.TextColor = Color.FromHex("503026");
+
+            //add views to the view hierarchy
+            horizontalLayout.Children.Add(left);
+            horizontalLayout.Children.Add(right);
+            horizontalLayout.Children.Add(image);
+            cellWrapper.Children.Add(horizontalLayout);
+            View = cellWrapper;
         }
     }
 }
