@@ -100,8 +100,16 @@ D:\DEV\COMP205P\App1\App1\obj\Debug\App1.Pages.DSXaml.xaml.g.cs
 D:\DEV\COMP205P\App1\App1\obj\Debug\App1.Pages.IBXaml.xaml.g.cs
 D:\DEV\COMP205P\App1\App1\obj\Debug\App1.Pages.CBXaml.xaml.g.cs
 D:\DEV\COMP205P\App1\App1\obj\Debug\App1.Pages.IAXaml.xaml.g.cs
+D:\DEV\COMP205P\App1\App1\obj\Debug\App1.Pages.ChangeNameXaml.xaml.g.cs
+D:\DEV\COMP205P\App1\App1\obj\Debug\App1.Pages.ChangeEmailXaml.xaml.g.cs
+D:\DEV\COMP205P\App1\App1\obj\Debug\App1.Pages.ChangePasswordXaml.xaml.g.cs
+D:\DEV\COMP205P\App1\App1\obj\Debug\App1.Pages.ChangeLanguageXaml.xaml.g.cs
+D:\DEV\COMP205P\App1\App1\obj\Debug\App1.Pages.NotificationsXaml.xaml.g.cs
+D:\DEV\COMP205P\App1\App1\obj\Debug\App1.Pages.ChangeProfilePictureXaml.xaml.g.cs
+D:\DEV\COMP205P\App1\App1\obj\Debug\App1.Pages.ChangeSecurityQuestionXaml.xaml.g.cs
 D:\DEV\COMP205P\App1\App1\obj\Debug\App1.dll
 D:\DEV\COMP205P\App1\App1\obj\Debug\App1.pdb
-D:\DEV\COMP205P\App1\App1\obj\Debug\App1.Pages.ChangeNameXaml.xaml.g.cs
+D:\DEV\COMP205P\App1\App1\obj\Debug\App1.dll.mdb
+D:\DEV\COMP205P\App1\App1\bin\Debug\App1.dll.mdb
 D:\DEV\COMP205P\App1\App1\obj\Debug\App1.dll.mdb
 D:\DEV\COMP205P\App1\App1\bin\Debug\App1.dll.mdb

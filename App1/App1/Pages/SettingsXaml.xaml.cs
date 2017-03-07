@@ -44,25 +44,25 @@ namespace App1.Pages
                     page = new ChangeNameXaml();
                     break;
                 case "Change My Email":
-                    page = new PSXaml();
+                    page = new ChangeEmailXaml();
                     break;
                 case "Change My Password":
-                    page = new DSXaml();
+                    page = new ChangePasswordXaml();
                     break;
                 case "Change My Profile Picture":
-                    page = new DISAXaml();
+                    page = new ChangeProfilePictureXaml();
                     break;
                 case "Security Question":
-                    page = new IBXaml();
+                    page = new ChangeSecurityQuestionXaml();
                     break;
                 case "Language":
-                    page = new CBXaml();
+                    page = new ChangeLanguageXaml();
                     break;
                 case "Notifications":
-                    page = new IAXaml();
+                    page = new NotificationsXaml();
                     break;
                 case "Sign Out":
-                    page = new IAXaml();
+                    page = new LoginXaml();
                     break;
                 default:
                     page = new SettingsXaml();

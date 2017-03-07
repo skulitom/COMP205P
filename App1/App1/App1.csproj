@@ -44,8 +44,23 @@
     <Compile Include="Pages\CBXaml.xaml.cs">
       <DependentUpon>CBXaml.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\ChangeEmailXaml.xaml.cs">
+      <DependentUpon>ChangeEmailXaml.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ChangeLanguageXaml.xaml.cs">
+      <DependentUpon>ChangeLanguageXaml.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\ChangeNameXaml.xaml.cs">
       <DependentUpon>ChangeNameXaml.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ChangePasswordXaml.xaml.cs">
+      <DependentUpon>ChangePasswordXaml.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ChangeProfilePictureXaml.xaml.cs">
+      <DependentUpon>ChangeProfilePictureXaml.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ChangeSecurityQuestionXaml.xaml.cs">
+      <DependentUpon>ChangeSecurityQuestionXaml.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Constants.cs" />
     <Compile Include="Pages\ContactusXaml.xaml.cs">
@@ -71,6 +86,9 @@
     </Compile>
     <Compile Include="Pages\NavigationXaml.xaml.cs">
       <DependentUpon>NavigationXaml.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\NotificationsXaml.xaml.cs">
+      <DependentUpon>NotificationsXaml.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\PremiumBondsXaml.xaml.cs">
       <DependentUpon>PremiumBondsXaml.xaml</DependentUpon>
@@ -247,6 +265,42 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Pages\ChangeNameXaml.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\ChangeEmailXaml.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\ChangePasswordXaml.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\ChangeLanguageXaml.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\NotificationsXaml.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\ChangeProfilePictureXaml.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\ChangeSecurityQuestionXaml.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
