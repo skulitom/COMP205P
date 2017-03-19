@@ -3,8 +3,14 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="App1.Pages.NotificationsXaml"
              Title="Notifications">
-    <StackLayout Orientation="Horizontal" >
-        <Label Text="Notifications" FontSize="20" HorizontalOptions="Start" />
-        <Switch HorizontalOptions="End"></Switch>
+    <StackLayout >
+        <Grid HorizontalOptions="FillAndExpand" RowSpacing="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="300" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Label Text="Notifications" FontSize="20" HorizontalOptions="Start" Grid.Column="0" />
+            <Switch HorizontalOptions="End" Grid.Column="1"></Switch>
+        </Grid>
     </StackLayout>
 </ContentPage>

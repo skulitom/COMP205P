@@ -38,7 +38,7 @@ namespace App1.Pages
             switch (products.Name)
             {
                 case "Shared Premium Bonds":
-                    page = new HomeXaml();
+                    page = new SharedBondsXaml();
                     break;
                 case "Premium Bonds":
                     page = new HomeXaml();

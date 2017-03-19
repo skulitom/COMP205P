@@ -14,22 +14,22 @@ namespace App1.Pages
         public SettingsXaml()
         {
             InitializeComponent();
-            var settings = new List<Settings> {
-                new Settings ("Change My Username"),
-                new Settings ("Change My Email"),
-                new Settings ("Change My Password"),
-                new Settings ("Change My Profile Picture"),
-                new Settings ("Security Question"),
-                new Settings ("Language"),
-                new Settings ("Notifications"),
-                new Settings ("Sign Out")
+            var settings = new List<Titles> {
+                new Titles ("Change My Username"),
+                new Titles ("Change My Email"),
+                new Titles ("Change My Password"),
+                new Titles ("Change My Profile Picture"),
+                new Titles ("Security Question"),
+                new Titles ("Language"),
+                new Titles ("Notifications"),
+                new Titles ("Sign Out")
             };
             listView.ItemsSource = settings;
         }
 
         void OnItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            var settings = e.SelectedItem as Settings;
+            var settings = e.SelectedItem as Titles;
 
             if (settings == null)
             {

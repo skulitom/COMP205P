@@ -43,13 +43,13 @@
         </ResourceDictionary>
     </ContentPage.Resources>
     <ScrollView>
-        <StackLayout Padding="0,20,0,0">
-            <ListView x:Name="listView" SeparatorVisibility="Default" HasUnevenRows="true" ItemSelected="OnItemSelected">
+        <StackLayout>
+            <ListView x:Name="listView" SeparatorVisibility="Default" SeparatorColor="Black" HasUnevenRows="true" ItemSelected="OnItemSelected">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
                             <StackLayout HorizontalOptions="FillAndExpand" Padding="10">
-                                <Grid HorizontalOptions="FillAndExpand">
+                                <Grid HorizontalOptions="FillAndExpand" RowSpacing="0">
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="1*" />
                                         <RowDefinition Height="1*" />

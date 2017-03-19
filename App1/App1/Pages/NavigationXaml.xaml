@@ -4,7 +4,7 @@
              x:Class="App1.Pages.NavigationXaml"
              xmlns:local="clr-namespace:App1.Pages;assembly=App1"
              MasterBehavior="Popover"
-             BackgroundColor="#222222"
+             Padding="0"
              Title="Home Page">
     <MasterDetailPage.Master>
         <ContentPage Title="Menu" BackgroundColor="#333333">

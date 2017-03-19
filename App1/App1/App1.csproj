@@ -100,7 +100,10 @@
     <Compile Include="Pages\PSXaml.xaml.cs">
       <DependentUpon>PSXaml.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Settings.cs" />
+    <Compile Include="Pages\SharedBondsXaml.xaml.cs">
+      <DependentUpon>SharedBondsXaml.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Titles.cs" />
     <Compile Include="Pages\SettingsXaml.xaml.cs">
       <DependentUpon>SettingsXaml.xaml</DependentUpon>
     </Compile>
@@ -300,6 +303,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Pages\ChangeSecurityQuestionXaml.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\SharedBondsXaml.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
