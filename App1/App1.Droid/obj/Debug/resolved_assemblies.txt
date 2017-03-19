@@ -30,16 +30,17 @@ C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\COMP205P\App1\App1.Droid\o
 C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\COMP205P\App1\App1.Droid\obj\Debug\android\assets\System.Diagnostics.Debug.dll
 C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\COMP205P\App1\App1.Droid\obj\Debug\android\assets\System.Diagnostics.Tools.dll
 C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\COMP205P\App1\App1.Droid\obj\Debug\android\assets\System.Globalization.dll
-C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\COMP205P\App1\App1.Droid\obj\Debug\android\assets\System.Collections.dll
 C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\COMP205P\App1\App1.Droid\obj\Debug\android\assets\System.Threading.Tasks.dll
+C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\COMP205P\App1\App1.Droid\obj\Debug\android\assets\System.Collections.dll
 C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\COMP205P\App1\App1.Droid\obj\Debug\android\assets\System.Reflection.dll
+C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\COMP205P\App1\App1.Droid\obj\Debug\android\assets\System.Text.Encoding.dll
+C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\COMP205P\App1\App1.Droid\obj\Debug\android\assets\System.Net.Primitives.dll
 C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\COMP205P\App1\App1.Droid\obj\Debug\android\assets\System.Linq.dll
 C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\COMP205P\App1\App1.Droid\obj\Debug\android\assets\System.ComponentModel.dll
 C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\COMP205P\App1\App1.Droid\obj\Debug\android\assets\System.Xml.ReaderWriter.dll
 C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\COMP205P\App1\App1.Droid\obj\Debug\android\assets\System.Dynamic.Runtime.dll
 C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\COMP205P\App1\App1.Droid\obj\Debug\android\assets\System.ObjectModel.dll
 C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\COMP205P\App1\App1.Droid\obj\Debug\android\assets\System.Linq.Expressions.dll
-C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\COMP205P\App1\App1.Droid\obj\Debug\android\assets\System.Text.Encoding.dll
 C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\COMP205P\App1\App1.Droid\obj\Debug\android\assets\System.IO.dll
 C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\COMP205P\App1\App1.Droid\obj\Debug\android\assets\System.Text.RegularExpressions.dll
 C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\COMP205P\App1\App1.Droid\obj\Debug\android\assets\System.Xml.XDocument.dll
@@ -53,5 +54,4 @@ C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\COMP205P\App1\App1.Droid\o
 C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\COMP205P\App1\App1.Droid\obj\Debug\android\assets\Microsoft.CSharp.dll
 C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\COMP205P\App1\App1.Droid\obj\Debug\android\assets\Mono.CSharp.dll
 C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\COMP205P\App1\App1.Droid\obj\Debug\android\assets\System.Runtime.InteropServices.dll
-C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\COMP205P\App1\App1.Droid\obj\Debug\android\assets\System.Net.Primitives.dll
 C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\COMP205P\App1\App1.Droid\obj\Debug\android\assets\System.Collections.Concurrent.dll

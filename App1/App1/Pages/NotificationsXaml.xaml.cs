@@ -12,9 +12,13 @@ namespace App1.Pages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class NotificationsXaml : ContentPage
     {
-        public NotificationsXaml()
+        UserResponse user;
+        RestService obj;
+        public NotificationsXaml(UserResponse user)
         {
             InitializeComponent();
+            this.user = user;
+            obj = new RestService();
         }
     }
 }

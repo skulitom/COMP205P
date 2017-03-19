@@ -115,6 +115,5 @@ C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\COMP205P\App1\App1\obj\Deb
 C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\COMP205P\App1\App1\obj\Debug\App1.Pages.ChangeSecurityQuestionXaml.xaml.g.cs
 C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\COMP205P\App1\App1\obj\Debug\App1.dll
 C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\COMP205P\App1\App1\obj\Debug\App1.pdb
-C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\COMP205P\App1\App1\obj\Debug\App1.csprojResolveAssemblyReference.cache
 C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\COMP205P\App1\App1\obj\Debug\App1.dll.mdb
 C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\COMP205P\App1\App1\bin\Debug\App1.dll.mdb

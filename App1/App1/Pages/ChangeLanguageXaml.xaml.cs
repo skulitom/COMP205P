@@ -12,14 +12,30 @@ namespace App1.Pages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ChangeLanguageXaml : ContentPage
     {
-        public ChangeLanguageXaml()
+        UserResponse user;
+        RestService obj;
+        public ChangeLanguageXaml(UserResponse user)
         {
             InitializeComponent();
+            this.user = user;
+            obj = new RestService();
         }
 
-        private void Picker_SelectedIndexChanged(object sender, EventArgs e)
+        async private void Picker_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //Store locally and pull when starting the app
+            if(languagepicker.SelectedIndex == -1)
+            {
+                //should we show some kind of error message here?
+            }
+            else
+            {
+                User temp = new User();
+                temp.key = user.key;
+                temp.Language = languagepicker.Items[languagepicker.SelectedIndex];
+                await obj.editUserAsync(temp);
+                await Navigation.PushAsync(new NavigationXaml(user));
+            }
+
         }
     }
 }

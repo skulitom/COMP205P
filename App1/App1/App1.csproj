@@ -38,6 +38,7 @@
     <Compile Include="App.cs" />
     <Compile Include="Models\HomeModel.cs" />
     <Compile Include="Models\Product.cs" />
+    <Compile Include="Pages\Accounts.cs" />
     <Compile Include="Pages\AccountsXaml.xaml.cs">
       <DependentUpon>AccountsXaml.xaml</DependentUpon>
     </Compile>
@@ -100,6 +101,7 @@
     <Compile Include="Pages\PSXaml.xaml.cs">
       <DependentUpon>PSXaml.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\RestService.cs" />
     <Compile Include="Pages\Settings.cs" />
     <Compile Include="Pages\SettingsXaml.xaml.cs">
       <DependentUpon>SettingsXaml.xaml</DependentUpon>
@@ -110,7 +112,9 @@
     <Compile Include="Pages\SPSXaml.xaml.cs">
       <DependentUpon>SPSXaml.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\TransactionItem.cs" />
     <Compile Include="Pages\User.cs" />
+    <Compile Include="Pages\UserResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>

@@ -10,16 +10,17 @@ namespace App1.Pages
 {
     public partial class NavigationXaml : MasterDetailPage
     {
-        public NavigationXaml()
+        UserResponse user;
+
+        public NavigationXaml(UserResponse user)
         {
             InitializeComponent();
-            
+            this.user = user;
         }
 
         public void SettingsButton_Clicked(object sender, EventArgs e)
         {
-
-            this.Detail = new Pages.SettingsXaml();
+            this.Detail = new Pages.SettingsXaml(user);
             this.Title = this.Detail.Title;
             // change to the detail page
             this.IsPresented = false;
@@ -27,8 +28,7 @@ namespace App1.Pages
 
         public void HomeButton_Clicked(object sender, EventArgs e)
         {
-
-            this.Detail = new Pages.HomeXaml();
+            this.Detail = new Pages.HomeXaml(user);
             this.Title = this.Detail.Title;
             // change to the detail page
             this.IsPresented = false;
@@ -36,7 +36,6 @@ namespace App1.Pages
 
         public void Contactus_Clicked(object sender, EventArgs e)
         {
-
             this.Detail = new Pages.ContactusXaml();
             this.Title = this.Detail.Title;
             // change to the detail page
@@ -45,8 +44,7 @@ namespace App1.Pages
 
         public void Accounts_Clicked(object sender, EventArgs e)
         {
-
-            this.Detail = new Pages.AccountsXaml();
+            this.Detail = new Pages.AccountsXaml(user);
             this.Title = this.Detail.Title;
             // change to the detail page
             this.IsPresented = false;

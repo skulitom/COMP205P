@@ -6,11 +6,14 @@ using System.Threading.Tasks;
 using System.Reflection;
 
 using Xamarin.Forms;
+using System.Diagnostics;
 
 namespace App1.Pages
 {
     public partial class LoginXaml : ContentPage
     {
+        RestService obj = new RestService();
+        UserResponse userResponse;
         public LoginXaml()
         {
             InitializeComponent();
@@ -23,29 +26,25 @@ namespace App1.Pages
 
         async void OnLoginButtonClicked(object sender, EventArgs e)
         {
-            var user = new User
+            User user = new User(usernameEntry.Text, passwordEntry.Text);
+            userResponse = await AreCredentialsCorrect(user);
+            if (userResponse != null)
             {
-                Username = usernameEntry.Text,
-                Password = passwordEntry.Text
-            };
-
-            var isValid = AreCredentialsCorrect(user);
-            if (isValid)
-            {
-                App.IsUserLoggedIn = true;
-                Navigation.InsertPageBefore(new NavigationXaml(), this);
+                Debug.WriteLine("               User is logged in"); 
+                Navigation.InsertPageBefore(new NavigationXaml(userResponse), this);
                 await Navigation.PopAsync();
             }
             else
             {
-                messageLabel.Text = "Login failed";
+                messageLabel.Text = "Login failed!";
                 passwordEntry.Text = string.Empty;
             }
         }
 
-        bool AreCredentialsCorrect(User user)
+        async Task<UserResponse> AreCredentialsCorrect(User user)
         {
-            return user.Username == Constants.Username && user.Password == Constants.Password;
+            userResponse = await obj.AuthenticateuserAsync(user);
+            return userResponse;
         }
     }
 }

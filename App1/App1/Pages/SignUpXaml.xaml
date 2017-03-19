@@ -5,6 +5,10 @@
              Title="Sign Up">
     <ContentPage.Content>
         <StackLayout VerticalOptions="StartAndExpand">
+            <Label Text="First name" />
+            <Entry x:Name="firstnameEntry" Placeholder="firstname" />
+            <Label Text="Last name" />
+            <Entry x:Name="lastnameEntry" Placeholder="lastname" />
             <Label Text="Username" />
             <Entry x:Name="usernameEntry" Placeholder="username" />
             <Label Text="Password" />

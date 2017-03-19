@@ -17,8 +17,12 @@ namespace App1.Pages {
     public partial class ChangeLanguageXaml : global::Xamarin.Forms.ContentPage {
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.Picker languagepicker;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private void InitializeComponent() {
             this.LoadFromXaml(typeof(ChangeLanguageXaml));
+            languagepicker = this.FindByName<global::Xamarin.Forms.Picker>("languagepicker");
         }
     }
 }

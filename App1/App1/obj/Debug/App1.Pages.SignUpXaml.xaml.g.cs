@@ -17,6 +17,12 @@ namespace App1.Pages {
     public partial class SignUpXaml : global::Xamarin.Forms.ContentPage {
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.Entry firstnameEntry;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.Entry lastnameEntry;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private global::Xamarin.Forms.Entry usernameEntry;
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
@@ -40,6 +46,8 @@ namespace App1.Pages {
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private void InitializeComponent() {
             this.LoadFromXaml(typeof(SignUpXaml));
+            firstnameEntry = this.FindByName<global::Xamarin.Forms.Entry>("firstnameEntry");
+            lastnameEntry = this.FindByName<global::Xamarin.Forms.Entry>("lastnameEntry");
             usernameEntry = this.FindByName<global::Xamarin.Forms.Entry>("usernameEntry");
             passwordEntry = this.FindByName<global::Xamarin.Forms.Entry>("passwordEntry");
             emailEntry = this.FindByName<global::Xamarin.Forms.Entry>("emailEntry");

@@ -11,7 +11,8 @@ namespace App1.Pages
 {
     public partial class SettingsXaml : ContentPage
     {
-        public SettingsXaml()
+        UserResponse user;
+        public SettingsXaml(UserResponse user)
         {
             InitializeComponent();
             var settings = new List<Settings> {
@@ -25,6 +26,7 @@ namespace App1.Pages
                 new Settings ("Sign Out")
             };
             listView.ItemsSource = settings;
+            this.user = user;
         }
 
         void OnItemSelected(object sender, SelectedItemChangedEventArgs e)
@@ -41,31 +43,31 @@ namespace App1.Pages
             switch (settings.Name)
             {
                 case "Change My Username":
-                    page = new ChangeNameXaml();
+                    page = new ChangeNameXaml(user);
                     break;
                 case "Change My Email":
-                    page = new ChangeEmailXaml();
+                    page = new ChangeEmailXaml(user);
                     break;
                 case "Change My Password":
-                    page = new ChangePasswordXaml();
+                    page = new ChangePasswordXaml(user);
                     break;
                 case "Change My Profile Picture":
-                    page = new ChangeProfilePictureXaml();
+                    page = new ChangeProfilePictureXaml(user);
                     break;
                 case "Security Question":
-                    page = new ChangeSecurityQuestionXaml();
+                    page = new ChangeSecurityQuestionXaml(user);
                     break;
                 case "Language":
-                    page = new ChangeLanguageXaml();
+                    page = new ChangeLanguageXaml(user);
                     break;
                 case "Notifications":
-                    page = new NotificationsXaml();
+                    page = new NotificationsXaml(user);
                     break;
                 case "Sign Out":
                     page = new LoginXaml();
                     break;
                 default:
-                    page = new SettingsXaml();
+                    page = new SettingsXaml(user);
                     break;
             }
 
