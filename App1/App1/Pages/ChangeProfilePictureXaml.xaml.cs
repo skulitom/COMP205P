@@ -12,9 +12,13 @@ namespace App1.Pages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ChangeProfilePictureXaml : ContentPage
     {
-        public ChangeProfilePictureXaml()
+        UserResponse user;
+        RestService obj;
+        public ChangeProfilePictureXaml(UserResponse user)
         {
             InitializeComponent();
+            this.user = user;
+            obj = new RestService();
         }
     }
 }

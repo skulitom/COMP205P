@@ -9,7 +9,6 @@ namespace App1
 {
     public class App : Application
     {
-        public static bool IsUserLoggedIn { get; set; }
         public App()
         {
             // The root page of your application
@@ -19,14 +18,7 @@ namespace App1
             var barBackgroundColorSetter = new Setter { Property = NavigationPage.BarBackgroundColorProperty, Value = xamarin_color };
             navigationStyle.Setters.Add(barBackgroundColorSetter);
             Current.Resources.Add(navigationStyle);
-            if (!IsUserLoggedIn)
-            {
-                MainPage = new NavigationPage(new LoginXaml());
-            }
-            else
-            {
-                MainPage = new NavigationPage(new NavigationXaml());
-            }
+            MainPage = new NavigationPage(new LoginXaml());
         }
 
         protected override void OnStart()

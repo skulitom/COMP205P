@@ -12,29 +12,25 @@ namespace App1.Pages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class SignUpXaml : ContentPage
     {
+        RestService obj = new RestService();
         public SignUpXaml()
         {
             InitializeComponent();
         }
         async void OnSignUpButtonClicked(object sender, EventArgs e)
         {
-            var user = new User()
-            {
-                Username = usernameEntry.Text,
-                Password = passwordEntry.Text,
-                Email = emailEntry.Text
-            };
+            var user = new User(usernameEntry.Text, passwordEntry.Text, emailEntry.Text);
 
             // Sign up logic goes here
 
             var signUpSucceeded = AreDetailsValid(user);
             if (signUpSucceeded)
             {
+                UserResponse authUser = await obj.addUserAsync(user);
                 var rootPage = Navigation.NavigationStack.FirstOrDefault();
-                if (rootPage != null)
+                if (rootPage != null && authUser != null)
                 {
-                    App.IsUserLoggedIn = true;
-                    Navigation.InsertPageBefore(new HomeXaml(), Navigation.NavigationStack.First());
+                    Navigation.InsertPageBefore(new NavigationXaml(authUser), Navigation.NavigationStack.First());
                     await Navigation.PopToRootAsync();
                 }
             }
@@ -46,7 +42,7 @@ namespace App1.Pages
 
         bool AreDetailsValid(User user)
         {
-            return (!string.IsNullOrWhiteSpace(user.Username) && !string.IsNullOrWhiteSpace(user.Password) && !string.IsNullOrWhiteSpace(user.Email) && user.Email.Contains("@"));
+            return (!string.IsNullOrWhiteSpace(user.username) && !string.IsNullOrWhiteSpace(user.password) && !string.IsNullOrWhiteSpace(user.email) && user.email.Contains("@"));
         }
     }
 }

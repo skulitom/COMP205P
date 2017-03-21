@@ -30,16 +30,17 @@ D:\DEV\COMP205P\App1\App1.Droid\obj\Debug\android\assets\System.Resources.Resour
 D:\DEV\COMP205P\App1\App1.Droid\obj\Debug\android\assets\System.Diagnostics.Debug.dll
 D:\DEV\COMP205P\App1\App1.Droid\obj\Debug\android\assets\System.Diagnostics.Tools.dll
 D:\DEV\COMP205P\App1\App1.Droid\obj\Debug\android\assets\System.Globalization.dll
-D:\DEV\COMP205P\App1\App1.Droid\obj\Debug\android\assets\System.Collections.dll
 D:\DEV\COMP205P\App1\App1.Droid\obj\Debug\android\assets\System.Threading.Tasks.dll
+D:\DEV\COMP205P\App1\App1.Droid\obj\Debug\android\assets\System.Collections.dll
 D:\DEV\COMP205P\App1\App1.Droid\obj\Debug\android\assets\System.Reflection.dll
+D:\DEV\COMP205P\App1\App1.Droid\obj\Debug\android\assets\System.Text.Encoding.dll
+D:\DEV\COMP205P\App1\App1.Droid\obj\Debug\android\assets\System.Net.Primitives.dll
 D:\DEV\COMP205P\App1\App1.Droid\obj\Debug\android\assets\System.Linq.dll
 D:\DEV\COMP205P\App1\App1.Droid\obj\Debug\android\assets\System.ComponentModel.dll
 D:\DEV\COMP205P\App1\App1.Droid\obj\Debug\android\assets\System.Xml.ReaderWriter.dll
 D:\DEV\COMP205P\App1\App1.Droid\obj\Debug\android\assets\System.Dynamic.Runtime.dll
 D:\DEV\COMP205P\App1\App1.Droid\obj\Debug\android\assets\System.ObjectModel.dll
 D:\DEV\COMP205P\App1\App1.Droid\obj\Debug\android\assets\System.Linq.Expressions.dll
-D:\DEV\COMP205P\App1\App1.Droid\obj\Debug\android\assets\System.Text.Encoding.dll
 D:\DEV\COMP205P\App1\App1.Droid\obj\Debug\android\assets\System.IO.dll
 D:\DEV\COMP205P\App1\App1.Droid\obj\Debug\android\assets\System.Text.RegularExpressions.dll
 D:\DEV\COMP205P\App1\App1.Droid\obj\Debug\android\assets\System.Xml.XDocument.dll
@@ -53,5 +54,4 @@ D:\DEV\COMP205P\App1\App1.Droid\obj\Debug\android\assets\System.Threading.dll
 D:\DEV\COMP205P\App1\App1.Droid\obj\Debug\android\assets\Microsoft.CSharp.dll
 D:\DEV\COMP205P\App1\App1.Droid\obj\Debug\android\assets\Mono.CSharp.dll
 D:\DEV\COMP205P\App1\App1.Droid\obj\Debug\android\assets\System.Runtime.InteropServices.dll
-D:\DEV\COMP205P\App1\App1.Droid\obj\Debug\android\assets\System.Net.Primitives.dll
 D:\DEV\COMP205P\App1\App1.Droid\obj\Debug\android\assets\System.Collections.Concurrent.dll

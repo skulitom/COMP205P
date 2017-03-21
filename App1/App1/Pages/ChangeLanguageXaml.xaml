@@ -28,7 +28,7 @@
 <StackLayout BackgroundColor="#EEEEEE"
             Padding="60">
         <Label Text="Select your language" Style="{StaticResource LargeLabel}"></Label>
-        <Picker Title="Select a Language" SelectedIndexChanged="Picker_SelectedIndexChanged">
+        <Picker x:Name="languagepicker" Title="Select a Language" SelectedIndexChanged="Picker_SelectedIndexChanged">
             <Picker.Items>
                 <x:String>English</x:String>
                 <x:String>Russian</x:String>

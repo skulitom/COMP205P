@@ -39,36 +39,36 @@ namespace App1.Pages
 
             ContentPage page = null;
 
-            switch (settings.Name)
-            {
-                case "Change My Username":
-                    page = new ChangeNameXaml();
-                    break;
-                case "Change My Email":
-                    page = new ChangeEmailXaml();
-                    break;
-                case "Change My Password":
-                    page = new ChangePasswordXaml();
-                    break;
-                case "Change My Profile Picture":
-                    page = new ChangeProfilePictureXaml();
-                    break;
-                case "Security Question":
-                    page = new ChangeSecurityQuestionXaml();
-                    break;
-                case "Language":
-                    page = new ChangeLanguageXaml();
-                    break;
-                case "Notifications":
-                    page = new NotificationsXaml();
-                    break;
-                case "Sign Out":
-                    page = new LoginXaml();
-                    break;
-                default:
-                    page = new SettingsXaml();
-                    break;
-            }
+            //switch (settings.Name)
+            //{
+            //    case "Change My Username":
+            //        page = new ChangeNameXaml();
+            //        break;
+            //    case "Change My Email":
+            //        page = new ChangeEmailXaml();
+            //        break;
+            //    case "Change My Password":
+            //        page = new ChangePasswordXaml();
+            //        break;
+            //    case "Change My Profile Picture":
+            //        page = new ChangeProfilePictureXaml();
+            //        break;
+            //    case "Security Question":
+            //        page = new ChangeSecurityQuestionXaml();
+            //        break;
+            //    case "Language":
+            //        page = new ChangeLanguageXaml();
+            //        break;
+            //    case "Notifications":
+            //        page = new NotificationsXaml();
+            //        break;
+            //    case "Sign Out":
+            //        page = new LoginXaml();
+            //        break;
+            //    default:
+            //        page = new SettingsXaml();
+            //        break;
+            //}
 
             page.BindingContext = settings;
             Navigation.PushAsync(page);
