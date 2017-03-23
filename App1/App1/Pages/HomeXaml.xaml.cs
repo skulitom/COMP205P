@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using App1.ViewModels;
+using System.Diagnostics;
 
 namespace App1.Pages
 {
@@ -22,15 +23,16 @@ namespace App1.Pages
         protected async override void OnAppearing()
         {
             base.OnAppearing();
+            Debug.WriteLine("           ON APPEARING");
             var accounts = obj.RefreshAccountsAsync(user);
             listView.ItemsSource = await accounts;
         }
 
         void OnItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            var products = e.SelectedItem as Products;
+            var acc = e.SelectedItem as Accounts;
 
-            if (products == null)
+            if (acc == null)
             {
                 return;
             }
@@ -38,35 +40,35 @@ namespace App1.Pages
             ContentPage page = null;
 
             //pages to be filled in when created by artem
-            //switch (products.Name)
-            //{
-            //    case "Shared Premium Bonds":
-            //        page = new ;
-            //        break;
-            //    case "Premium Bonds":
-            //        page = new ;
-            //        break;
-            //    case "Direct Saver":
-            //        page = new ;
-            //        break;
-            //    case "Direct ISA":
-            //        page = new ;
-            //        break;
-            //    case "Income Bonds":
-            //        page = new ;
-            //        break;
-            //    case "Childrens Bonds":
-            //        page = new ;
-            //        break;
-            //    case "Investment Account":
-            //        page = new ;
-            //        break;
-            //    default:
-            //        page = new ;
-            //        break;
-            //}
+            switch (acc.Name)
+            {
+                case "Shared Premium Bonds":
+                    page = new HomeXaml(user);
+                    break;
+                case "Premium Bonds":
+                    page = new HomeXaml(user);
+                    break;
+                case "Direct Saver":
+                    page = new HomeXaml(user);
+                    break;
+                case "Direct ISA":
+                    page = new HomeXaml(user);
+                    break;
+                case "Income Bonds":
+                    page = new HomeXaml(user);
+                    break;
+                case "Childrens Bonds":
+                    page = new HomeXaml(user);
+                    break;
+                case "Investment Account":
+                    page = new HomeXaml(user);
+                    break;
+                default:
+                    page = new HomeXaml(user);
+                    break;
+            }
 
-            page.BindingContext = products;
+            page.BindingContext = acc;
             Navigation.PushAsync(page);
         }
     }

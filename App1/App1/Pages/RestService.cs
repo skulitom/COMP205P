@@ -11,8 +11,6 @@ namespace App1.Pages
 {
     class RestService
     {
-        HttpClient client;
-
         public User authUser { get; private set; }
         public List<Accounts> acc { get; private set; }
         public List<Products> prods { get; private set; }
@@ -20,12 +18,12 @@ namespace App1.Pages
 
         public RestService()
         {
-            client = new HttpClient();
-            client.MaxResponseContentBufferSize = 256000;
+
         }
 
         public async Task<UserResponse> AuthenticateuserAsync(User user)
         {
+            HttpClient client = new HttpClient();
             var uri = new Uri(string.Format(Constants.authenticationURL, string.Empty));
             var json = JsonConvert.SerializeObject(user);
             var content = new StringContent(json, Encoding.UTF8, "application/json");
@@ -54,6 +52,7 @@ namespace App1.Pages
 
         public async Task<UserResponse> addUserAsync(User user)
         {
+            HttpClient client = new HttpClient();
             var uri = new Uri(string.Format(Constants.getUserDetailsURL, string.Empty));
             try
             {
@@ -79,6 +78,7 @@ namespace App1.Pages
 
         public async Task<List<Accounts>> RefreshAccountsAsync(UserResponse user)
         {
+            HttpClient client = new HttpClient();
             acc = new List<Accounts>();
             var uri = new Uri(string.Format(Constants.getAccountsURL, string.Empty));
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("basic", user.key);
@@ -102,6 +102,7 @@ namespace App1.Pages
 
         public async Task<List<Products>> RefreshProductsAsync()
         {
+            HttpClient client = new HttpClient();
             prods = new List<Products>();
             var uri = new Uri(string.Format(Constants.getProductsURL, string.Empty));
             try
@@ -123,6 +124,7 @@ namespace App1.Pages
 
         public async Task<List<TransactionItem>> RefreshTransactionHistoryAsync()
         {
+            HttpClient client = new HttpClient();
             transactions = new List<TransactionItem>();
             var uri = new Uri(string.Format(Constants.getTransactionHistoryURL, string.Empty));
             try
@@ -144,6 +146,7 @@ namespace App1.Pages
 
         public async Task editAccountAsync(Accounts acc)
         {
+            HttpClient client = new HttpClient();
             var uri = new Uri(string.Format(Constants.getAccountsURL, acc.ID));
             try
             {
@@ -165,6 +168,7 @@ namespace App1.Pages
 
         public async Task editUserAsync(User user)
         {
+            HttpClient client = new HttpClient();
             var uri = new Uri(string.Format(Constants.getUserDetailsURL, user.ID));
             try
             {
