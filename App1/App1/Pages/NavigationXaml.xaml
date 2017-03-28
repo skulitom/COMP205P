@@ -84,6 +84,6 @@
   </MasterDetailPage.Master>
     
   <MasterDetailPage.Detail>
-    <local:HomeXaml></local:HomeXaml>
+        <local:ProductsXaml></local:ProductsXaml>
   </MasterDetailPage.Detail>
 </MasterDetailPage>

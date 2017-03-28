@@ -2,12 +2,16 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+
 using System.Threading.Tasks;
 
 using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
+
 
 namespace App1.Pages
 {
+    [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class NavigationXaml : MasterDetailPage
     {
         UserResponse user;
@@ -15,6 +19,8 @@ namespace App1.Pages
         {
             InitializeComponent();
             this.user = user;
+            this.Detail = new Pages.HomeXaml(user);
+            this.Title = this.Detail.Title;
 
         }
 

@@ -28,9 +28,9 @@ namespace App1.Pages
           }
     void OnItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            var products = e.SelectedItem as Products;
+            var acc = e.SelectedItem as Accounts;
 
-            if (products == null)
+            if (acc == null)
             {
                 return;
             }
@@ -65,7 +65,7 @@ namespace App1.Pages
             //        break;
             //}
 
-            page.BindingContext = products;
+            page.BindingContext = acc;
             Navigation.PushAsync(page);
         }
     }
