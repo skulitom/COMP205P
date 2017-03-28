@@ -61,7 +61,7 @@ namespace App1.Pages
 
         public void Products_Clicked(object sender, EventArgs e)
         {
-            this.Detail = new Pages.ProductsXaml();
+            this.Detail = new Pages.ProductsXaml(user);
             this.Title = this.Detail.Title;
             // change to the detail page
             this.IsPresented = false;

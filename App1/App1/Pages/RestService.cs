@@ -81,7 +81,8 @@ namespace App1.Pages
         {
             acc = new List<Accounts>();
             var uri = new Uri(string.Format(Constants.getAccountsURL, string.Empty));
-            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("basic", user.key);
+            //client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("basic", user.key);
+            client.DefaultRequestHeaders.Add("Authorization", "TOKEN " + user.key);
             try
             {
                 Debug.WriteLine("               TRYING TO GET LISTS OF ACCOUNTS");
@@ -90,20 +91,29 @@ namespace App1.Pages
                 {
                     var content = await response.Content.ReadAsStringAsync();
                     acc = JsonConvert.DeserializeObject<List<Accounts>>(content);
+                    Debug.WriteLine("Succesful response for accounts");
+                }
+                else
+                {
+                    Debug.WriteLine("Unsuccesful response for accounts");
                 }
             }
             catch (Exception ex)
             {
                 Debug.WriteLine(@"				ERROR {0}", ex.Message);
             }
-
+            Debug.WriteLine("LIST OF ACCOUNTS BEING RETURNED: " + acc);
+            foreach (Accounts element in acc) {
+                Debug.WriteLine("Element ID = " + element.ID );
+            }
             return acc;
         }
 
-        public async Task<List<Products>> RefreshProductsAsync()
+        public async Task<List<Products>> RefreshProductsAsync(UserResponse user)
         {
             prods = new List<Products>();
             var uri = new Uri(string.Format(Constants.getProductsURL, string.Empty));
+            client.DefaultRequestHeaders.Add("Authorization", "TOKEN " + user.key);
             try
             {
                 var response = await client.GetAsync(uri);
@@ -111,13 +121,22 @@ namespace App1.Pages
                 {
                     var content = await response.Content.ReadAsStringAsync();
                     prods = JsonConvert.DeserializeObject<List<Products>>(content);
+                    Debug.WriteLine("Succesful response for products");
+                }
+                else
+                {
+                    Debug.WriteLine("Unsuccesful response for products");
                 }
             }
             catch (Exception ex)
             {
                 Debug.WriteLine(@"				ERROR {0}", ex.Message);
             }
-
+            Debug.WriteLine("LIST OF PRODUCTS BEING RETURNED: " + prods);
+            foreach (Products element in prods)
+            {
+                Debug.WriteLine("Element ID = " + element.id);
+            }
             return prods;
         }
 

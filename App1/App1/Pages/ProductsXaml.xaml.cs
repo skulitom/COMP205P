@@ -13,17 +13,19 @@ namespace App1.Pages
 	public partial class ProductsXaml : ContentPage
 	{
         string temp;
+        UserResponse user;
         RestService obj = new RestService();
-        public ProductsXaml ()
+        public ProductsXaml (UserResponse user)
 		{
 			InitializeComponent ();
+            this.user = user;
 
         }
 
         protected async override void OnAppearing()
         {
             base.OnAppearing();
-            var products = obj.RefreshProductsAsync();
+            var products = obj.RefreshProductsAsync(user);
             listView.ItemsSource = await products;
         }
     void OnItemSelected(object sender, SelectedItemChangedEventArgs e)
@@ -37,7 +39,7 @@ namespace App1.Pages
 
             ContentPage page = null;
 
-            switch (products.Name)
+            switch (products.name)
             {
                 case "Shared Premium Bonds":
                     temp = "Shared Premium Bonds";
@@ -68,7 +70,7 @@ namespace App1.Pages
                     page = new IAXaml();
                     break;
                 default:
-                    page = new ProductsXaml();
+                    page = new ProductsXaml(user);
                     break;
             }
             
