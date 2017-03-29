@@ -67,7 +67,7 @@
                                         <ColumnDefinition Width="Auto" />
                                     </Grid.ColumnDefinitions>
                                     <Label x:Name="TextLabel" Grid.Column="0" Text="{Binding info.name}" Style="{StaticResource PrimaryCellLabel}"/>
-                                    
+                                    <Label x:Name="RightTextLabel" Grid.Column="1" Text="{Binding balance}" Style="{StaticResource SecondaryCellLabel}"/>
                                 </Grid>
                             </StackLayout>
                         </ViewCell>

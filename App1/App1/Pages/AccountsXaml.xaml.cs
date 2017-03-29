@@ -34,33 +34,33 @@ namespace App1.Pages
 
             ContentPage page = null;
 
-            //switch (acc.Name)
-            //{
-            //    case "Shared Premium Bonds":
-            //        page = new SharedBondsXaml();
-            //        break;
-            //    case "Premium Bonds":
-            //        page = new HomeXaml();
-            //        break;
-            //    case "Direct Saver":
-            //        page = new HomeXaml();
-            //        break;
-            //    case "Direct ISA":
-            //        page = new HomeXaml();
-            //        break;
-            //    case "Income Bonds":
-            //        page = new HomeXaml();
-            //        break;
-            //    case "Childrens Bonds":
-            //        page = new HomeXaml();
-            //        break;
-            //    case "Investment Account":
-            //        page = new HomeXaml();
-            //        break;
-            //    default:
-            //        page = new HomeXaml();
-            //        break;
-            //}
+            switch (acc.info.name)
+            {
+                case "Shared Premium Bonds":
+                    page = new SharedBondsXaml(user);
+                    break;
+                case "Premium Bonds":
+                    page = new SharedBondsXaml(user);
+                    break;
+                case "Direct Saver":
+                    page = new SharedBondsXaml(user);
+                    break;
+                case "Direct ISA":
+                    page = new SharedBondsXaml(user);
+                    break;
+                case "Income Bonds":
+                    page = new SharedBondsXaml(user);
+                    break;
+                case "Childrens Bonds":
+                    page = new SharedBondsXaml(user);
+                    break;
+                case "Investment Account":
+                    page = new SharedBondsXaml(user);
+                    break;
+                default:
+                    page = new SharedBondsXaml(user);
+                    break;
+            }
 
             page.BindingContext = acc;
             Navigation.PushAsync(page);

@@ -12,6 +12,8 @@ namespace App1.Pages
 
         public Info info { get; set; }
 
+        public string balance { get; set; }
+
         public Accounts()
         {
 
