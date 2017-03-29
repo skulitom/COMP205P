@@ -104,7 +104,7 @@ namespace App1.Pages
             }
             Debug.WriteLine("LIST OF ACCOUNTS BEING RETURNED: " + acc);
             foreach (Accounts element in acc) {
-                Debug.WriteLine("Element ID = " + element.ID );
+                Debug.WriteLine("Element ID = " + element.info.id );
             }
             return acc;
         }
@@ -163,7 +163,7 @@ namespace App1.Pages
 
         public async Task editAccountAsync(Accounts acc)
         {
-            var uri = new Uri(string.Format(Constants.getAccountsURL, acc.ID));
+            var uri = new Uri(string.Format(Constants.getAccountsURL, acc.info.id));
             try
             {
                 var json = JsonConvert.SerializeObject(acc);
