@@ -31,8 +31,8 @@ namespace App1.Pages
                         if (userResponse != null)
             {
                 Debug.WriteLine("User is logged in");
-                Navigation.InsertPageBefore(new NavigationXaml(userResponse), this);
-                await Navigation.PopAsync();
+                Application.Current.MainPage = new NavigationXaml(userResponse);
+                
             }
             else
             {

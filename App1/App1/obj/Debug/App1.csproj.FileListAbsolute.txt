@@ -46,5 +46,6 @@ D:\DEV\COMP205P\App1\App1\obj\Debug\App1.Pages.ChangeSecurityQuestionXaml.xaml.g
 D:\DEV\COMP205P\App1\App1\obj\Debug\App1.Pages.SharedBondsXaml.xaml.g.cs
 D:\DEV\COMP205P\App1\App1\obj\Debug\App1.dll
 D:\DEV\COMP205P\App1\App1\obj\Debug\App1.pdb
+D:\DEV\COMP205P\App1\App1\obj\Debug\App1.csprojResolveAssemblyReference.cache
 D:\DEV\COMP205P\App1\App1\obj\Debug\App1.dll.mdb
 D:\DEV\COMP205P\App1\App1\bin\Debug\App1.dll.mdb

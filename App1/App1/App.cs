@@ -19,6 +19,7 @@ namespace App1
             navigationStyle.Setters.Add(barBackgroundColorSetter);
             Current.Resources.Add(navigationStyle);
             MainPage = new NavigationPage(new LoginXaml());
+           
         }
 
         protected override void OnStart()
