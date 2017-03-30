@@ -14,11 +14,13 @@ namespace App1.Pages
 	{
         string temp;
         UserResponse user;
+        MasterDetailPage master;
         RestService obj = new RestService();
-        public ProductsXaml (UserResponse user)
+        public ProductsXaml (MasterDetailPage master, UserResponse user)
 		{
 			InitializeComponent ();
             this.user = user;
+            this.master = master;
 
         }
 
@@ -70,13 +72,14 @@ namespace App1.Pages
                     page = new IAXaml();
                     break;
                 default:
-                    page = new ProductsXaml(user);
+                    page = new ProductsXaml(master, user);
                     break;
             }
             
             page.BindingContext = products;
             page.Title = temp;
-            Navigation.PushAsync(page);
+            this.master.Detail = page;
+            this.master.Title = page.Title;
             
         }
     }

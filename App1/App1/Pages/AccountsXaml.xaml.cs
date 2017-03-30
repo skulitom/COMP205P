@@ -11,11 +11,13 @@ namespace App1.Pages
     public partial class AccountsXaml : ContentPage
     {
         UserResponse user;
+        MasterDetailPage master;
         RestService obj = new RestService();
-        public AccountsXaml(UserResponse user)
+        public AccountsXaml(MasterDetailPage master,  UserResponse user)
         {
             InitializeComponent();
             this.user = user;
+            this.master = master;
         }
     protected async override void OnAppearing()
         {
@@ -63,7 +65,8 @@ namespace App1.Pages
             }
 
             page.BindingContext = acc;
-            Navigation.PushAsync(page);
+            this.master.Detail = page;
+            this.master.Title = page.Title;
         }
     }
 }

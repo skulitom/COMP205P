@@ -12,11 +12,13 @@ namespace App1.Pages
     public partial class HomeXaml : ContentPage
     {
         UserResponse user;
+        MasterDetailPage master;
         RestService obj = new RestService();
-        public HomeXaml(UserResponse user)
+        public HomeXaml(MasterDetailPage master,UserResponse user)
         {
             InitializeComponent();
             this.user = user;
+            this.master = master;
 
         }
 
@@ -37,36 +39,37 @@ namespace App1.Pages
 
             ContentPage page = null;
 
-            //switch (products.Name)
-            //{
-            //    case "Shared Premium Bonds":
-            //        page = new HomeXaml();
-            //        break;
-            //    case "Premium Bonds":
-            //        page = new HomeXaml();
-            //        break;
-            //    case "Direct Saver":
-            //        page = new HomeXaml();
-            //        break;
-            //    case "Direct ISA":
-            //        page = new HomeXaml();
-            //        break;
-            //    case "Income Bonds":
-            //        page = new HomeXaml();
-            //        break;
-            //    case "Childrens Bonds":
-            //        page = new HomeXaml();
-            //        break;
-            //    case "Investment Account":
-            //        page = new HomeXaml();
-            //        break;
-            //    default:
-            //        page = new HomeXaml();
-            //        break;
-            //}
+            switch (acc.info.name)
+            {
+                case "Shared Premium Bonds":
+                    page = new SharedBondsXaml(user);
+                    break;
+                case "Premium Bonds":
+                    page = new SharedBondsXaml(user);
+                    break;
+                case "Direct Saver":
+                    page = new SharedBondsXaml(user);
+                    break;
+                case "Direct ISA":
+                    page = new SharedBondsXaml(user);
+                    break;
+                case "Income Bonds":
+                    page = new SharedBondsXaml(user);
+                    break;
+                case "Childrens Bonds":
+                    page = new SharedBondsXaml(user);
+                    break;
+                case "Investment Account":
+                    page = new SharedBondsXaml(user);
+                    break;
+                default:
+                    page = new SharedBondsXaml(user);
+                    break;
+            }
 
             page.BindingContext = acc;
-            Navigation.PushAsync(page);
+            this.master.Detail = page;
+            this.master.Title = page.Title;
         }
     }
 }

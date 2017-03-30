@@ -12,7 +12,8 @@ namespace App1.Pages
     public partial class SettingsXaml : ContentPage
     {
         UserResponse user;
-        public SettingsXaml(UserResponse user)
+        MasterDetailPage master;
+        public SettingsXaml(MasterDetailPage master,UserResponse user)
         {
             InitializeComponent();
             var settings = new List<Titles> {
@@ -27,6 +28,7 @@ namespace App1.Pages
             };
             listView.ItemsSource = settings;
             this.user = user;
+            this.master = master;
         }
 
         void OnItemSelected(object sender, SelectedItemChangedEventArgs e)
@@ -67,12 +69,13 @@ namespace App1.Pages
                     page = new LoginXaml();
                     break;
                 default:
-                    page = new SettingsXaml(user);
+                    page = new SettingsXaml(master,user);
                     break;
             }
 
             page.BindingContext = settings;
-            Navigation.PushAsync(page);
+            this.master.Detail = page;
+            this.master.Title = page.Title;
         }
 
     }
