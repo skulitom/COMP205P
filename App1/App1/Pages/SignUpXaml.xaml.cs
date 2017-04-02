@@ -45,10 +45,14 @@ namespace App1.Pages
                     Navigation.InsertPageBefore(new NavigationXaml(authUser), Navigation.NavigationStack.First());
                     await Navigation.PopToRootAsync();
                 }
+                else
+                {
+                    messageLabel.Text = "There is already a user with those details!";
+                }
             }
             else
             {
-                messageLabel.Text = "Sign up failed";
+                messageLabel.Text = "Please ensure you have filled out all fields correctly";
             }
         }
 

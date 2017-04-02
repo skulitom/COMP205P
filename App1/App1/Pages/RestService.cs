@@ -54,19 +54,19 @@ namespace App1.Pages
 
         public async Task<UserResponse> addUserAsync(User user)
         {
-            var uri = new Uri(string.Format(Constants.usersURL, string.Empty));
+            var uri = new Uri(string.Format(Constants.userCreateURL, string.Empty));
             try
             {
                 var json = JsonConvert.SerializeObject(user);
                 var content = new StringContent(json, Encoding.UTF8, "application/json");
+                Debug.WriteLine(json);
+                Debug.WriteLine(content);
                 HttpResponseMessage response = null;
                 response = await client.PostAsync(uri, content);
                 if (response.IsSuccessStatusCode)
                 {
                     Debug.WriteLine(@"				User Successfully Signed up.");
-                    var temp = await response.Content.ReadAsStringAsync();
-                    UserResponse authUser = JsonConvert.DeserializeObject<UserResponse>(temp);
-                    return authUser;
+                    return await AuthenticateuserAsync(user);
                 }
                 else
                 {
@@ -83,7 +83,7 @@ namespace App1.Pages
 
         public async Task<User> getUserDetailsAsync(UserResponse userResponse)
         {
-            var uri = new Uri(string.Format(Constants.usersURL, string.Empty));
+            var uri = new Uri(string.Format(Constants.userUpdateViewURL, string.Empty));
             client.DefaultRequestHeaders.Add("Authorization", "TOKEN " + userResponse.key);
             try
             {
@@ -110,7 +110,7 @@ namespace App1.Pages
 
         public async Task<Boolean> updateUserDetailsAsync(UserResponse userResponse, User user)
         {
-            var uri = new Uri(string.Format(Constants.usersURL, string.Empty));
+            var uri = new Uri(string.Format(Constants.userUpdateViewURL, string.Empty));
             client.DefaultRequestHeaders.Add("Authorization", "TOKEN " + userResponse.key);
             try
             {

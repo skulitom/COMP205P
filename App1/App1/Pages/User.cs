@@ -12,8 +12,6 @@ namespace App1.Pages
     public class User
     {
         [JsonProperty(Required = Required.AllowNull)]
-        public string id { get; set; }
-        [JsonProperty(Required = Required.AllowNull)]
         public string username { get; set; }
         [JsonProperty(Required = Required.AllowNull)]
         public string password { get; set; }
