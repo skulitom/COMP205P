@@ -68,6 +68,10 @@ namespace App1.Pages
                     UserResponse authUser = JsonConvert.DeserializeObject<UserResponse>(temp);
                     return authUser;
                 }
+                else
+                {
+                    Debug.WriteLine(@"				User Failed Signing up with response code as " + response.StatusCode);
+                }
 
             }
             catch (Exception ex)

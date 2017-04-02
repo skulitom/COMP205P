@@ -4,6 +4,7 @@
              x:Class="App1.Pages.SignUpXaml"
              Title="Sign Up">
     <ContentPage.Content>
+        <ScrollView>
         <StackLayout VerticalOptions="StartAndExpand">
             <Label Text="First name" />
             <Entry x:Name="firstnameEntry" Placeholder="firstname" />
@@ -42,5 +43,6 @@
             <Button Text="Sign Up" Clicked="OnSignUpButtonClicked" />
             <Label x:Name="messageLabel" />
         </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

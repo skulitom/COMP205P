@@ -32,10 +32,12 @@ namespace App1.Pages
 
         async void OnSignUpButtonClicked(object sender, EventArgs e)
         {
+            Debug.WriteLine("                    USER CREATION HAS BEGUN");
             var user = new User(usernameEntry.Text, passwordEntry.Text, emailEntry.Text, firstnameEntry.Text, lastnameEntry.Text, lang, sec, answerEntry.Text);
             var signUpSucceeded = AreDetailsValid(user);
             if (signUpSucceeded)
             {
+                Debug.WriteLine("               USER DETAILS ARE VALID");
                 UserResponse authUser = await obj.addUserAsync(user);
                 var rootPage = Navigation.NavigationStack.FirstOrDefault();
                 if (rootPage != null && authUser != null)

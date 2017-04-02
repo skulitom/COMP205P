@@ -12,7 +12,7 @@ namespace App1.Pages
     public class User
     {
         [JsonProperty(Required = Required.AllowNull)]
-        public string ID { get; set; }
+        public string id { get; set; }
         [JsonProperty(Required = Required.AllowNull)]
         public string username { get; set; }
         [JsonProperty(Required = Required.AllowNull)]
@@ -29,8 +29,6 @@ namespace App1.Pages
         public string security_question { get; set; }
         [JsonProperty(Required = Required.AllowNull)]
         public string answer { get; set; }
-        [JsonProperty(Required = Required.AllowNull)]
-        public string ProfilePic { get; set; }
 
         public User()
         {
