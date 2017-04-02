@@ -11,27 +11,38 @@ namespace App1.Pages
 {
     public partial class SettingsXaml : ContentPage
     {
+        User temp;
         UserResponse user;
-        public SettingsXaml(UserResponse user)
+        RestService obj;
+        MasterDetailPage master;
+        public SettingsXaml(MasterDetailPage master,UserResponse user)
         {
             InitializeComponent();
-            var settings = new List<Settings> {
-                new Settings ("Change My Username"),
-                new Settings ("Change My Email"),
-                new Settings ("Change My Password"),
-                new Settings ("Change My Profile Picture"),
-                new Settings ("Security Question"),
-                new Settings ("Language"),
-                new Settings ("Notifications"),
-                new Settings ("Sign Out")
+            obj = new RestService();
+            var settings = new List<Titles> {
+                new Titles ("Change My Username"),
+                new Titles ("Change My Email"),
+                new Titles ("Change My Password"),
+                new Titles ("Change My Profile Picture"),
+                new Titles ("Security Question"),
+                new Titles ("Language"),
+                new Titles ("Notifications"),
+                new Titles ("Sign Out")
             };
             listView.ItemsSource = settings;
             this.user = user;
+            this.master = master;
+        }
+
+        protected async override void OnAppearing()
+        {
+            base.OnAppearing();
+            temp = await obj.getUserDetailsAsync(user);
         }
 
         void OnItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            var settings = e.SelectedItem as Settings;
+            var settings = e.SelectedItem as Titles;
 
             if (settings == null)
             {
@@ -43,36 +54,37 @@ namespace App1.Pages
             switch (settings.Name)
             {
                 case "Change My Username":
-                    page = new ChangeNameXaml(user);
+                    page = new ChangeNameXaml(user,temp);
                     break;
                 case "Change My Email":
-                    page = new ChangeEmailXaml(user);
+                    page = new ChangeEmailXaml(user,temp);
                     break;
                 case "Change My Password":
-                    page = new ChangePasswordXaml(user);
+                    page = new ChangePasswordXaml(user,temp);
                     break;
                 case "Change My Profile Picture":
-                    page = new ChangeProfilePictureXaml(user);
+                    page = new ChangeProfilePictureXaml(user,temp);
                     break;
                 case "Security Question":
-                    page = new ChangeSecurityQuestionXaml(user);
+                    page = new ChangeSecurityQuestionXaml(user,temp);
                     break;
                 case "Language":
-                    page = new ChangeLanguageXaml(user);
+                    page = new ChangeLanguageXaml(user,temp);
                     break;
                 case "Notifications":
-                    page = new NotificationsXaml(user);
+                    page = new NotificationsXaml(user,temp);
                     break;
                 case "Sign Out":
                     page = new LoginXaml();
                     break;
                 default:
-                    page = new SettingsXaml(user);
+                    page = new SettingsXaml(master,user);
                     break;
             }
 
             page.BindingContext = settings;
-            Navigation.PushAsync(page);
+            this.master.Detail = page;
+            this.master.Title = page.Title;
         }
 
     }

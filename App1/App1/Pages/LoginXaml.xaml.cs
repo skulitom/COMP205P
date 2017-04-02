@@ -28,15 +28,15 @@ namespace App1.Pages
         {
             User user = new User(usernameEntry.Text, passwordEntry.Text);
             userResponse = await AreCredentialsCorrect(user);
-            if (userResponse != null)
+                        if (userResponse != null)
             {
-                Debug.WriteLine("               User is logged in"); 
+                Debug.WriteLine("User is logged in");
                 Navigation.InsertPageBefore(new NavigationXaml(userResponse), this);
                 await Navigation.PopAsync();
             }
             else
             {
-                messageLabel.Text = "Login failed!";
+                messageLabel.Text = "Login failed! ";
                 passwordEntry.Text = string.Empty;
             }
         }

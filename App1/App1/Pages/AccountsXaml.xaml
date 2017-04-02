@@ -43,24 +43,24 @@
         </ResourceDictionary>
     </ContentPage.Resources>
     <ScrollView>
-        <StackLayout Padding="0,20,0,0">
-            <ListView x:Name="listView" SeparatorVisibility="Default" HasUnevenRows="true" ItemSelected="OnItemSelected">
+        <StackLayout>
+            <ListView x:Name="listView" SeparatorVisibility="Default" SeparatorColor="Black" HasUnevenRows="true" ItemSelected="OnItemSelected">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
                             <StackLayout HorizontalOptions="FillAndExpand" Padding="10">
-                                <Grid HorizontalOptions="FillAndExpand">
+                                <Grid HorizontalOptions="FillAndExpand" RowSpacing="0">
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="1*" />
                                         <RowDefinition Height="1*" />
                                     </Grid.RowDefinitions>
                                     <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="4*" />
+                                        <ColumnDefinition Width="3*" />
                                         <ColumnDefinition Width="1*" />
                                     </Grid.ColumnDefinitions>
-                                    <Label Text="{Binding Name}" Style="{StaticResource PrimaryCellLabel}"/>
-                                    <Label Text="AC no: 5478" Grid.Row="1" Grid.Column="0" Style="{StaticResource SecondaryCellLabel}"/>
-                                    <Label Text="{Binding ProductNo}" Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" Style="{StaticResource TertiaryCellLabel}"/>
+                                    <Label Text="{Binding info.name}" Style="{StaticResource PrimaryCellLabel}"/>
+                                    <Label Text="{Binding info.id}" Grid.Row="1" Grid.Column="0" Style="{StaticResource SecondaryCellLabel}"/>
+                                    <Label Text="{Binding balance}" Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" Style="{StaticResource TertiaryCellLabel}"/>
                                 </Grid>
                             </StackLayout>
                         </ViewCell>

@@ -8,10 +8,27 @@ namespace App1.Pages
 {
     class Accounts
     {
-        public string ID { get; set; }
-        public string Name { get; set; }
-        public string userID { get; set; }
-        public string productID { get; set; }
-        public int balance { get; set; }
+        public string created { get; set; }
+
+        public Info info { get; set; }
+
+        public string balance { get; set; }
+
+        public Accounts()
+        {
+
+        }
+    }
+
+    class Info
+    {
+        public int id { get; set; }
+
+        public string name { get; set; }
+        public string description { get; set; }
+
+        public string interest_rate { get; set; }
+        public int min_deposit { get; set; }
+        public int payout_period { get; set; }
     }
 }

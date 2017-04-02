@@ -106,12 +106,19 @@
     <Compile Include="Pages\SettingsXaml.xaml.cs">
       <DependentUpon>SettingsXaml.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\SharedBondsXaml.xaml.cs">
+      <DependentUpon>SharedBondsXaml.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SharedPremiumBonds.xaml.cs">
+      <DependentUpon>SharedPremiumBonds.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\SignUpXaml.xaml.cs">
       <DependentUpon>SignUpXaml.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\SPSXaml.xaml.cs">
       <DependentUpon>SPSXaml.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Titles.cs" />
     <Compile Include="Pages\TransactionItem.cs" />
     <Compile Include="Pages\User.cs" />
     <Compile Include="Pages\UserResponse.cs" />
@@ -304,6 +311,18 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Pages\ChangeSecurityQuestionXaml.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\SharedPremiumBonds.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\SharedBondsXaml.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

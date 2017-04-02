@@ -38,7 +38,7 @@ namespace App1.Pages {
         private global::Xamarin.Forms.Picker pickerChangeSecurityQuestion;
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
-        private global::Xamarin.Forms.Entry answer;
+        private global::Xamarin.Forms.Entry answerEntry;
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private global::Xamarin.Forms.Label messageLabel;
@@ -53,7 +53,7 @@ namespace App1.Pages {
             emailEntry = this.FindByName<global::Xamarin.Forms.Entry>("emailEntry");
             pickerLanguage = this.FindByName<global::Xamarin.Forms.Picker>("pickerLanguage");
             pickerChangeSecurityQuestion = this.FindByName<global::Xamarin.Forms.Picker>("pickerChangeSecurityQuestion");
-            answer = this.FindByName<global::Xamarin.Forms.Entry>("answer");
+            answerEntry = this.FindByName<global::Xamarin.Forms.Entry>("answerEntry");
             messageLabel = this.FindByName<global::Xamarin.Forms.Label>("messageLabel");
         }
     }

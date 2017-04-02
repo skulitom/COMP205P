@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="App1.Pages.HomeXaml"
+             Padding="0"
              Title="Home Page">
     <ContentPage.Resources>
         <ResourceDictionary>
@@ -47,26 +48,26 @@
             </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
-    <Grid BackgroundColor="White">
+    <Grid BackgroundColor="White" RowSpacing="0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="200" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
-            <Image Source="Winter.jpg" Aspect="Fill" />
+            <Image Source="Winter.jpg" Aspect="AspectFill" />
             <Label Style="{StaticResource TitleLabelStyle}" Text="{Binding HomeModel.userName}"/>
         <ScrollView Grid.Row="1">
-            <ListView x:Name="listView" SeparatorVisibility="Default" HasUnevenRows="true" ItemSelected="OnItemSelected">
+            <ListView x:Name="listView" SeparatorVisibility="Default" SeparatorColor="Black" HasUnevenRows="true" ItemSelected="OnItemSelected">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
                             <StackLayout HorizontalOptions="FillAndExpand" Padding="10">
-                                <Grid HorizontalOptions="FillAndExpand">
+                                <Grid HorizontalOptions="FillAndExpand" RowSpacing="0">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="*" />
                                         <ColumnDefinition Width="Auto" />
                                     </Grid.ColumnDefinitions>
-                                    <Label x:Name="TextLabel" Grid.Column="0" Text="{Binding Name}" Style="{StaticResource PrimaryCellLabel}"/>
-                                    <Label x:Name="RightTextLabel" Grid.Column="1" Text="{Binding ProductNo}" Style="{StaticResource SecondaryCellLabel}"/>
+                                    <Label x:Name="TextLabel" Grid.Column="0" Text="{Binding info.name}" Style="{StaticResource PrimaryCellLabel}"/>
+                                    <Label x:Name="RightTextLabel" Grid.Column="1" Text="{Binding balance}" Style="{StaticResource SecondaryCellLabel}"/>
                                 </Grid>
                             </StackLayout>
                         </ViewCell>
