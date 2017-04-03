@@ -9,6 +9,8 @@ namespace App1.Pages
     class Accounts
     {
         public string created { get; set; }
+        
+        public int id { get; set; }
 
         public Info info { get; set; }
 

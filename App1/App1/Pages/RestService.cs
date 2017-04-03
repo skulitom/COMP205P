@@ -15,6 +15,7 @@ namespace App1.Pages
 
         public User user { get; private set; }
         public List<Accounts> acc { get; private set; }
+        public Accounts account { get; private set; }
         public List<Products> prods { get; private set; }
         public List<TransactionItem> transactions { get; private set; }
 
@@ -59,8 +60,6 @@ namespace App1.Pages
             {
                 var json = JsonConvert.SerializeObject(user);
                 var content = new StringContent(json, Encoding.UTF8, "application/json");
-                Debug.WriteLine(json);
-                Debug.WriteLine(content);
                 HttpResponseMessage response = null;
                 response = await client.PostAsync(uri, content);
                 if (response.IsSuccessStatusCode)
@@ -196,10 +195,10 @@ namespace App1.Pages
             return prods;
         }
 
-        public async Task<List<TransactionItem>> RefreshTransactionHistoryAsync()
+        public async Task<List<TransactionItem>> RefreshTransactionHistoryAsync(string accNo)
         {
             transactions = new List<TransactionItem>();
-            var uri = new Uri(string.Format(Constants.getTransactionHistoryURL, string.Empty));
+            var uri = new Uri(string.Format(Constants.getTransactionHistoryURL, accNo, "transactions"));
             try
             {
                 var response = await client.GetAsync(uri);
@@ -217,18 +216,25 @@ namespace App1.Pages
             return transactions;
         }
 
-        public async Task editAccountAsync(Accounts acc)
+        //action = deposit/transfer/withdraw
+        public async Task<Boolean> accountActionAsync(UserResponse token,string accNo, string action, AccountActions accAct)
         {
-            var uri = new Uri(string.Format(Constants.getAccountsURL, acc.info.id));
+            var uri = new Uri(string.Format(Constants.userAccountAction, accNo,action));
+            client.DefaultRequestHeaders.Add("Authorization", "TOKEN " + token.key);
             try
             {
-                var json = JsonConvert.SerializeObject(acc);
+                var json = JsonConvert.SerializeObject(accAct);
                 var content = new StringContent(json, Encoding.UTF8, "application/json");
                 HttpResponseMessage response = null;
-                response = await client.PutAsync(uri, content);
+                response = await client.PostAsync(uri, content);
                 if (response.IsSuccessStatusCode)
                 {
-                    Debug.WriteLine(@"				Account successfully editted.");
+                    Debug.WriteLine(@"				Account action successful: " + action);
+                    return true;
+                }
+                else
+                {
+                    Debug.WriteLine(@"				Account action failed with response code as " + response.StatusCode);
                 }
 
             }
@@ -236,6 +242,34 @@ namespace App1.Pages
             {
                 Debug.WriteLine(@"				ERROR {0}", ex.Message);
             }
+            return false;
+        }
+
+        public async Task<Accounts> getAccountDetailsAsync(UserResponse user, string accNo)
+        {
+            account = new Accounts();
+            var uri = new Uri(string.Format(Constants.getAccountsURL, accNo));
+            client.DefaultRequestHeaders.Add("Authorization", "TOKEN " + user.key);
+            try
+            {
+                Debug.WriteLine("               TRYING TO GET ACCOUNT DETAILS");
+                var response = await client.GetAsync(uri);
+                if (response.IsSuccessStatusCode)
+                {
+                    var content = await response.Content.ReadAsStringAsync();
+                    account = JsonConvert.DeserializeObject<Accounts>(content);
+                    Debug.WriteLine("Succesful response for account");
+                }
+                else
+                {
+                    Debug.WriteLine("Unsuccesful response for account with response code " + response.StatusCode);
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(@"				ERROR {0}", ex.Message);
+            }
+            return account;
         }
     }
 }

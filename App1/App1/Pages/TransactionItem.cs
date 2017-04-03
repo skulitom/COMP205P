@@ -8,10 +8,10 @@ namespace App1.Pages
 {
     class TransactionItem
     {
-        public string name { get; set; }
-        public string description { get; set; }
-        public string dateAndTime { get; set; }
-        public int amount { get; set; }
-        public bool type { get; set; } //true for money going out and false for money coming in
+        public string id { get; set; }
+        public string created { get; set; }
+        public string kind { get; set; }
+        public string amount { get; set; }
+        public string account { get; set; }
     }
 }
