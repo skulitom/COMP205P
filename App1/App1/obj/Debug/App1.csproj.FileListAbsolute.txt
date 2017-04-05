@@ -18,7 +18,6 @@ D:\DEV\COMP205P\App1\App1\bin\Debug\Xamarin.Forms.Platform.pdb
 D:\DEV\COMP205P\App1\App1\bin\Debug\Xamarin.Forms.Xaml.pdb
 D:\DEV\COMP205P\App1\App1\bin\Debug\Xamarin.Forms.Xaml.xml
 D:\DEV\COMP205P\App1\App1\obj\Debug\App1.csproj.App.config
-D:\DEV\COMP205P\App1\App1\obj\Debug\App1.csprojResolveAssemblyReference.cache
 D:\DEV\COMP205P\App1\App1\obj\Debug\App1.Properties.Resources.resources
 D:\DEV\COMP205P\App1\App1\obj\Debug\App1.csproj.GenerateResource.Cache
 D:\DEV\COMP205P\App1\App1\obj\Debug\App1.Pages.LoginXaml.xaml.g.cs

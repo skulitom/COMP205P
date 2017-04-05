@@ -38,38 +38,48 @@ namespace App1.Pages
             }
 
             ContentPage page = null;
+            string newTitle = "";
 
             switch (acc.info.name)
             {
                 case "Shared Premium Bonds":
                     page = new SharedBondsXaml(user);
+                    newTitle = "Shared Premium Bonds";
                     break;
                 case "Premium Bonds":
-                    page = new SharedBondsXaml(user);
+                    page = new PremiumBondsXaml(user);
+                    newTitle = "Premium Bonds";
                     break;
                 case "Direct Saver":
                     page = new SharedBondsXaml(user);
+                    newTitle = "Direct Saver";
                     break;
                 case "Direct ISA":
                     page = new SharedBondsXaml(user);
+                    newTitle = "Direct ISA";
                     break;
                 case "Income Bonds":
                     page = new SharedBondsXaml(user);
+                    newTitle = "Income Bonds";
                     break;
-                case "Childrens Bonds":
+                case "Children's Bonds":
                     page = new SharedBondsXaml(user);
+                    newTitle = "Children's Bonds";
                     break;
                 case "Investment Account":
                     page = new SharedBondsXaml(user);
+                    newTitle = "Investment Account";
                     break;
                 default:
                     page = new SharedBondsXaml(user);
+                    newTitle = "Shared Premium Bonds";
                     break;
             }
 
             page.BindingContext = acc;
+            page.Title = newTitle;
             this.master.Detail = new NavigationPage(page);
-            this.master.Title = page.Title;
+            this.master.Title = newTitle;
         }
     }
 }

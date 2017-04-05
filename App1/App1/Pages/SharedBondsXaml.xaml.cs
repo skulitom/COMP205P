@@ -18,20 +18,31 @@ namespace App1.Pages
         {
             InitializeComponent();
             this.user = user;
+            var options = new List<Titles> {
+                new Titles ("Transactions"),
+                new Titles ("Deposit"),
+                new Titles ("Withdraw"),
+                new Titles ("Transfer"),
+                new Titles ("Account Details"),
+            };
+            listView.ItemsSource = options;
         }
 
         protected async override void OnAppearing()
         {
             base.OnAppearing();
             var accounts = obj.RefreshAccountsAsync(user);
-            listView.ItemsSource = await accounts;
+            
         }
 
         void OnItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
 
+
             ContentPage page = null;
+            ContentPage page2 = null;
             var acc = e.SelectedItem as Accounts;
+            var options = e.SelectedItem as Titles;
 
             if (acc == null)
             {
@@ -40,7 +51,9 @@ namespace App1.Pages
 
 
             page.BindingContext = acc;
+            page2.BindingContext = options;
             Navigation.PushAsync(page);
+            Navigation.PushAsync(page2);
         }
     }
 }
