@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App1.Pages.Transfer"
+             Title="Transfer">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="LargeLabel"
+                   TargetType="Label">
+                <Setter Property="FontSize"
+                        Value="Large"></Setter>
+                <Setter Property="TextColor"
+                        Value="Black"></Setter>
+                <Setter Property="Margin"
+                        Value="5"></Setter>
+                <Setter Property="HorizontalOptions"
+                        Value="Center"></Setter>
+            </Style>
+            <Style x:Key="AquaButtonStyle"
+                   TargetType="Button">
+                <Setter Property="BackgroundColor"
+                        Value="Aqua"></Setter>
+                <Setter Property="TextColor"
+                        Value="Black"></Setter>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <StackLayout BackgroundColor="#EEEEEE"
+            Padding="60">
+        <Label Text="How much money would you like to Transfer?" Style="{StaticResource LargeLabel}" />
+        <Entry x:Name="transferEntry" Placeholder="amount" Keyboard="Numeric" />
+        <Label Text="Select your account you wish to transfer to" Style="{StaticResource LargeLabel}"></Label>
+        <Picker x:Name="transferpicker" Title="Select an Account" SelectedIndexChanged="Picker_SelectedIndexChanged" />
+        <Button Text="Transfer" Clicked="OnTransferButtonClicked" Style="{StaticResource AquaButtonStyle}"/>
+        <Label x:Name="transferMessageLabel" />
+    </StackLayout>
+</ContentPage>

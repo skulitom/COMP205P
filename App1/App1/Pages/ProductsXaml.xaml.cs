@@ -78,7 +78,7 @@ namespace App1.Pages
             
             page.BindingContext = products;
             page.Title = temp;
-            this.master.Detail = page;
+            this.master.Detail = this.master.Detail = new NavigationPage(page);
             this.master.Title = page.Title;
             
         }

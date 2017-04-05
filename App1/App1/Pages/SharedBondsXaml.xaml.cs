@@ -14,31 +14,47 @@ namespace App1.Pages
     {
         RestService obj = new RestService();
         UserResponse user;
-        public SharedBondsXaml(UserResponse user)
+        Accounts acc;
+        public SharedBondsXaml(UserResponse user, Accounts acc)
         {
             InitializeComponent();
             this.user = user;
-        }
-
-        protected async override void OnAppearing()
-        {
-            base.OnAppearing();
-            var accounts = obj.RefreshAccountsAsync(user);
-            listView.ItemsSource = await accounts;
+            var options = new List<Titles> {
+                new Titles ("Transactions"),
+                new Titles ("Deposit"),
+                new Titles ("Withdraw"),
+                new Titles ("Transfer"),
+                new Titles ("Account Details"),
+            };
+            this.acc = acc;
+            listView.ItemsSource = options;
         }
 
         void OnItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-
             ContentPage page = null;
-            var acc = e.SelectedItem as Accounts;
-
-            if (acc == null)
+            var options = e.SelectedItem as Titles;
+            switch (options.Name)
             {
-                return;
+                case "Transactions":
+                    page = new Transactions(user, acc);
+                    break;
+                case "Deposit":
+                    page = new Deposit(user, acc);
+                    break;
+                case "Withdraw":
+                    page = new Withdraw(user, acc);
+                    break;
+                case "Transfer":
+                    page = new Transfer(user, acc);
+                    break;
+                case "Account Details":
+                    page = new AccountDetails();
+                    break;
+                default:
+                    page = new SharedBondsXaml(user, acc);
+                    break;
             }
-
-
             page.BindingContext = acc;
             Navigation.PushAsync(page);
         }

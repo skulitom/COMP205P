@@ -14,7 +14,7 @@ namespace App1.Pages
         UserResponse user;
         MasterDetailPage master;
         RestService obj = new RestService();
-        public HomeXaml(MasterDetailPage master,UserResponse user)
+        public HomeXaml(MasterDetailPage master, UserResponse user)
         {
             InitializeComponent();
             this.user = user;
@@ -23,12 +23,12 @@ namespace App1.Pages
         }
 
         protected async override void OnAppearing()
-          {
-              base.OnAppearing();
-              var accounts = obj.RefreshAccountsAsync(user);
-              listView.ItemsSource = await accounts;
-          }
-    void OnItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            base.OnAppearing();
+            var accounts = obj.RefreshAccountsAsync(user);
+            listView.ItemsSource = await accounts;
+        }
+        void OnItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             var acc = e.SelectedItem as Accounts;
 
@@ -38,38 +38,47 @@ namespace App1.Pages
             }
 
             ContentPage page = null;
+            string newTitle = "";
 
             switch (acc.info.name)
             {
                 case "Shared Premium Bonds":
-                    page = new SharedBondsXaml(user);
+                    page = new SharedBondsXaml(user, acc);
+                    newTitle = "Shared Premium Bonds";
                     break;
                 case "Premium Bonds":
-                    page = new SharedBondsXaml(user);
+                    page = new PremiumBondsXaml(user, acc.id);
+                    newTitle = "Premium Bonds";
                     break;
                 case "Direct Saver":
-                    page = new SharedBondsXaml(user);
+                    page = new SharedBondsXaml(user, acc);
+                    newTitle = "Direct Saver";
                     break;
                 case "Direct ISA":
-                    page = new SharedBondsXaml(user);
+                    page = new SharedBondsXaml(user, acc);
+                    newTitle = "Direct ISA";
                     break;
                 case "Income Bonds":
-                    page = new SharedBondsXaml(user);
+                    page = new SharedBondsXaml(user, acc);
+                    newTitle = "Income Bonds";
                     break;
-                case "Childrens Bonds":
-                    page = new SharedBondsXaml(user);
+                case "Children's Bonds":
+                    page = new SharedBondsXaml(user, acc);
+                    newTitle = "Children's Bonds";
                     break;
                 case "Investment Account":
-                    page = new SharedBondsXaml(user);
+                    page = new SharedBondsXaml(user, acc);
+                    newTitle = "Investment Account";
                     break;
                 default:
-                    page = new SharedBondsXaml(user);
+                    page = new SharedBondsXaml(user, acc);
+                    newTitle = "Shared Premium Bonds";
                     break;
             }
-
             page.BindingContext = acc;
-            this.master.Detail = page;
-            this.master.Title = page.Title;
+            page.Title = newTitle;
+            this.master.Detail = new NavigationPage(page);
+            this.master.Title = newTitle;
         }
     }
 }

@@ -35,37 +35,47 @@ namespace App1.Pages
             }
 
             ContentPage page = null;
+            string newTitle = "";
 
             switch (acc.info.name)
             {
                 case "Shared Premium Bonds":
-                    page = new SharedBondsXaml(user);
+                    page = new SharedBondsXaml(user,acc);
+                    newTitle = "Shared Premium Bonds";
                     break;
                 case "Premium Bonds":
-                    page = new SharedBondsXaml(user);
+                    page = new PremiumBondsXaml(user, acc.id);
+                    newTitle = "Premium Bonds";
                     break;
                 case "Direct Saver":
-                    page = new SharedBondsXaml(user);
+                    page = new SharedBondsXaml(user, acc);
+                    newTitle = "Direct Saver";
                     break;
                 case "Direct ISA":
-                    page = new SharedBondsXaml(user);
+                    page = new SharedBondsXaml(user, acc);
+                    newTitle = "Direct ISA";
                     break;
                 case "Income Bonds":
-                    page = new SharedBondsXaml(user);
+                    page = new SharedBondsXaml(user, acc);
+                    newTitle = "Income Bonds";
                     break;
-                case "Childrens Bonds":
-                    page = new SharedBondsXaml(user);
+                case "Children's Bonds":
+                    page = new SharedBondsXaml(user, acc);
+                    newTitle = "Children's Bonds";
                     break;
                 case "Investment Account":
-                    page = new SharedBondsXaml(user);
+                    page = new SharedBondsXaml(user, acc);
+                    newTitle = "Investment Account";
                     break;
                 default:
-                    page = new SharedBondsXaml(user);
+                    page = new AccountsXaml(master,user);
+                    newTitle = "Shared Premium Bonds";
                     break;
             }
 
             page.BindingContext = acc;
-            this.master.Detail = page;
+            page.Title = newTitle;
+            this.master.Detail = new NavigationPage(page);
             this.master.Title = page.Title;
         }
     }

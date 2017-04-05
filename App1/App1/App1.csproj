@@ -39,6 +39,9 @@
     <Compile Include="Models\HomeModel.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Pages\AccountActions.cs" />
+    <Compile Include="Pages\AccountDetails.xaml.cs">
+      <DependentUpon>AccountDetails.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Accounts.cs" />
     <Compile Include="Pages\AccountsXaml.xaml.cs">
       <DependentUpon>AccountsXaml.xaml</DependentUpon>
@@ -67,6 +70,9 @@
     <Compile Include="Pages\Constants.cs" />
     <Compile Include="Pages\ContactusXaml.xaml.cs">
       <DependentUpon>ContactusXaml.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Deposit.xaml.cs">
+      <DependentUpon>Deposit.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\DISAXaml.xaml.cs">
       <DependentUpon>DISAXaml.xaml</DependentUpon>
@@ -121,14 +127,24 @@
     </Compile>
     <Compile Include="Pages\Titles.cs" />
     <Compile Include="Pages\TransactionItem.cs" />
+    <Compile Include="Pages\Transactions.xaml.cs">
+      <DependentUpon>Transactions.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Transfer.xaml.cs">
+      <DependentUpon>Transfer.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\User.cs" />
     <Compile Include="Pages\UserResponse.cs" />
+    <Compile Include="Pages\Withdraw.xaml.cs">
+      <DependentUpon>Withdraw.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="RoundedBoxView.cs" />
     <Compile Include="ViewModels\HomeViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -324,6 +340,36 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Pages\SharedBondsXaml.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\Transactions.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\Deposit.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\Withdraw.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\AccountDetails.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\Transfer.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

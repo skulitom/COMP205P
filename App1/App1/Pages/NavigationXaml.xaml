@@ -59,31 +59,31 @@
                         </Label.GestureRecognizers>
                     </Label>
                     <Label Grid.Row="2" Grid.Column="0" Text="Accounts" Style="{StaticResource NavigatorCellLabel}" >
-                    <Label.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="Accounts_Clicked" />
-                    </Label.GestureRecognizers>
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="Accounts_Clicked" />
+                        </Label.GestureRecognizers>
                     </Label>
                     <Label Grid.Row="3" Grid.Column="0" Text="Products" Style="{StaticResource NavigatorCellLabel}" >
-                    <Label.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="Products_Clicked" />
-                    </Label.GestureRecognizers>
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="Products_Clicked" />
+                        </Label.GestureRecognizers>
                     </Label>
                     <Label Grid.Row="4" Grid.Column="0" Text="Settings" Style="{StaticResource NavigatorCellLabel}" >
-                    <Label.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="SettingsButton_Clicked" />
-                    </Label.GestureRecognizers>
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="SettingsButton_Clicked" />
+                        </Label.GestureRecognizers>
                     </Label>
                     <Label Grid.Row="5" Grid.Column="0" Text="Contact Us" Style="{StaticResource NavigatorCellLabel}" >
-                    <Label.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="Contactus_Clicked" />
-                    </Label.GestureRecognizers>
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="Contactus_Clicked" />
+                        </Label.GestureRecognizers>
                     </Label>
                 </Grid>
             </StackLayout>
-    </ContentPage>
-  </MasterDetailPage.Master>
-    
-  <MasterDetailPage.Detail>
-        
-  </MasterDetailPage.Detail>
+        </ContentPage>
+    </MasterDetailPage.Master>
+
+    <MasterDetailPage.Detail>
+
+    </MasterDetailPage.Detail>
 </MasterDetailPage>
