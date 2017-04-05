@@ -38,6 +38,7 @@
     <Compile Include="App.cs" />
     <Compile Include="Models\HomeModel.cs" />
     <Compile Include="Models\Product.cs" />
+    <Compile Include="Pages\AccountActions.cs" />
     <Compile Include="Pages\Accounts.cs" />
     <Compile Include="Pages\AccountsXaml.xaml.cs">
       <DependentUpon>AccountsXaml.xaml</DependentUpon>
@@ -124,6 +125,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="RoundedBoxView.cs" />
     <Compile Include="ViewModels\HomeViewModel.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -12,12 +12,14 @@ namespace App1.Pages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ChangeLanguageXaml : ContentPage
     {
+        User temp;
         UserResponse user;
         RestService obj;
-        public ChangeLanguageXaml(UserResponse user)
+        public ChangeLanguageXaml(UserResponse user, User temp)
         {
             InitializeComponent();
             this.user = user;
+            this.temp = temp;
             obj = new RestService();
         }
 
@@ -29,10 +31,8 @@ namespace App1.Pages
                 }
             else
             {
-                User temp = new User();
-                temp.key = user.key;
-                temp.Language = languagepicker.Items[languagepicker.SelectedIndex];
-                await obj.editUserAsync(temp);
+                temp.language = languagepicker.Items[languagepicker.SelectedIndex];
+                await obj.updateUserDetailsAsync(user, temp);
                 await Navigation.PushAsync(new NavigationXaml(user));
             }
             

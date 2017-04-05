@@ -32,7 +32,6 @@ namespace App1.Pages
             {
                 Debug.WriteLine("User is logged in");
                 Application.Current.MainPage = new NavigationXaml(userResponse);
-                
             }
             else
             {

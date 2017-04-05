@@ -12,12 +12,14 @@ namespace App1.Pages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ChangeNameXaml : ContentPage
     {
+        User temp;
         UserResponse user;
         RestService obj;
-        public ChangeNameXaml(UserResponse user)
+        public ChangeNameXaml(UserResponse user, User temp)
         {
             InitializeComponent();
             this.user = user;
+            this.temp = temp;
             obj = new RestService();
         }
 
@@ -25,10 +27,8 @@ namespace App1.Pages
         {
             if (string.Equals(settingsUsernameEntry.Text, repeatUsernameEntry.Text) && !string.Equals(settingsUsernameEntry.Text, string.Empty))
             {
-                User temp = new Pages.User();
-                temp.key = user.key;
                 temp.username = settingsUsernameEntry.Text;
-                await obj.editUserAsync(temp);
+                await obj.updateUserDetailsAsync(user, temp);
                 await Navigation.PushAsync(new NavigationXaml(user));
             }
             else

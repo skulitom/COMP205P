@@ -12,12 +12,14 @@ namespace App1.Pages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ChangeEmailXaml : ContentPage
     {
+        User temp;
         UserResponse user;
         RestService obj;
-        public ChangeEmailXaml(UserResponse user)
+        public ChangeEmailXaml(UserResponse user, User temp)
         {
             InitializeComponent();
             this.user = user;
+            this.temp = temp;
             obj = new RestService();
         }
 
@@ -25,10 +27,8 @@ namespace App1.Pages
         {
             if (string.Equals(settingsEmailEntry.Text, repeatEmailEntry.Text) && !string.Equals(settingsEmailEntry.Text, string.Empty))
             {
-                User temp = new Pages.User();
-                temp.key = user.key;
                 temp.email = settingsEmailEntry.Text;
-                await obj.editUserAsync(temp);
+                await obj.updateUserDetailsAsync(user, temp);
                 await Navigation.PushAsync(new NavigationXaml(user));
             }
             else

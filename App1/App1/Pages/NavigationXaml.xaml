@@ -52,7 +52,7 @@
                         <RowDefinition Height="*" />
                         <RowDefinition Height="*" />
                     </Grid.RowDefinitions>
-                    <Label Grid.Row="0" Grid.Column="0" Text="Sidharth" Style="{StaticResource TitleCellLabel}"/>
+                    <Label Grid.Row="0" Grid.Column="0" Text="John Snow" Style="{StaticResource TitleCellLabel}"/>
                     <Label Grid.Row="1" Grid.Column="0" Text="Home" Style="{StaticResource NavigatorCellLabel}" >
                         <Label.GestureRecognizers>
                             <TapGestureRecognizer Tapped="HomeButton_Clicked" />

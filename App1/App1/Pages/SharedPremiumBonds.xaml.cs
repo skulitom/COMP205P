@@ -37,30 +37,30 @@ namespace App1.Pages
 
             ContentPage page = null;
 
-            switch (settings.Name)
-            {
-                case "Transactions":
-                    page = new ChangeNameXaml();
-                    break;
-                case "Deposit":
-                    page = new ChangeEmailXaml();
-                    break;
-                case "Withdraw":
-                    page = new ChangePasswordXaml();
-                    break;
-                case "Transfer":
-                    page = new ChangeProfilePictureXaml();
-                    break;
-                case "Have I Won?":
-                    page = new ChangeSecurityQuestionXaml();
-                    break;
-                case "Account Details":
-                    page = new ChangeLanguageXaml();
-                    break;
-                default:
-                    page = new SettingsXaml();
-                    break;
-            }
+            //switch (settings.Name)
+            //{
+            //    case "Transactions":
+            //        page = new ChangeNameXaml();
+            //        break;
+            //    case "Deposit":
+            //        page = new ChangeEmailXaml();
+            //        break;
+            //    case "Withdraw":
+            //        page = new ChangePasswordXaml();
+            //        break;
+            //    case "Transfer":
+            //        page = new ChangeProfilePictureXaml();
+            //        break;
+            //    case "Have I Won?":
+            //        page = new ChangeSecurityQuestionXaml();
+            //        break;
+            //    case "Account Details":
+            //        page = new ChangeLanguageXaml();
+            //        break;
+            //    default:
+            //        page = new SettingsXaml();
+            //        break;
+            //}
 
             page.BindingContext = settings;
             Navigation.PushAsync(page);

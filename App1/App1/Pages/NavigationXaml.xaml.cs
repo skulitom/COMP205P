@@ -15,21 +15,19 @@ namespace App1.Pages
     public partial class NavigationXaml : MasterDetailPage
     {
         UserResponse user;
-        RestService obj = new RestService();
         public NavigationXaml(UserResponse user)
         {
             InitializeComponent();
             this.user = user;
-            this.Detail = new NavigationPage( new Pages.HomeXaml(this, user));
+            this.Detail = new NavigationPage(new Pages.HomeXaml(this, user));
             this.Title = this.Detail.Title;
-            
-            
+
         }
 
         public void SettingsButton_Clicked(object sender, EventArgs e)
         {
 
-            this.Detail = new NavigationPage(new Pages.SettingsXaml(this,user));
+            this.Detail = new NavigationPage(new Pages.SettingsXaml(this, user));
             this.Title = this.Detail.Title;
             // change to the detail page
             this.IsPresented = false;
@@ -46,7 +44,7 @@ namespace App1.Pages
 
         public void Contactus_Clicked(object sender, EventArgs e)
         {
-            this.Detail = new NavigationPage( new Pages.ContactusXaml());
+            this.Detail = new NavigationPage(new Pages.ContactusXaml());
             this.Title = this.Detail.Title;
             // change to the detail page
             this.IsPresented = false;
@@ -55,7 +53,7 @@ namespace App1.Pages
         public void Accounts_Clicked(object sender, EventArgs e)
         {
 
-            this.Detail = new NavigationPage( new Pages.AccountsXaml(this,user));
+            this.Detail = new NavigationPage(new Pages.AccountsXaml(this, user));
             this.Title = this.Detail.Title;
             // change to the detail page
             this.IsPresented = false;
@@ -63,7 +61,7 @@ namespace App1.Pages
 
         public void Products_Clicked(object sender, EventArgs e)
         {
-            this.Detail = new NavigationPage(new Pages.ProductsXaml(this,user));
+            this.Detail = new NavigationPage(new Pages.ProductsXaml(this, user));
             this.Title = this.Detail.Title;
             // change to the detail page
             this.IsPresented = false;

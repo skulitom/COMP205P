@@ -13,26 +13,27 @@ namespace App1.Pages
     public partial class ChangeSecurityQuestionXaml : ContentPage
     {
        User temp;
+        UserResponse user;
        RestService obj;
-       public ChangeSecurityQuestionXaml(UserResponse user)
+       public ChangeSecurityQuestionXaml(UserResponse user, User temp)
         {
             InitializeComponent();
-            temp = new Pages.User();
-            temp.key = user.key;
             obj = new RestService();
+            this.user = user;
+            this.temp = temp;
         }
 
         private void Picker_SelectedIndexChanged(object sender, EventArgs e)
         {
-            temp.SecurityQuestion = pickerChangeSecurityQuestion.Items[pickerChangeSecurityQuestion.SelectedIndex];
+            temp.security_question = pickerChangeSecurityQuestion.Items[pickerChangeSecurityQuestion.SelectedIndex];
         }
 
         async private void OnChangeQuestionButtonClicked(object sender, EventArgs e)
         {
             // store the ans and question in the database
             if (secretanswer.Text != string.Empty)
-                temp.Answer = secretanswer.Text;
-            await obj.editUserAsync(temp);
+                temp.answer = secretanswer.Text;
+            await obj.updateUserDetailsAsync(user,temp);
         }
     }
 }

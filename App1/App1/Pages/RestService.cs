@@ -13,8 +13,9 @@ namespace App1.Pages
     {
         HttpClient client;
 
-        public User authUser { get; private set; }
+        public User user { get; private set; }
         public List<Accounts> acc { get; private set; }
+        public Accounts account { get; private set; }
         public List<Products> prods { get; private set; }
         public List<TransactionItem> transactions { get; private set; }
 
@@ -54,7 +55,7 @@ namespace App1.Pages
 
         public async Task<UserResponse> addUserAsync(User user)
         {
-            var uri = new Uri(string.Format(Constants.getUserDetailsURL, string.Empty));
+            var uri = new Uri(string.Format(Constants.userCreateURL, string.Empty));
             try
             {
                 var json = JsonConvert.SerializeObject(user);
@@ -64,9 +65,11 @@ namespace App1.Pages
                 if (response.IsSuccessStatusCode)
                 {
                     Debug.WriteLine(@"				User Successfully Signed up.");
-                    var temp = await response.Content.ReadAsStringAsync();
-                    UserResponse authUser = JsonConvert.DeserializeObject<UserResponse>(temp);
-                    return authUser;
+                    return await AuthenticateuserAsync(user);
+                }
+                else
+                {
+                    Debug.WriteLine(@"				User Failed Signing up with response code as " + response.StatusCode);
                 }
 
             }
@@ -75,6 +78,58 @@ namespace App1.Pages
                 Debug.WriteLine(@"				ERROR {0}", ex.Message);
             }
             return null;
+        }
+
+        public async Task<User> getUserDetailsAsync(UserResponse userResponse)
+        {
+            var uri = new Uri(string.Format(Constants.userUpdateViewURL, string.Empty));
+            client.DefaultRequestHeaders.Add("Authorization", "TOKEN " + userResponse.key);
+            try
+            {
+                Debug.WriteLine("               TRYING TO GET USER DETAILS");
+                var response = await client.GetAsync(uri);
+                if (response.IsSuccessStatusCode)
+                {
+                    var content = await response.Content.ReadAsStringAsync();
+                    user = JsonConvert.DeserializeObject<User>(content);
+                    Debug.WriteLine("Succesful response for getting details");
+                }
+                else
+                {
+                    Debug.WriteLine("Unsuccesful response for getting details");
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(@"				ERROR {0}", ex.Message);
+            }
+            Debug.WriteLine("User BEING RETURNED: " + user.username);
+            return user;
+        }
+
+        public async Task<Boolean> updateUserDetailsAsync(UserResponse userResponse, User user)
+        {
+            var uri = new Uri(string.Format(Constants.userUpdateViewURL, string.Empty));
+            client.DefaultRequestHeaders.Add("Authorization", "TOKEN " + userResponse.key);
+            try
+            {
+                var json = JsonConvert.SerializeObject(user);
+                var content = new StringContent(json, Encoding.UTF8, "application/json");
+                HttpResponseMessage response = null;
+                response = await client.PutAsync(uri, content);
+                if (response.IsSuccessStatusCode)
+                {
+                    Debug.WriteLine(@"				User setting Successfully changed.");
+                    var temp = await response.Content.ReadAsStringAsync();
+                    UserResponse authUser = JsonConvert.DeserializeObject<UserResponse>(temp);
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(@"				ERROR {0}", ex.Message);
+            }
+            return false;
         }
 
         public async Task<List<Accounts>> RefreshAccountsAsync(UserResponse user)
@@ -140,10 +195,10 @@ namespace App1.Pages
             return prods;
         }
 
-        public async Task<List<TransactionItem>> RefreshTransactionHistoryAsync()
+        public async Task<List<TransactionItem>> RefreshTransactionHistoryAsync(string accNo)
         {
             transactions = new List<TransactionItem>();
-            var uri = new Uri(string.Format(Constants.getTransactionHistoryURL, string.Empty));
+            var uri = new Uri(string.Format(Constants.getTransactionHistoryURL, accNo, "transactions"));
             try
             {
                 var response = await client.GetAsync(uri);
@@ -161,18 +216,25 @@ namespace App1.Pages
             return transactions;
         }
 
-        public async Task editAccountAsync(Accounts acc)
+        //action = deposit/transfer/withdraw
+        public async Task<Boolean> accountActionAsync(UserResponse token,string accNo, string action, AccountActions accAct)
         {
-            var uri = new Uri(string.Format(Constants.getAccountsURL, acc.info.id));
+            var uri = new Uri(string.Format(Constants.userAccountAction, accNo,action));
+            client.DefaultRequestHeaders.Add("Authorization", "TOKEN " + token.key);
             try
             {
-                var json = JsonConvert.SerializeObject(acc);
+                var json = JsonConvert.SerializeObject(accAct);
                 var content = new StringContent(json, Encoding.UTF8, "application/json");
                 HttpResponseMessage response = null;
-                response = await client.PutAsync(uri, content);
+                response = await client.PostAsync(uri, content);
                 if (response.IsSuccessStatusCode)
                 {
-                    Debug.WriteLine(@"				Account successfully editted.");
+                    Debug.WriteLine(@"				Account action successful: " + action);
+                    return true;
+                }
+                else
+                {
+                    Debug.WriteLine(@"				Account action failed with response code as " + response.StatusCode);
                 }
 
             }
@@ -180,27 +242,34 @@ namespace App1.Pages
             {
                 Debug.WriteLine(@"				ERROR {0}", ex.Message);
             }
+            return false;
         }
 
-        public async Task editUserAsync(User user)
+        public async Task<Accounts> getAccountDetailsAsync(UserResponse user, string accNo)
         {
-            var uri = new Uri(string.Format(Constants.getUserDetailsURL, user.ID));
+            account = new Accounts();
+            var uri = new Uri(string.Format(Constants.getAccountsURL, accNo));
+            client.DefaultRequestHeaders.Add("Authorization", "TOKEN " + user.key);
             try
             {
-                var json = JsonConvert.SerializeObject(user);
-                var content = new StringContent(json, Encoding.UTF8, "application/json");
-                HttpResponseMessage response = null;
-                response = await client.PutAsync(uri, content);
+                Debug.WriteLine("               TRYING TO GET ACCOUNT DETAILS");
+                var response = await client.GetAsync(uri);
                 if (response.IsSuccessStatusCode)
                 {
-                    Debug.WriteLine(@"				UserField successfully changed.");
+                    var content = await response.Content.ReadAsStringAsync();
+                    account = JsonConvert.DeserializeObject<Accounts>(content);
+                    Debug.WriteLine("Succesful response for account");
                 }
-
+                else
+                {
+                    Debug.WriteLine("Unsuccesful response for account with response code " + response.StatusCode);
+                }
             }
             catch (Exception ex)
             {
                 Debug.WriteLine(@"				ERROR {0}", ex.Message);
             }
+            return account;
         }
     }
 }

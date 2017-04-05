@@ -68,7 +68,7 @@ namespace App1.Pages
             }
 
             page.BindingContext = acc;
-            this.master.Detail =new NavigationPage( page);
+            this.master.Detail = new NavigationPage(page);
             this.master.Title = page.Title;
         }
     }

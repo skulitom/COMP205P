@@ -11,11 +11,14 @@ namespace App1.Pages
 {
     public partial class SettingsXaml : ContentPage
     {
+        User temp;
         UserResponse user;
+        RestService obj;
         MasterDetailPage master;
         public SettingsXaml(MasterDetailPage master,UserResponse user)
         {
             InitializeComponent();
+            obj = new RestService();
             var settings = new List<Titles> {
                 new Titles ("Change My Username"),
                 new Titles ("Change My Email"),
@@ -29,6 +32,12 @@ namespace App1.Pages
             listView.ItemsSource = settings;
             this.user = user;
             this.master = master;
+        }
+
+        protected async override void OnAppearing()
+        {
+            base.OnAppearing();
+            temp = await obj.getUserDetailsAsync(user);
         }
 
         void OnItemSelected(object sender, SelectedItemChangedEventArgs e)
@@ -45,25 +54,25 @@ namespace App1.Pages
             switch (settings.Name)
             {
                 case "Change My Username":
-                    page = new ChangeNameXaml(user);
+                    page = new ChangeNameXaml(user,temp);
                     break;
                 case "Change My Email":
-                    page = new ChangeEmailXaml(user);
+                    page = new ChangeEmailXaml(user,temp);
                     break;
                 case "Change My Password":
-                    page = new ChangePasswordXaml(user);
+                    page = new ChangePasswordXaml(user,temp);
                     break;
                 case "Change My Profile Picture":
-                    page = new ChangeProfilePictureXaml(user);
+                    page = new ChangeProfilePictureXaml(user,temp);
                     break;
                 case "Security Question":
-                    page = new ChangeSecurityQuestionXaml(user);
+                    page = new ChangeSecurityQuestionXaml(user,temp);
                     break;
                 case "Language":
-                    page = new ChangeLanguageXaml(user);
+                    page = new ChangeLanguageXaml(user,temp);
                     break;
                 case "Notifications":
-                    page = new NotificationsXaml(user);
+                    page = new NotificationsXaml(user,temp);
                     break;
                 case "Sign Out":
                     page = new LoginXaml();

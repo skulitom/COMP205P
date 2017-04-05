@@ -12,12 +12,14 @@ namespace App1.Pages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ChangePasswordXaml : ContentPage
     {
+        User temp;
         UserResponse user;
         RestService obj;
-        public ChangePasswordXaml(UserResponse user)
+        public ChangePasswordXaml(UserResponse user, User temp)
         {
             InitializeComponent();
             this.user = user;
+            this.temp = temp;
             obj = new RestService();
         }
 
@@ -25,10 +27,8 @@ namespace App1.Pages
         {
             if (string.Equals(settingsPasswordEntry.Text, repeatPasswordEntry.Text) && !string.Equals(settingsPasswordEntry.Text, string.Empty))
             {
-                User temp = new Pages.User();
-                temp.key = user.key;
                 temp.password = settingsPasswordEntry.Text;
-                await obj.editUserAsync(temp);
+                await obj.updateUserDetailsAsync(user, temp);
                 await Navigation.PushAsync(new NavigationXaml(user));
             }
             else
