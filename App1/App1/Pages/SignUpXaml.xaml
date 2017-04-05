@@ -3,21 +3,49 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="App1.Pages.SignUpXaml"
              Title="Sign Up">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="LargeLabel"
+                   TargetType="Label">
+                <Setter Property="FontSize"
+                        Value="Medium"></Setter>
+                <Setter Property="TextColor"
+                        Value="Black"></Setter>
+                <Setter Property="Margin"
+                        Value="5"></Setter>
+            </Style>
+            <Style x:Key="AquaButtonStyle"
+                   TargetType="Button">
+                <Setter Property="BackgroundColor"
+                        Value="Aqua"></Setter>
+                <Setter Property="TextColor"
+                        Value="Black"></Setter>
+                <Setter Property="Margin"
+                        Value="20"></Setter>
+            </Style>
+            <Style x:Key="EntryStyle"
+                   TargetType="Entry">
+                <Setter Property="Margin"
+                        Value="20"></Setter>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <ContentPage.Content>
-        <ScrollView>
+
+        <ScrollView Padding="5">
         <StackLayout VerticalOptions="StartAndExpand">
-            <Label Text="First name" />
-            <Entry x:Name="firstnameEntry" Placeholder="firstname" />
-            <Label Text="Last name" />
-            <Entry x:Name="lastnameEntry" Placeholder="lastname" />
-            <Label Text="Username" />
-            <Entry x:Name="usernameEntry" Placeholder="username" />
-            <Label Text="Password" />
-            <Entry x:Name="passwordEntry" IsPassword="true" />
-            <Label Text="Email address" />
-            <Entry x:Name="emailEntry" />
-            <Label Text="Language" />
-            <Picker x:Name="pickerLanguage"  Title="Select a Language" SelectedIndexChanged="LangPicker_SelectedIndexChanged">
+                <Label Text="First name" Style="{StaticResource LargeLabel}"  />
+                <Entry x:Name="firstnameEntry" Placeholder="First Name" Style="{StaticResource EntryStyle}"  />
+                <Label Text="Last name" Style="{StaticResource LargeLabel}" />
+                <Entry x:Name="lastnameEntry" Placeholder="Last Name" Style="{StaticResource EntryStyle}" />
+                <Label Text="Username" Style="{StaticResource LargeLabel}"/>
+                <Entry x:Name="usernameEntry" Placeholder="Username" Style="{StaticResource EntryStyle}"/>
+                <Label Text="Password" Style="{StaticResource LargeLabel}"/>
+                <Entry x:Name="passwordEntry" IsPassword="true" Placeholder="Password" Style="{StaticResource EntryStyle}"/>
+                <Label Text="Email address" Style="{StaticResource LargeLabel}"/>
+                <Entry x:Name="emailEntry" Style="{StaticResource EntryStyle}" Placeholder="Email"/>
+                <Label Text="Language" Style="{StaticResource LargeLabel} " />
+                <Picker x:Name="pickerLanguage"  Title="Select a Language" Margin="20" SelectedIndexChanged="LangPicker_SelectedIndexChanged">
                 <Picker.Items>
                     <x:String>English</x:String>
                     <x:String>Russian</x:String>
@@ -28,8 +56,8 @@
                     <x:String>Tamil</x:String>
                 </Picker.Items>
             </Picker>
-            <Label Text="Security Question" />
-            <Picker x:Name="pickerChangeSecurityQuestion" Title="Select a Question" SelectedIndexChanged="SecPicker_SelectedIndexChanged">
+                <Label Text="Security Question" Style="{StaticResource LargeLabel}"/>
+            <Picker x:Name="pickerChangeSecurityQuestion" Title="Select a Question" Margin="20" SelectedIndexChanged="SecPicker_SelectedIndexChanged">
                 <Picker.Items>
                     <x:String>What is your first pets name?</x:String>
                     <x:String>What is your fathers madien name?</x:String>
@@ -38,10 +66,10 @@
                     <x:String>What is the address of your birth house?</x:String>
                 </Picker.Items>
             </Picker>
-            <Label Text="Answer" />
-            <Entry x:Name="answerEntry" Placeholder="Answer"/>
-            <Button Text="Sign Up" Clicked="OnSignUpButtonClicked" />
-            <Label x:Name="messageLabel" />
+                <Label Text="Answer" Style="{StaticResource LargeLabel}"/>
+                <Entry x:Name="answerEntry" Placeholder="Answer" Style="{StaticResource EntryStyle}"/>
+                <Button Text="Sign Up" Clicked="OnSignUpButtonClicked" Style="{StaticResource AquaButtonStyle}"/>
+            <Label x:Name="messageLabel"  />
         </StackLayout>
         </ScrollView>
     </ContentPage.Content>
