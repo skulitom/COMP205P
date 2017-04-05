@@ -26,14 +26,14 @@ namespace App1.Pages
         async private void Picker_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (languagepicker.SelectedIndex == -1)
-                {
-                    //should we show some kind of error message here?
-                }
+            {
+                langMessageLabel.Text = "Please select an appropriate language";
+            }
             else
             {
                 temp.language = languagepicker.Items[languagepicker.SelectedIndex];
                 await obj.updateUserDetailsAsync(user, temp);
-                await Navigation.PushAsync(new NavigationXaml(user));
+                langMessageLabel.Text = "Your Language has been updated for you";
             }
             
         }

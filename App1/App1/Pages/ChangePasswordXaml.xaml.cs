@@ -29,7 +29,7 @@ namespace App1.Pages
             {
                 temp.password = settingsPasswordEntry.Text;
                 await obj.updateUserDetailsAsync(user, temp);
-                await Navigation.PushAsync(new NavigationXaml(user));
+                passwordMessageLabel.Text = "Password has succesffully been changed";
             }
             else
             {

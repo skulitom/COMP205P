@@ -29,7 +29,7 @@ namespace App1.Pages
             {
                 temp.email = settingsEmailEntry.Text;
                 await obj.updateUserDetailsAsync(user, temp);
-                await Navigation.PushAsync(new NavigationXaml(user));
+                emailMessageLabel.Text = "Email has successfully been changed";
             }
             else
             {

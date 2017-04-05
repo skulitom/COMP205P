@@ -39,5 +39,6 @@
                 <x:String>Tamil</x:String>
             </Picker.Items>
         </Picker>
+        <Label x:Name="langMessageLabel" />
     </StackLayout>
 </ContentPage>
