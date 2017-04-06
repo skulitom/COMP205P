@@ -20,9 +20,13 @@ namespace App1.Pages {
         private global::Xamarin.Forms.Picker languagepicker;
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.Label langMessageLabel;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private void InitializeComponent() {
             this.LoadFromXaml(typeof(ChangeLanguageXaml));
             languagepicker = this.FindByName<global::Xamarin.Forms.Picker>("languagepicker");
+            langMessageLabel = this.FindByName<global::Xamarin.Forms.Label>("langMessageLabel");
         }
     }
 }

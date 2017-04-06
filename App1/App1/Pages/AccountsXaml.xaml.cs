@@ -35,41 +35,40 @@ namespace App1.Pages
             }
 
             ContentPage page = null;
-
             string newTitle = "";
 
             switch (acc.info.name)
             {
                 case "Shared Premium Bonds":
-                    page = new SharedBondsXaml(user);
+                    page = new GeneralBondsXaml(user,acc);
                     newTitle = "Shared Premium Bonds";
                     break;
                 case "Premium Bonds":
-                    page = new PremiumBondsXaml(user);
+                    page = new PremiumBondsXaml(user, acc.id);
                     newTitle = "Premium Bonds";
                     break;
                 case "Direct Saver":
-                    page = new SharedBondsXaml(user);
+                    page = new GeneralBondsXaml(user, acc);
                     newTitle = "Direct Saver";
                     break;
                 case "Direct ISA":
-                    page = new SharedBondsXaml(user);
+                    page = new GeneralBondsXaml(user, acc);
                     newTitle = "Direct ISA";
                     break;
                 case "Income Bonds":
-                    page = new SharedBondsXaml(user);
+                    page = new GeneralBondsXaml(user, acc);
                     newTitle = "Income Bonds";
                     break;
                 case "Children's Bonds":
-                    page = new SharedBondsXaml(user);
+                    page = new GeneralBondsXaml(user, acc);
                     newTitle = "Children's Bonds";
                     break;
                 case "Investment Account":
-                    page = new SharedBondsXaml(user);
+                    page = new GeneralBondsXaml(user, acc);
                     newTitle = "Investment Account";
                     break;
                 default:
-                    page = new SharedBondsXaml(user);
+                    page = new AccountsXaml(master,user);
                     newTitle = "Shared Premium Bonds";
                     break;
             }
@@ -77,7 +76,7 @@ namespace App1.Pages
             page.BindingContext = acc;
             page.Title = newTitle;
             this.master.Detail = new NavigationPage(page);
-            this.master.Title = newTitle;
+            this.master.Title = page.Title;
         }
     }
 }

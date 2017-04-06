@@ -29,7 +29,7 @@ namespace App1.Pages
             {
                 temp.username = settingsUsernameEntry.Text;
                 await obj.updateUserDetailsAsync(user, temp);
-                await Navigation.PushAsync(new NavigationXaml(user));
+                nameMessageLabel.Text = "Username has successfuly been changed";
             }
             else
             {

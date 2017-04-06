@@ -14,7 +14,8 @@ namespace App1.Pages
     {
         RestService obj = new RestService();
         UserResponse user;
-        public SharedBondsXaml(UserResponse user)
+        Accounts acc;
+        public SharedBondsXaml(UserResponse user, Accounts acc)
         {
             InitializeComponent();
             this.user = user;
@@ -25,35 +26,37 @@ namespace App1.Pages
                 new Titles ("Transfer"),
                 new Titles ("Account Details"),
             };
+            this.acc = acc;
             listView.ItemsSource = options;
-        }
-
-        protected async override void OnAppearing()
-        {
-            base.OnAppearing();
-            var accounts = obj.RefreshAccountsAsync(user);
-            
         }
 
         void OnItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-
-
             ContentPage page = null;
-            ContentPage page2 = null;
-            var acc = e.SelectedItem as Accounts;
             var options = e.SelectedItem as Titles;
-
-            if (acc == null)
+            switch (options.Name)
             {
-                return;
+                case "Transactions":
+                    page = new Transactions(user, acc);
+                    break;
+                case "Deposit":
+                    page = new Deposit(user, acc);
+                    break;
+                case "Withdraw":
+                    page = new Withdraw(user, acc);
+                    break;
+                case "Transfer":
+                    page = new Transfer(user, acc);
+                    break;
+                case "Account Details":
+                    page = new AccountDetails();
+                    break;
+                default:
+                    page = new SharedBondsXaml(user, acc);
+                    break;
             }
-
-
             page.BindingContext = acc;
-            page2.BindingContext = options;
             Navigation.PushAsync(page);
-            Navigation.PushAsync(page2);
         }
     }
 }

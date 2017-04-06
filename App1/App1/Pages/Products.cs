@@ -15,16 +15,10 @@ namespace App1.Pages
 
         public string description { get; set; }
 
-        //public int ProductNo { get; private set; }
-
         public string interest_rate { get; set; }
 
         public int min_deposit { get; set; }
         public int payout_period { get;set; }
-
-        // public int MaxDeposit { get; private set; }
-
-        // public string Image { get; private set; }
 
         public Products()
         {

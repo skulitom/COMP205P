@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace App1.Pages
 {
-    class Accounts
+    public class Accounts
     {
         public string created { get; set; }
         
         public int id { get; set; }
 
-        public Info info { get; set; }
+        public Products info { get; set; }
 
         public string balance { get; set; }
 
@@ -20,17 +20,5 @@ namespace App1.Pages
         {
 
         }
-    }
-
-    class Info
-    {
-        public int id { get; set; }
-
-        public string name { get; set; }
-        public string description { get; set; }
-
-        public string interest_rate { get; set; }
-        public int min_deposit { get; set; }
-        public int payout_period { get; set; }
     }
 }

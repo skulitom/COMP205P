@@ -39,6 +39,9 @@
     <Compile Include="Models\HomeModel.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Pages\AccountActions.cs" />
+    <Compile Include="Pages\AccountDetails.xaml.cs">
+      <DependentUpon>AccountDetails.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Accounts.cs" />
     <Compile Include="Pages\AccountsXaml.xaml.cs">
       <DependentUpon>AccountsXaml.xaml</DependentUpon>
@@ -68,11 +71,17 @@
     <Compile Include="Pages\ContactusXaml.xaml.cs">
       <DependentUpon>ContactusXaml.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Deposit.xaml.cs">
+      <DependentUpon>Deposit.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\DISAXaml.xaml.cs">
       <DependentUpon>DISAXaml.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\DSXaml.xaml.cs">
       <DependentUpon>DSXaml.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\GeneralBondsXaml.xaml.cs">
+      <DependentUpon>GeneralBondsXaml.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\HomeXaml.xaml.cs">
       <DependentUpon>HomeXaml.xaml</DependentUpon>
@@ -103,12 +112,12 @@
       <DependentUpon>PSXaml.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\RestService.cs" />
-    <Compile Include="Pages\SharedBondsXaml.xaml.cs">
-      <DependentUpon>SharedBondsXaml.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\Titles.cs" />
+    <Compile Include="Pages\Settings.cs" />
     <Compile Include="Pages\SettingsXaml.xaml.cs">
       <DependentUpon>SettingsXaml.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SharedBondsXaml.xaml.cs">
+      <DependentUpon>SharedBondsXaml.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\SignUpXaml.xaml.cs">
       <DependentUpon>SignUpXaml.xaml</DependentUpon>
@@ -116,9 +125,19 @@
     <Compile Include="Pages\SPSXaml.xaml.cs">
       <DependentUpon>SPSXaml.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Titles.cs" />
     <Compile Include="Pages\TransactionItem.cs" />
+    <Compile Include="Pages\Transactions.xaml.cs">
+      <DependentUpon>Transactions.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Transfer.xaml.cs">
+      <DependentUpon>Transfer.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\User.cs" />
     <Compile Include="Pages\UserResponse.cs" />
+    <Compile Include="Pages\Withdraw.xaml.cs">
+      <DependentUpon>Withdraw.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -320,8 +339,40 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="bin\" />
-    <Folder Include="obj\Debug\" />
+    <EmbeddedResource Include="Pages\Transactions.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\Deposit.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\Withdraw.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\AccountDetails.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\Transfer.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\GeneralBondsXaml.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Forms.2.2.0.45\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.2.2.0.45\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />

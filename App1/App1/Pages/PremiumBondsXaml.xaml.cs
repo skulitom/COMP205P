@@ -15,10 +15,12 @@ namespace App1.Pages
     {
         RestService obj = new RestService();
         UserResponse user;
-        public PremiumBondsXaml(UserResponse user)
+        int accNo;
+        public PremiumBondsXaml(UserResponse user, int accNo)
         {
             InitializeComponent();
             this.user = user;
+            this.accNo = accNo;
             var options = new List<Titles> {
                 new Titles ("Transactions"),
                 new Titles ("Deposit"),
@@ -33,7 +35,7 @@ namespace App1.Pages
         protected async override void OnAppearing()
         {
             base.OnAppearing();
-            var accounts = obj.RefreshAccountsAsync(user);
+            //account = await obj.RefreshAccountsAsync(user);
 
         }
 
@@ -43,16 +45,9 @@ namespace App1.Pages
 
             ContentPage page = null;
             ContentPage page2 = null;
-            var acc = e.SelectedItem as Accounts;
             var options = e.SelectedItem as Titles;
 
-            if (acc == null)
-            {
-                return;
-            }
-
-
-            page.BindingContext = acc;
+           //page.BindingContext = account;
             page2.BindingContext = options;
             Navigation.PushAsync(page);
             Navigation.PushAsync(page2);

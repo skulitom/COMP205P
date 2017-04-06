@@ -6,18 +6,18 @@ using System.Threading.Tasks;
 
 namespace App1.Pages
 {
-    class AccountActions
+    public class AccountActions
     {
-        public string amount { get; set; }
-        public string destination { get; set; }
+        public int amount { get; set; }
+        public int destination { get; set; }
 
-        public AccountActions(string amt)
+        public AccountActions(int amt)
         {
             amount = amt;
-            destination = "";
+            destination = 0;
         }
 
-        public AccountActions(string amt, string dest)
+        public AccountActions(int amt, int dest)
         {
             amount = amt;
             destination = dest;

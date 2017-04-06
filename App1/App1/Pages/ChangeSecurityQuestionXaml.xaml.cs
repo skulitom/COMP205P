@@ -25,15 +25,30 @@ namespace App1.Pages
 
         private void Picker_SelectedIndexChanged(object sender, EventArgs e)
         {
-            temp.security_question = pickerChangeSecurityQuestion.Items[pickerChangeSecurityQuestion.SelectedIndex];
+            if (pickerChangeSecurityQuestion.SelectedIndex == -1)
+                {
+                     questionMessageLabel.Text = "Please fill in the appropriate fields";
+                }
+            else
+            {
+                temp.security_question = pickerChangeSecurityQuestion.Items[pickerChangeSecurityQuestion.SelectedIndex];
+                questionMessageLabel.Text = string.Empty;
+            }
         }
 
         async private void OnChangeQuestionButtonClicked(object sender, EventArgs e)
         {
-            // store the ans and question in the database
             if (secretanswer.Text != string.Empty)
+            {
                 temp.answer = secretanswer.Text;
-            await obj.updateUserDetailsAsync(user,temp);
+
+                await obj.updateUserDetailsAsync(user, temp);
+                questionMessageLabel.Text = "Security details have been updated";
+            }
+            else
+            {
+                questionMessageLabel.Text = "Please fill in the appropriate fields";
+            }
         }
     }
 }
