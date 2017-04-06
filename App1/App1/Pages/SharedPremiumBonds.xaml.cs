@@ -12,58 +12,56 @@ namespace App1.Pages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class SharedPremiumBonds : ContentPage
     {
-        public SharedPremiumBonds()
+        RestService obj = new RestService();
+        UserResponse user;
+        MasterDetailPage master;
+        Accounts acc;
+        public SharedPremiumBonds(MasterDetailPage master, UserResponse user, Accounts acc)
         {
             InitializeComponent();
-            var settings = new List<Settings> {
-                new Settings ("Transactions"),
-                new Settings ("Deposit"),
-                new Settings ("Withdraw"),
-                new Settings ("Transfer"),
-                new Settings ("Have I Won?"),
-                new Settings ("Account Details"),
+            this.user = user;
+            this.acc = acc;
+            this.master = master;
+            var settings = new List<Titles> {
+                new Titles ("Buy Bonds"),
+                new Titles ("Sell Bonds"),
+                new Titles ("Add/Delete a member"),
+                new Titles ("Have I Won?"),
+                new Titles ("What is my payout?"),
+                new Titles ("Account Details"),
+                new Titles ("Leave the group"),
             };
             listView.ItemsSource = settings;
         }
 
         void OnItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            var settings = e.SelectedItem as Settings;
-
-            if (settings == null)
-            {
-                return;
-            }
-
             ContentPage page = null;
-
-            //switch (settings.Name)
-            //{
-            //    case "Transactions":
-            //        page = new ChangeNameXaml();
-            //        break;
-            //    case "Deposit":
-            //        page = new ChangeEmailXaml();
-            //        break;
-            //    case "Withdraw":
-            //        page = new ChangePasswordXaml();
-            //        break;
-            //    case "Transfer":
-            //        page = new ChangeProfilePictureXaml();
-            //        break;
-            //    case "Have I Won?":
-            //        page = new ChangeSecurityQuestionXaml();
-            //        break;
-            //    case "Account Details":
-            //        page = new ChangeLanguageXaml();
-            //        break;
-            //    default:
-            //        page = new SettingsXaml();
-            //        break;
-            //}
-
-            page.BindingContext = settings;
-            Navigation.PushAsync(page);
+            var options = e.SelectedItem as Titles;
+            switch (options.Name)
+            {
+                case "Buy Bonds":
+                    page = new BuyBonds(user, acc);
+                    break;
+                case "Sell Bonds":
+                    page = new SellBonds(user, acc);
+                    break;
+                case "Add/Delete a member":
+                    page = new UserManagement(user, acc);
+                    break;
+                case "Account Details":
+                    page = new AccountDetails();
+                    break;
+                case "Have I Won?":
+                    page = new AccountDetails();
+                    break;
+                default:
+                    page = new PremiumBondsXaml(master, user, acc);
+                    break;
+            }
+            page.BindingContext = acc;
+            this.master.Detail = new NavigationPage(page);
+            this.master.Title = page.Title;
         }
     }
 }

@@ -19,7 +19,6 @@ namespace App1.Pages
             InitializeComponent();
             this.user = user;
             this.master = master;
-
         }
 
         protected async override void OnAppearing()
@@ -42,37 +41,33 @@ namespace App1.Pages
 
             switch (acc.info.name)
             {
-                case "Shared Premium Bonds":
-                    page = new SharedBondsXaml(user, acc);
-                    newTitle = "Shared Premium Bonds";
-                    break;
                 case "Premium Bonds":
-                    page = new PremiumBondsXaml(user, acc.id);
+                    page = new PremiumBondsXaml(this.master,user, acc);
                     newTitle = "Premium Bonds";
                     break;
                 case "Direct Saver":
-                    page = new SharedBondsXaml(user, acc);
+                    page = new GeneralBondsXaml(this.master,user, acc);
                     newTitle = "Direct Saver";
                     break;
                 case "Direct ISA":
-                    page = new SharedBondsXaml(user, acc);
+                    page = new GeneralBondsXaml(this.master, user, acc);
                     newTitle = "Direct ISA";
                     break;
                 case "Income Bonds":
-                    page = new SharedBondsXaml(user, acc);
+                    page = new GeneralBondsXaml(this.master, user, acc);
                     newTitle = "Income Bonds";
                     break;
                 case "Children's Bonds":
-                    page = new SharedBondsXaml(user, acc);
+                    page = new GeneralBondsXaml(this.master, user, acc);
                     newTitle = "Children's Bonds";
                     break;
                 case "Investment Account":
-                    page = new SharedBondsXaml(user, acc);
+                    page = new GeneralBondsXaml(this.master, user, acc);
                     newTitle = "Investment Account";
                     break;
                 default:
-                    page = new SharedBondsXaml(user, acc);
-                    newTitle = "Shared Premium Bonds";
+                    page = new SharedPremiumBonds(this.master, user, acc);
+                    newTitle = acc.info.name;
                     break;
             }
             page.BindingContext = acc;

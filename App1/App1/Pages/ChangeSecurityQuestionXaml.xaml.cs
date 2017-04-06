@@ -13,7 +13,7 @@ namespace App1.Pages
     public partial class ChangeSecurityQuestionXaml : ContentPage
     {
        User temp;
-        UserResponse user;
+       UserResponse user;
        RestService obj;
        public ChangeSecurityQuestionXaml(UserResponse user, User temp)
         {

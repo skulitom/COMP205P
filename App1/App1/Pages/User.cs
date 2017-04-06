@@ -27,6 +27,10 @@ namespace App1.Pages
         public string security_question { get; set; }
         [JsonProperty(Required = Required.AllowNull)]
         public string answer { get; set; }
+        [JsonProperty(Required = Required.AllowNull)]
+        public int balance { get; set; }
+        [JsonProperty(Required = Required.AllowNull)]
+        public int winnings { get; set; }
 
         public User()
         {

@@ -20,6 +20,8 @@ namespace App1.Pages
             InitializeComponent();
             obj = new RestService();
             var settings = new List<Titles> {
+                new Titles ("Check total Winnings"),
+                new Titles ("Update my Balance"),
                 new Titles ("Change My Username"),
                 new Titles ("Change My Email"),
                 new Titles ("Change My Password"),
@@ -53,6 +55,12 @@ namespace App1.Pages
 
             switch (settings.Name)
             {
+                case "Check total Winnings":
+                    page = new TotalWinnings();
+                    break;
+                case "Update my Balance":
+                    page = new UpdateBalance(user, temp);
+                    break;
                 case "Change My Username":
                     page = new ChangeNameXaml(user,temp);
                     break;
@@ -82,7 +90,7 @@ namespace App1.Pages
                     break;
             }
 
-            page.BindingContext = settings;
+            page.BindingContext = temp;
             this.master.Detail = new NavigationPage(page);
             this.master.Title = page.Title;
         }

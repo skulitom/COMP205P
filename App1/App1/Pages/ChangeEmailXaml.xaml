@@ -27,6 +27,8 @@
 </ContentPage.Resources>
     <StackLayout BackgroundColor="#EEEEEE"
             Padding="60">
+        <Label Text="Current Email" Style="{StaticResource LargeLabel}" />
+        <Label Text="{Binding email}" Style="{StaticResource LargeLabel}" />
         <Label Text=" Change Email" Style="{StaticResource LargeLabel}" />
     <Entry x:Name="settingsEmailEntry" Placeholder="email" />
     <Entry x:Name="repeatEmailEntry" Placeholder="repeat email" />
