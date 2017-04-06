@@ -41,10 +41,10 @@ namespace App1.Pages
             switch (options.Name)
             {
                 case "Buy Bonds":
-                    page = new BuyBonds(user, acc);
+                    page = new BuyBonds(user, acc, true);
                     break;
                 case "Sell Bonds":
-                    page = new SellBonds(user, acc);
+                    page = new SellBonds(user, acc, true);
                     break;
                 case "Add/Delete a member":
                     page = new UserManagement(user, acc);
@@ -60,8 +60,8 @@ namespace App1.Pages
                     break;
             }
             page.BindingContext = acc;
+            this.master.Title = options.Name;
             this.master.Detail = new NavigationPage(page);
-            this.master.Title = page.Title;
         }
     }
 }

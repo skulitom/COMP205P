@@ -397,5 +397,37 @@ namespace App1.Pages
             }
             return false;
         }
+
+        public async Task<Boolean> PBActionAsync(UserResponse token, SPBActions accAct)
+        {
+            HttpClient client = new HttpClient();
+            var uri = new Uri(string.Format(Constants.soleBondsAction));
+            Debug.WriteLine("               URI " + uri);
+            client.DefaultRequestHeaders.Add("Authorization", "TOKEN " + token.key);
+            try
+            {
+                Debug.WriteLine("               TRYING TO PERFORM " + accAct.kind);
+                var json = JsonConvert.SerializeObject(accAct);
+                var content = new StringContent(json, Encoding.UTF8, "application/json");
+                Debug.WriteLine("                   JSON " + json);
+                HttpResponseMessage response = null;
+                response = await client.PostAsync(uri, content);
+                if (response.IsSuccessStatusCode)
+                {
+                    Debug.WriteLine(@"				PB action successful: " + accAct.kind);
+                    return true;
+                }
+                else
+                {
+                    Debug.WriteLine(@"				PB action failed with response code as " + response.StatusCode);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(@"				ERROR {0}", ex.Message);
+            }
+            return false;
+        }
     }
 }

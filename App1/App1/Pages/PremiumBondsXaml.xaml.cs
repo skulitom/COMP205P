@@ -43,10 +43,10 @@ namespace App1.Pages
                     page = new Transactions(user, acc);
                     break;
                 case "Buy Bonds":
-                    page = new Deposit(user, acc);
+                    page = new BuyBonds(user, acc, false);
                     break;
                 case "Sell Bonds":
-                    page = new Withdraw(user, acc);
+                    page = new SellBonds(user, acc, false);
                     break;
                 case "Account Details":
                     page = new AccountDetails();
@@ -59,8 +59,8 @@ namespace App1.Pages
                     break;
             }
             page.BindingContext = acc;
+            this.master.Title = options.Name;
             this.master.Detail = new NavigationPage(page);
-            this.master.Title = page.Title;
         }
     }
 
