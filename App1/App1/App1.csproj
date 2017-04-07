@@ -46,6 +46,9 @@
     <Compile Include="Pages\AccountsXaml.xaml.cs">
       <DependentUpon>AccountsXaml.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\BuyBonds.xaml.cs">
+      <DependentUpon>BuyBonds.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\CBXaml.xaml.cs">
       <DependentUpon>CBXaml.xaml</DependentUpon>
     </Compile>
@@ -80,9 +83,6 @@
     <Compile Include="Pages\DSXaml.xaml.cs">
       <DependentUpon>DSXaml.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\GeneralBondsXaml.xaml.cs">
-      <DependentUpon>GeneralBondsXaml.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Pages\HomeXaml.xaml.cs">
       <DependentUpon>HomeXaml.xaml</DependentUpon>
     </Compile>
@@ -112,20 +112,31 @@
       <DependentUpon>PSXaml.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\RestService.cs" />
+    <Compile Include="Pages\SellBonds.xaml.cs">
+      <DependentUpon>SellBonds.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Settings.cs" />
     <Compile Include="Pages\SettingsXaml.xaml.cs">
       <DependentUpon>SettingsXaml.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\SharedBondsXaml.xaml.cs">
-      <DependentUpon>SharedBondsXaml.xaml</DependentUpon>
+    <Compile Include="Pages\GeneralBondsXaml.xaml.cs">
+      <DependentUpon>GeneralBondsXaml.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SharedPremiumBonds.xaml.cs">
+      <DependentUpon>SharedPremiumBonds.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\SignUpXaml.xaml.cs">
       <DependentUpon>SignUpXaml.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\SPBActions.cs" />
     <Compile Include="Pages\SPSXaml.xaml.cs">
       <DependentUpon>SPSXaml.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Syndicate.cs" />
     <Compile Include="Pages\Titles.cs" />
+    <Compile Include="Pages\TotalWinnings.xaml.cs">
+      <DependentUpon>TotalWinnings.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\TransactionItem.cs" />
     <Compile Include="Pages\Transactions.xaml.cs">
       <DependentUpon>Transactions.xaml</DependentUpon>
@@ -133,7 +144,13 @@
     <Compile Include="Pages\Transfer.xaml.cs">
       <DependentUpon>Transfer.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\UpdateBalance.xaml.cs">
+      <DependentUpon>UpdateBalance.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\User.cs" />
+    <Compile Include="Pages\UserManagement.xaml.cs">
+      <DependentUpon>UserManagement.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\UserResponse.cs" />
     <Compile Include="Pages\Withdraw.xaml.cs">
       <DependentUpon>Withdraw.xaml</DependentUpon>
@@ -333,7 +350,13 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Pages\SharedBondsXaml.xaml">
+    <EmbeddedResource Include="Pages\SharedPremiumBonds.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\GeneralBondsXaml.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -369,7 +392,31 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Pages\GeneralBondsXaml.xaml">
+    <EmbeddedResource Include="Pages\BuyBonds.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\SellBonds.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\UserManagement.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\UpdateBalance.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\TotalWinnings.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

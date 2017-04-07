@@ -121,6 +121,7 @@ namespace App1.Pages
             {
                 var json = JsonConvert.SerializeObject(user);
                 var content = new StringContent(json, Encoding.UTF8, "application/json");
+                Debug.WriteLine("       JSON OBJECT TO CHANGE USER DETAILS: " + json);
                 HttpResponseMessage response = null;
                 response = await client.PutAsync(uri, content);
                 if (response.IsSuccessStatusCode)
@@ -273,7 +274,7 @@ namespace App1.Pages
         {
             HttpClient client = new HttpClient();
             account = new Accounts();
-            var uri = new Uri(string.Format(Constants.getAccountsURL, accNo));
+            var uri = new Uri(string.Format(Constants.getAccountDetailsURL, accNo));
             client.DefaultRequestHeaders.Add("Authorization", "TOKEN " + user.key);
             try
             {
@@ -295,6 +296,138 @@ namespace App1.Pages
                 Debug.WriteLine(@"				ERROR {0}", ex.Message);
             }
             return account;
+        }
+
+        public async Task<Syndicate> getSyndicateDetailsAsync(UserResponse user, string accNo)
+        {
+            HttpClient client = new HttpClient();
+            Syndicate syn = new Syndicate();
+            string url = Constants.getSyndicateDetailsURL + accNo + "/";
+            var uri = new Uri(string.Format(url));
+            client.DefaultRequestHeaders.Add("Authorization", "TOKEN " + user.key);
+            try
+            {
+                Debug.WriteLine("               TRYING TO GET Syndicate DETAILS");
+                var response = await client.GetAsync(uri);
+                if (response.IsSuccessStatusCode)
+                {
+                    var content = await response.Content.ReadAsStringAsync();
+                    syn = JsonConvert.DeserializeObject<Syndicate>(content);
+                    Debug.WriteLine("Succesful response for syndicate");
+                }
+                else
+                {
+                    Debug.WriteLine("Unsuccesful response for syndicate with response code " + response.StatusCode);
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(@"				ERROR {0}", ex.Message);
+            }
+            return syn;
+        }
+
+        public async Task<Boolean> SPBActionAsync(UserResponse token, string accNo, SPBActions accAct)
+        {
+            HttpClient client = new HttpClient();
+            string url = Constants.sharedAccountAction + accNo + "/bonds/";
+            var uri = new Uri(string.Format(url));
+            Debug.WriteLine("               URI " + uri);
+            client.DefaultRequestHeaders.Add("Authorization", "TOKEN " + token.key);
+            try
+            {
+                Debug.WriteLine("               TRYING TO PERFORM " + accAct.kind);
+                var json = JsonConvert.SerializeObject(accAct);
+                var content = new StringContent(json, Encoding.UTF8, "application/json");
+                Debug.WriteLine("                   JSON " + json);
+                HttpResponseMessage response = null;
+                response = await client.PostAsync(uri, content);
+                if (response.IsSuccessStatusCode)
+                {
+                    Debug.WriteLine(@"				SPB action successful: " + accAct.kind);
+                    return true;
+                }
+                else
+                {
+                    Debug.WriteLine(@"				SPB action failed with response code as " + response.StatusCode);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(@"				ERROR {0}", ex.Message);
+            }
+            return false;
+        }
+
+        public async Task<Boolean> UserMangementAsync(UserResponse token, string accNo,string action, string email, int id)
+        {
+            string temp = "";
+            HttpClient client = new HttpClient();
+            string url = Constants.sharedAccountAction + accNo + "/manage/" + action + "_member/";
+            var uri = new Uri(string.Format(url));
+            Debug.WriteLine("               URI " + uri);
+            client.DefaultRequestHeaders.Add("Authorization", "TOKEN " + token.key);
+            try
+            {
+                Debug.WriteLine("               TRYING TO PERFORM " + action);
+                if (action.Equals("add"))
+                    temp = @"{user: '" + email + "'}";
+                else if(action.Equals("remove"))
+                    temp = @"{user: " + id + "}";
+                var json = JsonConvert.SerializeObject(temp);
+                var content = new StringContent(json, Encoding.UTF8, "application /json");
+                Debug.WriteLine("                   JSON " + json);
+                HttpResponseMessage response = null;
+                response = await client.PostAsync(uri, content);
+                if (response.IsSuccessStatusCode)
+                {
+                    Debug.WriteLine(@"				User management successful: " + action);
+                    return true;
+                }
+                else
+                {
+                    Debug.WriteLine(@"				User management failed with response code as " + response.StatusCode);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(@"				ERROR {0}", ex.Message);
+            }
+            return false;
+        }
+
+        public async Task<Boolean> PBActionAsync(UserResponse token, SPBActions accAct)
+        {
+            HttpClient client = new HttpClient();
+            var uri = new Uri(string.Format(Constants.soleBondsAction));
+            Debug.WriteLine("               URI " + uri);
+            client.DefaultRequestHeaders.Add("Authorization", "TOKEN " + token.key);
+            try
+            {
+                Debug.WriteLine("               TRYING TO PERFORM " + accAct.kind);
+                var json = JsonConvert.SerializeObject(accAct);
+                var content = new StringContent(json, Encoding.UTF8, "application/json");
+                Debug.WriteLine("                   JSON " + json);
+                HttpResponseMessage response = null;
+                response = await client.PostAsync(uri, content);
+                if (response.IsSuccessStatusCode)
+                {
+                    Debug.WriteLine(@"				PB action successful: " + accAct.kind);
+                    return true;
+                }
+                else
+                {
+                    Debug.WriteLine(@"				PB action failed with response code as " + response.StatusCode);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(@"				ERROR {0}", ex.Message);
+            }
+            return false;
         }
     }
 }

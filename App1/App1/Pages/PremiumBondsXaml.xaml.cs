@@ -15,42 +15,52 @@ namespace App1.Pages
     {
         RestService obj = new RestService();
         UserResponse user;
-        int accNo;
-        public PremiumBondsXaml(UserResponse user, int accNo)
+        MasterDetailPage master;
+        Accounts acc;
+        public PremiumBondsXaml(MasterDetailPage master, UserResponse user, Accounts acc)
         {
             InitializeComponent();
             this.user = user;
-            this.accNo = accNo;
+            this.acc = acc;
+            this.master = master;
             var options = new List<Titles> {
                 new Titles ("Transactions"),
-                new Titles ("Deposit"),
-                new Titles ("Withdraw"),
-                new Titles ("Transfer"),
+                new Titles ("Buy Bonds"),
+                new Titles ("Sell Bonds"),
                 new Titles ("Have I Won?"),
                 new Titles ("Account Details"),
             };
             listView.ItemsSource = options;
         }
 
-        protected async override void OnAppearing()
-        {
-            base.OnAppearing();
-            //account = await obj.RefreshAccountsAsync(user);
-
-        }
-
         void OnItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-
-
             ContentPage page = null;
-            ContentPage page2 = null;
             var options = e.SelectedItem as Titles;
-
-           //page.BindingContext = account;
-            page2.BindingContext = options;
-            Navigation.PushAsync(page);
-            Navigation.PushAsync(page2);
+            switch (options.Name)
+            {
+                case "Transactions":
+                    page = new Transactions(user, acc);
+                    break;
+                case "Buy Bonds":
+                    page = new BuyBonds(user, acc, false);
+                    break;
+                case "Sell Bonds":
+                    page = new SellBonds(user, acc, false);
+                    break;
+                case "Account Details":
+                    page = new AccountDetails(user, acc);
+                    break;
+                case "Have I Won?":
+                    page = new AccountDetails(user, acc);
+                    break;
+                default:
+                    page = new PremiumBondsXaml(master, user, acc);
+                    break;
+            }
+            page.BindingContext = acc;
+            this.master.Title = options.Name;
+            this.master.Detail = new NavigationPage(page);
         }
     }
 

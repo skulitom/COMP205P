@@ -46,11 +46,18 @@
             <Label Text="{Binding balance}" Style="{StaticResource TitleLabelStyle}" Margin="0"/>
         </StackLayout>
         <StackLayout Grid.Row="1" BackgroundColor="#444444"  Orientation="Horizontal" >
-            <Label Text="Interest" Style="{StaticResource TitleLabelStyle}"/>
-            <StackLayout  BackgroundColor="Aqua" HorizontalOptions="CenterAndExpand" >
-                <Label Text="{Binding info.interest_rate}" Style="{StaticResource TitleLabelStyle}" TextColor="Black"/>
-            </StackLayout>
-            <Label Text="Rate" Style="{StaticResource TitleLabelStyle} "/>
+            <Grid ColumnSpacing="0" RowSpacing="0" HorizontalOptions="FillAndExpand">
+                <Grid.ColumnDefinitions >
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label  Text="Interest" Style="{StaticResource TitleLabelStyle}" Grid.Column="0"/>
+                <StackLayout  BackgroundColor="Aqua" HorizontalOptions="CenterAndExpand" Grid.Column="1" >
+                    <Label Text="{Binding info.interest_rate}" Style="{StaticResource TitleLabelStyle}" TextColor="Black"/>
+                </StackLayout>
+                <Label Text="Rate" Style="{StaticResource TitleLabelStyle} " Grid.Column="2"/>
+            </Grid>
         </StackLayout>
         <ScrollView Grid.Row="2">
             <StackLayout>

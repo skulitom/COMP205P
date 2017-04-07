@@ -15,14 +15,24 @@ namespace App1.Pages
     public partial class NavigationXaml : MasterDetailPage
     {
         UserResponse user;
+        User userDetails;
+        RestService obj = new RestService();
         public NavigationXaml(UserResponse user)
         {
             InitializeComponent();
             this.user = user;
             this.Detail = new NavigationPage(new Pages.HomeXaml(this, user));
             this.Title = this.Detail.Title;
+            
 
         }
+
+        protected async override void OnAppearing()
+        {
+            this.userDetails = await obj.getUserDetailsAsync(user);
+            BindingContext = userDetails;
+        }
+
 
         public void SettingsButton_Clicked(object sender, EventArgs e)
         {

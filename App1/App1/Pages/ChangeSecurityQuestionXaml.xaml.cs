@@ -13,7 +13,7 @@ namespace App1.Pages
     public partial class ChangeSecurityQuestionXaml : ContentPage
     {
        User temp;
-        UserResponse user;
+       UserResponse user;
        RestService obj;
        public ChangeSecurityQuestionXaml(UserResponse user, User temp)
         {
@@ -26,9 +26,9 @@ namespace App1.Pages
         private void Picker_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (pickerChangeSecurityQuestion.SelectedIndex == -1)
-                {
-                     questionMessageLabel.Text = "Please fill in the appropriate fields";
-                }
+            {
+                questionMessageLabel.Text = "Please fill in the appropriate fields";
+            }
             else
             {
                 temp.security_question = pickerChangeSecurityQuestion.Items[pickerChangeSecurityQuestion.SelectedIndex];
@@ -41,7 +41,6 @@ namespace App1.Pages
             if (secretanswer.Text != string.Empty)
             {
                 temp.answer = secretanswer.Text;
-
                 await obj.updateUserDetailsAsync(user, temp);
                 questionMessageLabel.Text = "Security details have been updated";
             }

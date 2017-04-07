@@ -27,6 +27,8 @@
     </ContentPage.Resources>
     <StackLayout BackgroundColor="#EEEEEE"
             Padding="60">
+        <Label Text="Current Username" Style="{StaticResource LargeLabel}" />
+        <Label Text="{Binding username}" Style="{StaticResource LargeLabel}" />
         <Label Text=" Change Username" Style="{StaticResource LargeLabel}" />
         <Entry x:Name="settingsUsernameEntry" Placeholder="username" />
         <Entry x:Name="repeatUsernameEntry" Placeholder="repeat username" />

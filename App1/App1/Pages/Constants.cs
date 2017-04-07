@@ -19,6 +19,9 @@ namespace App1.Pages
         public static string userCreateURL = "http://safe-atoll-64469.herokuapp.com/bonds/api/user/create/";
         public static string userUpdateViewURL = "http://safe-atoll-64469.herokuapp.com/bonds/api/user/";
         public static string getSyndicatesURL = "https://safe-atoll-64469.herokuapp.com/bonds/api/syndicates/";//key in header
+        public static string getSyndicateDetailsURL = "https://safe-atoll-64469.herokuapp.com/bonds/api/syndicate/";//concat id
         public static string userAccountAction = "https://safe-atoll-64469.herokuapp.com/bonds/api/account/"; // need to add in account number/action
+        public static string sharedAccountAction = "https://safe-atoll-64469.herokuapp.com/bonds/api/syndicate/"; //need to concat id/bonds
+        public static string soleBondsAction = "https://safe-atoll-64469.herokuapp.com/bonds/api/user/bonds/"; //json kind + amt
     }
 }

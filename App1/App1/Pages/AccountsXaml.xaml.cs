@@ -19,13 +19,14 @@ namespace App1.Pages
             this.user = user;
             this.master = master;
         }
-    protected async override void OnAppearing()
+        protected async override void OnAppearing()
         {
             base.OnAppearing();
             var accounts = obj.RefreshAccountsAsync(user);
             listView.ItemsSource = await accounts;
         }
-    void OnItemSelected(object sender, SelectedItemChangedEventArgs e)
+
+        void OnItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             var acc = e.SelectedItem as Accounts;
 
@@ -39,37 +40,33 @@ namespace App1.Pages
 
             switch (acc.info.name)
             {
-                case "Shared Premium Bonds":
-                    page = new GeneralBondsXaml(user,acc);
-                    newTitle = "Shared Premium Bonds";
-                    break;
                 case "Premium Bonds":
-                    page = new PremiumBondsXaml(user, acc.id);
+                    page = new PremiumBondsXaml(master, user, acc);
                     newTitle = "Premium Bonds";
                     break;
                 case "Direct Saver":
-                    page = new GeneralBondsXaml(user, acc);
+                    page = new GeneralBondsXaml(master, user, acc);
                     newTitle = "Direct Saver";
                     break;
                 case "Direct ISA":
-                    page = new GeneralBondsXaml(user, acc);
+                    page = new GeneralBondsXaml(master, user, acc);
                     newTitle = "Direct ISA";
                     break;
                 case "Income Bonds":
-                    page = new GeneralBondsXaml(user, acc);
+                    page = new GeneralBondsXaml(master, user, acc);
                     newTitle = "Income Bonds";
                     break;
                 case "Children's Bonds":
-                    page = new GeneralBondsXaml(user, acc);
+                    page = new GeneralBondsXaml(master, user, acc);
                     newTitle = "Children's Bonds";
                     break;
                 case "Investment Account":
-                    page = new GeneralBondsXaml(user, acc);
+                    page = new GeneralBondsXaml(master, user, acc);
                     newTitle = "Investment Account";
                     break;
                 default:
-                    page = new AccountsXaml(master,user);
-                    newTitle = "Shared Premium Bonds";
+                    page = new SharedPremiumBonds(master,user,acc);
+                    newTitle = acc.info.name;
                     break;
             }
 
