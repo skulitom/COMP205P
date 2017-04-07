@@ -14,11 +14,19 @@ namespace App1.Pages {
     using Xamarin.Forms.Xaml;
     
     
-    public partial class IBXaml : global::Xamarin.Forms.ContentPage {
+    public partial class Withdraw : global::Xamarin.Forms.ContentPage {
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.Entry withdrawEntry;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.Label withdrawMessageLabel;
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private void InitializeComponent() {
-            this.LoadFromXaml(typeof(IBXaml));
+            this.LoadFromXaml(typeof(Withdraw));
+            withdrawEntry = this.FindByName<global::Xamarin.Forms.Entry>("withdrawEntry");
+            withdrawMessageLabel = this.FindByName<global::Xamarin.Forms.Label>("withdrawMessageLabel");
         }
     }
 }

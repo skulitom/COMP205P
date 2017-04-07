@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App1.Pages.SellBonds"
+             Title="Sell Bonds">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="LargeLabel"
+                   TargetType="Label">
+                <Setter Property="FontSize"
+                        Value="Large"></Setter>
+                <Setter Property="TextColor"
+                        Value="Black"></Setter>
+                <Setter Property="Margin"
+                        Value="5"></Setter>
+                <Setter Property="HorizontalOptions"
+                        Value="Center"></Setter>
+            </Style>
+            <Style x:Key="AquaButtonStyle"
+                   TargetType="Button">
+                <Setter Property="BackgroundColor"
+                        Value="Aqua"></Setter>
+                <Setter Property="TextColor"
+                        Value="Black"></Setter>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <StackLayout BackgroundColor="#EEEEEE"
+            Padding="60">
+        <Label Text="Sell Amount" Style="{StaticResource LargeLabel}" />
+        <Entry x:Name="sellBondsEntry" Placeholder="amount" Keyboard="Numeric"/>
+        <Button Text="Sell" Clicked="OnSellButtonClicked" Style="{StaticResource AquaButtonStyle}"/>
+        <Label x:Name="sellMessageLabel" />
+    </StackLayout>
+</ContentPage>

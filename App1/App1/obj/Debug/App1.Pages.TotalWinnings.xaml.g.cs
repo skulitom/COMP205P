@@ -14,11 +14,11 @@ namespace App1.Pages {
     using Xamarin.Forms.Xaml;
     
     
-    public partial class DISAXaml : global::Xamarin.Forms.ContentPage {
+    public partial class TotalWinnings : global::Xamarin.Forms.ContentPage {
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private void InitializeComponent() {
-            this.LoadFromXaml(typeof(DISAXaml));
+            this.LoadFromXaml(typeof(TotalWinnings));
         }
     }
 }

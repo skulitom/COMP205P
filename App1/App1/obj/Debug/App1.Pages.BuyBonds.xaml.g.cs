@@ -14,11 +14,19 @@ namespace App1.Pages {
     using Xamarin.Forms.Xaml;
     
     
-    public partial class DSXaml : global::Xamarin.Forms.ContentPage {
+    public partial class BuyBonds : global::Xamarin.Forms.ContentPage {
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.Entry buyBondsEntry;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.Label buyMessageLabel;
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private void InitializeComponent() {
-            this.LoadFromXaml(typeof(DSXaml));
+            this.LoadFromXaml(typeof(BuyBonds));
+            buyBondsEntry = this.FindByName<global::Xamarin.Forms.Entry>("buyBondsEntry");
+            buyMessageLabel = this.FindByName<global::Xamarin.Forms.Label>("buyMessageLabel");
         }
     }
 }

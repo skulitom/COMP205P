@@ -19,6 +19,7 @@ namespace App1.Pages
 
         public int min_deposit { get; set; }
         public int payout_period { get;set; }
+        public string link { get; set; }
 
         public Products()
         {
@@ -27,6 +28,14 @@ namespace App1.Pages
         public Products(string name)
         {
             this.name = name;
+        }
+        public Products(int id)
+        {
+            this.id = id;
+            name = "";
+            description = "";
+            interest_rate = "";
+            link = "";
         }
 
         //public Products(string name, string description, string image)

@@ -14,11 +14,19 @@ namespace App1.Pages {
     using Xamarin.Forms.Xaml;
     
     
-    public partial class PSXaml : global::Xamarin.Forms.ContentPage {
+    public partial class Deposit : global::Xamarin.Forms.ContentPage {
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.Entry depositEntry;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.Label depositMessageLabel;
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private void InitializeComponent() {
-            this.LoadFromXaml(typeof(PSXaml));
+            this.LoadFromXaml(typeof(Deposit));
+            depositEntry = this.FindByName<global::Xamarin.Forms.Entry>("depositEntry");
+            depositMessageLabel = this.FindByName<global::Xamarin.Forms.Label>("depositMessageLabel");
         }
     }
 }

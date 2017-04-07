@@ -360,9 +360,8 @@ namespace App1.Pages
             return false;
         }
 
-        public async Task<Boolean> UserMangementAsync(UserResponse token, string accNo,string action, string email, int id)
+        public async Task<Boolean> UserMangementAsync(UserResponse token, string accNo,string action, AddorDelUser aod)
         {
-            string temp = "";
             HttpClient client = new HttpClient();
             string url = Constants.sharedAccountAction + accNo + "/manage/" + action + "_member/";
             var uri = new Uri(string.Format(url));
@@ -371,11 +370,7 @@ namespace App1.Pages
             try
             {
                 Debug.WriteLine("               TRYING TO PERFORM " + action);
-                if (action.Equals("add"))
-                    temp = @"{user: '" + email + "'}";
-                else if(action.Equals("remove"))
-                    temp = @"{user: " + id + "}";
-                var json = JsonConvert.SerializeObject(temp);
+                var json = JsonConvert.SerializeObject(aod);
                 var content = new StringContent(json, Encoding.UTF8, "application /json");
                 Debug.WriteLine("                   JSON " + json);
                 HttpResponseMessage response = null;
@@ -420,6 +415,38 @@ namespace App1.Pages
                 else
                 {
                     Debug.WriteLine(@"				PB action failed with response code as " + response.StatusCode);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(@"				ERROR {0}", ex.Message);
+            }
+            return false;
+        }
+
+        public async Task<Boolean> registerAccountAsync(UserResponse token, int productNo)
+        {
+            HttpClient client = new HttpClient();
+            var uri = new Uri(string.Format(Constants.getAccountsURL));
+            Debug.WriteLine("               URI " + uri);
+            client.DefaultRequestHeaders.Add("Authorization", "TOKEN " + token.key);
+            try
+            {
+                Debug.WriteLine("               TRYING TO REGISTER PRODUCT NO " + productNo);
+                var json = JsonConvert.SerializeObject(new RegisterProduct(productNo));
+                var content = new StringContent(json, Encoding.UTF8, "application/json");
+                Debug.WriteLine("                   JSON " + json);
+                HttpResponseMessage response = null;
+                response = await client.PostAsync(uri, content);
+                if (response.IsSuccessStatusCode)
+                {
+                    Debug.WriteLine(@"				Product registration successful: " + productNo);
+                    return true;
+                }
+                else
+                {
+                    Debug.WriteLine(@"				Product registration failed with response code as " + response.StatusCode);
                 }
 
             }

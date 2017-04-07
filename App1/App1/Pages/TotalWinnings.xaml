@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App1.Pages.TotalWinnings"
+             Title="Winnings">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="LargeLabel"
+                   TargetType="Label">
+                <Setter Property="FontSize"
+                        Value="Large"></Setter>
+                <Setter Property="TextColor"
+                        Value="Black"></Setter>
+                <Setter Property="Margin"
+                        Value="5"></Setter>
+                <Setter Property="HorizontalOptions"
+                        Value="Center"></Setter>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <Label Text="Total Winnings" Style="{StaticResource LargeLabel}" />
+    <Label Text="{Binding winnings}" Style="{StaticResource LargeLabel}" />
+</ContentPage>

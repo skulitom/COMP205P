@@ -14,11 +14,15 @@ namespace App1.Pages {
     using Xamarin.Forms.Xaml;
     
     
-    public partial class IAXaml : global::Xamarin.Forms.ContentPage {
+    public partial class individualProducts : global::Xamarin.Forms.ContentPage {
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.Label registerMessageLabel;
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private void InitializeComponent() {
-            this.LoadFromXaml(typeof(IAXaml));
+            this.LoadFromXaml(typeof(individualProducts));
+            registerMessageLabel = this.FindByName<global::Xamarin.Forms.Label>("registerMessageLabel");
         }
     }
 }

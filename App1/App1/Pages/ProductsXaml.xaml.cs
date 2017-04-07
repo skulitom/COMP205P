@@ -30,7 +30,7 @@ namespace App1.Pages
             var products = obj.RefreshProductsAsync(user);
             listView.ItemsSource = await products;
         }
-    void OnItemSelected(object sender, SelectedItemChangedEventArgs e)
+        void OnItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             var products = e.SelectedItem as Products;
 
@@ -39,48 +39,12 @@ namespace App1.Pages
                 return;
             }
 
-            ContentPage page = null;
-
-            switch (products.name)
-            {
-                case "Shared Premium Bonds":
-                    temp = "Shared Premium Bonds";
-                    page = new SPSXaml(products);
-                    break;
-                case "Premium Bonds":
-                    temp = "Premium Bonds";
-                    page = new PSXaml(products);
-                    break;
-                case "Direct Saver":
-                    temp = "Direct Saver";
-                    page = new DSXaml(products);
-                    break;
-                case "Direct ISA":
-                    temp = "Direct ISA";
-                    page = new DISAXaml(products);
-                    break;
-                case "Income Bonds":
-                    temp = "Income Bonds";
-                    page = new IBXaml(products);
-                    break;
-                case "Childrens Bonds":
-                    temp = "Childrens Bonds";
-                    page = new CBXaml(products);
-                    break;
-                case "Investment Account":
-                    temp = "Investment Account";
-                    page = new IAXaml(products);
-                    break;
-                default:
-                    page = new ProductsXaml(master, user);
-                    break;
-            }
-            
+            ContentPage page = new individualProducts(products, user);
             page.BindingContext = products;
-            page.Title = temp;
+            page.Title = products.name;
             this.master.Detail = new NavigationPage(page);
             this.master.Title = page.Title;
-            
+
         }
     }
 }

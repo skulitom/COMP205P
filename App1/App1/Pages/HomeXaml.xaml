@@ -13,7 +13,7 @@
                 <Setter Property="VerticalTextAlignment"
                     Value="Start"></Setter>
                 <Setter Property="FontSize"
-                    Value="30"></Setter>
+                    Value="22"></Setter>
                 <Setter Property="TextColor"
                     Value="Black"></Setter>
             </Style>
@@ -54,7 +54,10 @@
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
             <Image Source="Winter.jpg" Aspect="AspectFill" />
-            <Label Style="{StaticResource TitleLabelStyle}" Text="{Binding username}"/>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <Label Style="{StaticResource TitleLabelStyle}" Text="Welcome Back"/>
+                <Label Style="{StaticResource TitleLabelStyle}" Text="{Binding username}"/>
+            </StackLayout>
         <ScrollView Grid.Row="1">
             <ListView x:Name="listView" SeparatorVisibility="Default" SeparatorColor="Black" HasUnevenRows="true" ItemSelected="OnItemSelected">
                 <ListView.ItemTemplate>
