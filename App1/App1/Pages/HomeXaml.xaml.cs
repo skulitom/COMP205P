@@ -12,6 +12,7 @@ namespace App1.Pages
     public partial class HomeXaml : ContentPage
     {
         UserResponse user;
+        User userDetails;
         MasterDetailPage master;
         RestService obj = new RestService();
         public HomeXaml(MasterDetailPage master, UserResponse user)
@@ -26,7 +27,10 @@ namespace App1.Pages
             base.OnAppearing();
             var accounts = obj.RefreshAccountsAsync(user);
             listView.ItemsSource = await accounts;
+            this.userDetails = await obj.getUserDetailsAsync(user);
+            BindingContext = userDetails;
         }
+
         void OnItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             var acc = e.SelectedItem as Accounts;
