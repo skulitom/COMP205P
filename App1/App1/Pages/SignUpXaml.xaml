@@ -47,13 +47,8 @@
                 <Label Text="Language" Style="{StaticResource LargeLabel} " />
                 <Picker x:Name="pickerLanguage"  Title="Select a Language" Margin="20" SelectedIndexChanged="LangPicker_SelectedIndexChanged">
                     <Picker.Items>
-                        <x:String>English</x:String>
-                        <x:String>Russian</x:String>
-                        <x:String>Spansish</x:String>
-                        <x:String>Chinese</x:String>
-                        <x:String>Hindi</x:String>
-                        <x:String>Bahasa Melayu</x:String>
-                        <x:String>Tamil</x:String>
+                        <x:String>EN</x:String>
+                        <x:String>FR</x:String>
                     </Picker.Items>
                 </Picker>
                 <Label Text="Security Question" Style="{StaticResource LargeLabel}"/>

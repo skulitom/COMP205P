@@ -11,9 +11,9 @@
                 <Setter Property="HorizontalTextAlignment"
                     Value="Center"></Setter>
                 <Setter Property="VerticalTextAlignment"
-                    Value="End"></Setter>
+                    Value="Start"></Setter>
                 <Setter Property="FontSize"
-                    Value="20"></Setter>
+                    Value="30"></Setter>
                 <Setter Property="TextColor"
                     Value="Black"></Setter>
             </Style>
@@ -49,12 +49,12 @@
         </ResourceDictionary>
     </ContentPage.Resources>
     <Grid BackgroundColor="White" RowSpacing="0">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="200" />
-                <RowDefinition Height="*" />
-            </Grid.RowDefinitions>
-            <Image Source="Winter.jpg" Aspect="AspectFill" />
-            <Label Style="{StaticResource TitleLabelStyle}" Text="{Binding HomeModel.userName}"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="200" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Image Source="Winter.jpg" Aspect="AspectFill" />
+        <Label Style="{StaticResource TitleLabelStyle}" Text="{Binding username}"/>
         <ScrollView Grid.Row="1">
             <ListView x:Name="listView" SeparatorVisibility="Default" SeparatorColor="Black" HasUnevenRows="true" ItemSelected="OnItemSelected">
                 <ListView.ItemTemplate>

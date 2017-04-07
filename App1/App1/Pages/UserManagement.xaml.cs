@@ -27,7 +27,8 @@ namespace App1.Pages
 
         async void OnAddUserButtonClicked(object sender, EventArgs e)
         {
-            var check = await obj.UserMangementAsync(user,acc.id.ToString(),"add", addUserEntry.Text,0);
+            AddorDelUser temp = new AddorDelUser(addUserEntry.Text);
+            Boolean check = await obj.UserMangementAsync(user, acc.id.ToString(), "add", temp);
             if (check)
             {
                 addUserMessageLabel.Text = "Added User: " + addUserEntry.Text;
@@ -77,7 +78,8 @@ namespace App1.Pages
 
         async void OnRemoveUserButtonClicked(object sender, EventArgs e)
         {
-            var check = await obj.UserMangementAsync(user, acc.id.ToString(), "remove", "" , removeid);
+            AddorDelUser temp = new AddorDelUser(removeid);
+            Boolean check = await obj.UserMangementAsync(user, acc.id.ToString(), "remove", temp);
             if (check)
             {
                 removeUserMessageLabel.Text = "User succesfully removed";

@@ -12,6 +12,7 @@ namespace App1.Pages
     public partial class HomeXaml : ContentPage
     {
         UserResponse user;
+        User userDetails;
         MasterDetailPage master;
         RestService obj = new RestService();
         public HomeXaml(MasterDetailPage master, UserResponse user)
@@ -26,7 +27,10 @@ namespace App1.Pages
             base.OnAppearing();
             var accounts = obj.RefreshAccountsAsync(user);
             listView.ItemsSource = await accounts;
+            this.userDetails = await obj.getUserDetailsAsync(user);
+            BindingContext = userDetails;
         }
+
         void OnItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             var acc = e.SelectedItem as Accounts;
@@ -42,11 +46,11 @@ namespace App1.Pages
             switch (acc.info.name)
             {
                 case "Premium Bonds":
-                    page = new PremiumBondsXaml(this.master,user, acc);
+                    page = new PremiumBondsXaml(this.master, user, acc);
                     newTitle = "Premium Bonds";
                     break;
                 case "Direct Saver":
-                    page = new GeneralBondsXaml(this.master,user, acc);
+                    page = new GeneralBondsXaml(this.master, user, acc);
                     newTitle = "Direct Saver";
                     break;
                 case "Direct ISA":
