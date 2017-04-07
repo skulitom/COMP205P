@@ -12,13 +12,25 @@ namespace App1.Pages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class IBXaml : ContentPage
     {
-        public IBXaml()
+
+        Uri uri;
+        Products product;
+        public IBXaml(Products product)
         {
-            var browser = new WebView();
+            InitializeComponent();
+            this.product = product;
+            uri = new Uri("https://www.nsandi.com/income-bonds");
+            BindingContext = product;
+        }
 
-            browser.Source = "https://www.nsandi.com/income-bonds";
+        protected async override void OnAppearing()
+        {
+            BindingContext = product;
+        }
 
-            Content = browser;
+        async void OnRedirectButtonClicked(object sender, EventArgs e)
+        {
+            Device.OpenUri(uri);
         }
     }
 }

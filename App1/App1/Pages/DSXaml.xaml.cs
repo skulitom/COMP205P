@@ -12,13 +12,24 @@ namespace App1.Pages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class DSXaml : ContentPage
     {
-        public DSXaml()
+        Uri uri;
+        Products product;
+        public DSXaml(Products product)
         {
-            var browser = new WebView();
+            InitializeComponent();
+            this.product = product;
+            uri = new Uri("https://www.nsandi.com/direct-saver");
+            BindingContext = product;
+        }
 
-            browser.Source = "https://www.nsandi.com/direct-saver";
+        protected async override void OnAppearing()
+        {
+            BindingContext = product;
+        }
 
-            Content = browser;
+        async void OnRedirectButtonClicked(object sender, EventArgs e)
+        {
+            Device.OpenUri(uri);
         }
     }
 }

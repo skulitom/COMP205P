@@ -12,13 +12,26 @@ namespace App1.Pages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class SPSXaml : ContentPage
     {
-        public SPSXaml()
+
+        Uri uri;
+        Products product;
+        public SPSXaml(Products product)
         {
-            var browser = new WebView();
-
-            browser.Source = "http://xamarin.com";
-
-            Content = browser;
+            InitializeComponent();
+            this.product = product;
+            uri = new Uri("http://xamarin.com");
+            BindingContext = product;
         }
+
+        protected async override void OnAppearing()
+        {
+            BindingContext = product;
+        }
+
+        async void OnRedirectButtonClicked(object sender, EventArgs e)
+        {
+            Device.OpenUri(uri);
+        }
+
     }
 }

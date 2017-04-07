@@ -45,31 +45,31 @@ namespace App1.Pages
             {
                 case "Shared Premium Bonds":
                     temp = "Shared Premium Bonds";
-                    page = new SPSXaml();
+                    page = new SPSXaml(products);
                     break;
                 case "Premium Bonds":
                     temp = "Premium Bonds";
-                    page = new PSXaml();
+                    page = new PSXaml(products);
                     break;
                 case "Direct Saver":
                     temp = "Direct Saver";
-                    page = new DSXaml();
+                    page = new DSXaml(products);
                     break;
                 case "Direct ISA":
                     temp = "Direct ISA";
-                    page = new DISAXaml();
+                    page = new DISAXaml(products);
                     break;
                 case "Income Bonds":
                     temp = "Income Bonds";
-                    page = new IBXaml();
+                    page = new IBXaml(products);
                     break;
                 case "Childrens Bonds":
                     temp = "Childrens Bonds";
-                    page = new CBXaml();
+                    page = new CBXaml(products);
                     break;
                 case "Investment Account":
                     temp = "Investment Account";
-                    page = new IAXaml();
+                    page = new IAXaml(products);
                     break;
                 default:
                     page = new ProductsXaml(master, user);
@@ -78,7 +78,7 @@ namespace App1.Pages
             
             page.BindingContext = products;
             page.Title = temp;
-            this.master.Detail = this.master.Detail = new NavigationPage(page);
+            this.master.Detail = new NavigationPage(page);
             this.master.Title = page.Title;
             
         }

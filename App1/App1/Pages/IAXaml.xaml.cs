@@ -12,13 +12,24 @@ namespace App1.Pages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class IAXaml : ContentPage
     {
-        public IAXaml()
+        Uri uri;
+        Products product;
+        public IAXaml(Products product)
         {
-            var browser = new WebView();
+            InitializeComponent();
+            this.product = product;
+            uri = new Uri("https://www.nsandi.com/investment-account");
+            BindingContext = product;
+        }
 
-            browser.Source = "https://www.nsandi.com/investment-account";
+        protected async override void OnAppearing()
+        {
+            BindingContext = product;
+        }
 
-            Content = browser;
+        async void OnRedirectButtonClicked(object sender, EventArgs e)
+        {
+            Device.OpenUri(uri);
         }
     }
 }

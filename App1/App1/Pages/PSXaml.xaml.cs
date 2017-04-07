@@ -12,13 +12,25 @@ namespace App1.Pages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class PSXaml : ContentPage
     {
-        public PSXaml()
+
+        Uri uri;
+        Products product;
+        public PSXaml(Products product)
         {
-            var browser = new WebView();
+            InitializeComponent();
+            this.product = product;
+            uri = new Uri("https://www.nsandi.com/premium-bonds");
+            BindingContext = product;
+        }
 
-            browser.Source = "https://www.nsandi.com/premium-bonds";
+        protected async override void OnAppearing()
+        {
+            BindingContext = product;
+        }
 
-            Content = browser;
+        async void OnRedirectButtonClicked(object sender, EventArgs e)
+        {
+            Device.OpenUri(uri);
         }
     }
 }
