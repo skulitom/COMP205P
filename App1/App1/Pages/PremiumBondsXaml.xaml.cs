@@ -48,11 +48,8 @@ namespace App1.Pages
                 case "Sell Bonds":
                     page = new SellBonds(user, acc, false);
                     break;
-                case "Account Details":
-                    page = new AccountDetails(user, acc);
-                    break;
                 case "Have I Won?":
-                    page = new AccountDetails(user, acc);
+                    page = new HaveIWonXaml();
                     break;
                 default:
                     page = new PremiumBondsXaml(master, user, acc);

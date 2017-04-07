@@ -50,9 +50,6 @@ namespace App1.Pages
                 case "Transfer":
                     page = new Transfer(user, acc);
                     break;
-                case "Account Details":
-                    page = new AccountDetails(user, acc);
-                    break;
                 default:
                     page = new GeneralBondsXaml(master,user, acc);
                     break;

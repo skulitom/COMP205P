@@ -43,7 +43,6 @@ D:\DEV\COMP205P\App1\App1\obj\Debug\App1.Pages.GeneralBondsXaml.xaml.g.cs
 D:\DEV\COMP205P\App1\App1\obj\Debug\App1.Pages.Transactions.xaml.g.cs
 D:\DEV\COMP205P\App1\App1\obj\Debug\App1.Pages.Deposit.xaml.g.cs
 D:\DEV\COMP205P\App1\App1\obj\Debug\App1.Pages.Withdraw.xaml.g.cs
-D:\DEV\COMP205P\App1\App1\obj\Debug\App1.Pages.AccountDetails.xaml.g.cs
 D:\DEV\COMP205P\App1\App1\obj\Debug\App1.Pages.Transfer.xaml.g.cs
 D:\DEV\COMP205P\App1\App1\obj\Debug\App1.Pages.BuyBonds.xaml.g.cs
 D:\DEV\COMP205P\App1\App1\obj\Debug\App1.Pages.SellBonds.xaml.g.cs
@@ -73,5 +72,6 @@ D:\DEV\COMP205P\App1\App1\bin\Debug\Xamarin.Forms.Xaml.xml
 D:\DEV\COMP205P\App1\App1\obj\Debug\App1.dll
 D:\DEV\COMP205P\App1\App1\obj\Debug\App1.pdb
 D:\DEV\COMP205P\App1\App1\obj\Debug\App1.csprojResolveAssemblyReference.cache
+D:\DEV\COMP205P\App1\App1\obj\Debug\App1.Pages.HaveIWonXaml.xaml.g.cs
 D:\DEV\COMP205P\App1\App1\obj\Debug\App1.dll.mdb
 D:\DEV\COMP205P\App1\App1\bin\Debug\App1.dll.mdb

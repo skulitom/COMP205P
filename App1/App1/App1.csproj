@@ -39,9 +39,6 @@
     <Compile Include="Models\HomeModel.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Pages\AccountActions.cs" />
-    <Compile Include="Pages\AccountDetails.xaml.cs">
-      <DependentUpon>AccountDetails.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Pages\Accounts.cs" />
     <Compile Include="Pages\AccountsXaml.xaml.cs">
       <DependentUpon>AccountsXaml.xaml</DependentUpon>
@@ -73,6 +70,9 @@
     </Compile>
     <Compile Include="Pages\Deposit.xaml.cs">
       <DependentUpon>Deposit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\HaveIWonXaml.xaml.cs">
+      <DependentUpon>HaveIWonXaml.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\HomeXaml.xaml.cs">
       <DependentUpon>HomeXaml.xaml</DependentUpon>
@@ -322,12 +322,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Pages\AccountDetails.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Include="Pages\Transfer.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
@@ -365,6 +359,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Pages\individualProducts.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\HaveIWonXaml.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

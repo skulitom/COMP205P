@@ -18,6 +18,8 @@
             </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
-    <Label Text="Total Winnings" Style="{StaticResource LargeLabel}" />
-    <Label Text="{Binding winnings}" Style="{StaticResource LargeLabel}" />
+    <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+        <Label Text="Total Winnings" Style="{StaticResource LargeLabel}" />
+        <Label Text="{Binding winnings}" Style="{StaticResource LargeLabel}" />
+    </StackLayout>
 </ContentPage>
