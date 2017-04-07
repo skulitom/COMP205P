@@ -28,7 +28,6 @@ namespace App1.Pages
                 new Titles ("Add/Delete a member"),
                 new Titles ("Have I Won?"),
                 new Titles ("What is my payout?"),
-                new Titles ("Account Details"),
                 new Titles ("Leave the group"),
             };
             listView.ItemsSource = settings;
@@ -49,11 +48,11 @@ namespace App1.Pages
                 case "Add/Delete a member":
                     page = new UserManagement(user, acc);
                     break;
-                case "Account Details":
-                    page = new AccountDetails();
-                    break;
                 case "Have I Won?":
-                    page = new AccountDetails();
+                    page = new HaveIwon();
+                    break;
+                case "Leave the group":
+                    page = new PremiumBondsXaml(master, user, acc);
                     break;
                 default:
                     page = new PremiumBondsXaml(master, user, acc);

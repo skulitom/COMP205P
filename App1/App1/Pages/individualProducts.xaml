@@ -42,6 +42,8 @@
                         Value="Aqua"></Setter>
                 <Setter Property="TextColor"
                         Value="Black"></Setter>
+                <Setter Property="Margin"
+                        Value="15"></Setter>
             </Style>
         </ResourceDictionary>
     </ContentPage.Resources>

@@ -26,7 +26,6 @@ namespace App1.Pages
                 new Titles ("Deposit"),
                 new Titles ("Withdraw"),
                 new Titles ("Transfer"),
-                new Titles ("Account Details"),
             };
             this.acc = acc;
             listView.ItemsSource = options;
@@ -49,9 +48,6 @@ namespace App1.Pages
                     break;
                 case "Transfer":
                     page = new Transfer(user, acc);
-                    break;
-                case "Account Details":
-                    page = new AccountDetails();
                     break;
                 default:
                     page = new GeneralBondsXaml(master,user, acc);

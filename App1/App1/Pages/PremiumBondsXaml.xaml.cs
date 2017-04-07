@@ -28,7 +28,6 @@ namespace App1.Pages
                 new Titles ("Buy Bonds"),
                 new Titles ("Sell Bonds"),
                 new Titles ("Have I Won?"),
-                new Titles ("Account Details"),
             };
             listView.ItemsSource = options;
         }
@@ -48,11 +47,8 @@ namespace App1.Pages
                 case "Sell Bonds":
                     page = new SellBonds(user, acc, false);
                     break;
-                case "Account Details":
-                    page = new AccountDetails();
-                    break;
                 case "Have I Won?":
-                    page = new AccountDetails();
+                    page = new HaveIwon();
                     break;
                 default:
                     page = new PremiumBondsXaml(master, user, acc);
