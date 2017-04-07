@@ -28,7 +28,6 @@ namespace App1.Pages
                 new Titles ("Add/Delete a member"),
                 new Titles ("Have I Won?"),
                 new Titles ("What is my payout?"),
-                new Titles ("Account Details"),
                 new Titles ("Leave the group"),
             };
             listView.ItemsSource = settings;
