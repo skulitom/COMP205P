@@ -462,6 +462,7 @@ namespace App1.Pages
             HttpClient client = new HttpClient();
             List<TransactionItem> tran = new List<TransactionItem>();
             string url = Constants.getTransactionHistoryURL + accNo + "/transactions/";
+            Debug.WriteLine("URL is: " + url);
             var uri = new Uri(string.Format(url));
             client.DefaultRequestHeaders.Add("Authorization", "TOKEN " + user.key);
             try
@@ -473,6 +474,7 @@ namespace App1.Pages
                     var content = await response.Content.ReadAsStringAsync();
                     tran = JsonConvert.DeserializeObject<List<TransactionItem>>(content);
                     Debug.WriteLine("Succesful response for transactions");
+                    
                 }
                 else
                 {
@@ -482,6 +484,9 @@ namespace App1.Pages
             catch (Exception ex)
             {
                 Debug.WriteLine(@"				ERROR {0}", ex.Message);
+            }
+            foreach(TransactionItem item in tran) {
+                Debug.WriteLine("Amount is: "+ item.amount);
             }
             return tran;
         }
