@@ -68,9 +68,11 @@
     <Compile Include="Pages\ContactusXaml.xaml.cs">
       <DependentUpon>ContactusXaml.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\CreateSyndicate.cs" />
     <Compile Include="Pages\Deposit.xaml.cs">
       <DependentUpon>Deposit.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Email.cs" />
     <Compile Include="Pages\HaveIwon.xaml.cs">
       <DependentUpon>HaveIwon.xaml</DependentUpon>
     </Compile>
@@ -116,6 +118,10 @@
     </Compile>
     <Compile Include="Pages\SPBActions.cs" />
     <Compile Include="Pages\Syndicate.cs" />
+    <Compile Include="Pages\SyndicateCreation.xaml.cs">
+      <DependentUpon>SyndicateCreation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SyndicateResponse.cs" />
     <Compile Include="Pages\Titles.cs" />
     <Compile Include="Pages\TotalWinnings.xaml.cs">
       <DependentUpon>TotalWinnings.xaml</DependentUpon>
@@ -365,6 +371,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Pages\HaveIwon.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\SyndicateCreation.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

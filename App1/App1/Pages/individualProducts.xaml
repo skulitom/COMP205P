@@ -25,7 +25,7 @@
                 <Setter Property="FontSize"
                     Value="25"></Setter>
                 <Setter Property="Margin"
-                    Value="0,0,0,10"></Setter>
+                    Value="10"></Setter>
                 <Setter Property="HorizontalTextAlignment"
                     Value="Center"></Setter>
             </Style>
@@ -34,7 +34,7 @@
                 <Setter Property="FontSize"
                     Value="20"></Setter>
                 <Setter Property="Margin"
-                    Value="0,0,0,10"></Setter>
+                    Value="10"></Setter>
             </Style>
             <Style x:Key="AquaButtonStyle"
                    TargetType="Button">
@@ -48,25 +48,28 @@
         </ResourceDictionary>
     </ContentPage.Resources>
     <ScrollView>
-        <StackLayout Orientation="Vertical">
-            <Label Text="{Binding name}" Style="{StaticResource MainTitleLabel}" />
+        <StackLayout Orientation="Vertical" Margin="2">
+            <StackLayout BackgroundColor="Aqua">
+                <Label Text="{Binding name}" Style="{StaticResource MainTitleLabel}" />
+                <BoxView HeightRequest="1" WidthRequest="100" Margin="0" BackgroundColor="Black"/>
+            </StackLayout>
             <Label Text="{Binding description}" Style="{StaticResource PlainText}" />
             <StackLayout Orientation="Horizontal">
-                <Label Text="Interest Rate: " Style="{StaticResource TitleLabel}"/>
+                <Label Text="Interest Rate:" Style="{StaticResource TitleLabel}"/>
                 <Label Text="{Binding interest_rate}" Style="{StaticResource TitleLabel}"/>
             </StackLayout>
             <StackLayout Orientation="Horizontal">
-                <Label Text="Minimum Deposit: " Style="{StaticResource TitleLabel}"/>
+                <Label Text="Minimum Deposit:" Style="{StaticResource TitleLabel}"/>
                 <Label Text="{Binding min_deposit}" Style="{StaticResource TitleLabel}"/>
             </StackLayout>
             <StackLayout Orientation="Horizontal">
-                <Label Text="Payout Period: " Style="{StaticResource TitleLabel}"/>
+                <Label Text="Payout Period:" Style="{StaticResource TitleLabel}"/>
                 <Label Text="{Binding payout_period}" Style="{StaticResource TitleLabel}"/>
             </StackLayout>
-
-            <Label Text="To find out more click below " Style="{StaticResource PlainText}"/>
+            <BoxView HeightRequest="1" WidthRequest="100" Margin="0" BackgroundColor="Black"/>
+            <Label Text="To find out more click below " HorizontalOptions="Center" Style="{StaticResource PlainText}"/>
             <Button Text="Find out more" Clicked="OnRedirectButtonClicked" Style="{StaticResource AquaButtonStyle}"/>
-            <Label Text="To set up an account for this product click below" Style="{StaticResource PlainText}"/>
+            <Label Text="To set up an account for this product click below" HorizontalOptions="Center" Style="{StaticResource PlainText}"/>
             <Button Text="Register" Clicked="OnRegisterButtonClicked" Style="{StaticResource AquaButtonStyle}"/>
             <Label x:Name="registerMessageLabel" />
         </StackLayout>
