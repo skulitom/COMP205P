@@ -26,7 +26,12 @@ namespace App1.Pages
         {
             base.OnAppearing();
             var task = obj.getTransactionsAsync(user, acc.id.ToString());
-            listView.ItemsSource = await task;
+            var allTasks = await task;
+            for (int i = allTasks.Count - 1; i >= 0; --i)
+            {
+                allTasks[i].created = GetUntilOrEmpty(allTasks[i].created);
+            }
+            listView.ItemsSource = allTasks;
         }
 
         void OnItemSelected(object sender, SelectedItemChangedEventArgs e)
@@ -47,6 +52,10 @@ namespace App1.Pages
                     allTasks.RemoveAt(i);
                 }
             }
+            for (int i = allTasks.Count - 1; i >= 0; --i)
+            {
+                allTasks[i].created = GetUntilOrEmpty(allTasks[i].created);
+            }
             listView.ItemsSource = allTasks;
         }
 
@@ -63,6 +72,10 @@ namespace App1.Pages
                 {
                     allTasks.RemoveAt(i);
                 }
+            }
+            for (int i = allTasks.Count - 1; i >= 0; --i)
+            {
+                allTasks[i].created = GetUntilOrEmpty(allTasks[i].created);
             }
             listView.ItemsSource = allTasks;
         }

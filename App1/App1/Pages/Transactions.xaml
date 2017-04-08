@@ -84,7 +84,7 @@
                                             <RowDefinition Height="1*" />
                                         </Grid.RowDefinitions>
                                         <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="4*" />
+                                            <ColumnDefinition Width="3*" />
                                             <ColumnDefinition Width="1*" />
                                         </Grid.ColumnDefinitions>
                                         <Label Text="{Binding amount}" Style="{StaticResource PrimaryCellLabel}"/>
