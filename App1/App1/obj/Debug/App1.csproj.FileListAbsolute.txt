@@ -75,3 +75,7 @@ D:\DEV\COMP205P\App1\App1\obj\Debug\App1.Pages.individualProducts.xaml.g.cs
 D:\DEV\COMP205P\App1\App1\obj\Debug\App1.Pages.HaveIwon.xaml.g.cs
 D:\DEV\COMP205P\App1\App1\obj\Debug\App1.dll.mdb
 D:\DEV\COMP205P\App1\App1\bin\Debug\App1.dll.mdb
+D:\DEV\COMP205P\App1\App1\obj\Debug\App1.dll.mdb
+D:\DEV\COMP205P\App1\App1\bin\Debug\App1.dll.mdb
+D:\DEV\COMP205P\App1\App1\obj\Debug\App1.dll.mdb
+D:\DEV\COMP205P\App1\App1\bin\Debug\App1.dll.mdb
