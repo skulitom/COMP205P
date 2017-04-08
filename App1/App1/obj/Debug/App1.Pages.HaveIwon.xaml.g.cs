@@ -14,11 +14,11 @@ namespace App1.Pages {
     using Xamarin.Forms.Xaml;
     
     
-    public partial class HaveIWonXaml : global::Xamarin.Forms.ContentPage {
+    public partial class HaveIwon : global::Xamarin.Forms.ContentPage {
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private void InitializeComponent() {
-            this.LoadFromXaml(typeof(HaveIWonXaml));
+            this.LoadFromXaml(typeof(HaveIwon));
         }
     }
 }

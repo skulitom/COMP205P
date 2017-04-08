@@ -71,8 +71,8 @@
     <Compile Include="Pages\Deposit.xaml.cs">
       <DependentUpon>Deposit.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\HaveIWonXaml.xaml.cs">
-      <DependentUpon>HaveIWonXaml.xaml</DependentUpon>
+    <Compile Include="Pages\HaveIwon.xaml.cs">
+      <DependentUpon>HaveIwon.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\HomeXaml.xaml.cs">
       <DependentUpon>HomeXaml.xaml</DependentUpon>
@@ -364,7 +364,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Pages\HaveIWonXaml.xaml">
+    <EmbeddedResource Include="Pages\HaveIwon.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

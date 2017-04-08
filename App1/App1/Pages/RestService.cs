@@ -456,5 +456,34 @@ namespace App1.Pages
             }
             return false;
         }
+
+        public async Task<List<TransactionItem>> getTransactionsAsync(UserResponse user, string accNo)
+        {
+            HttpClient client = new HttpClient();
+            List<TransactionItem> tran = new List<TransactionItem>();
+            string url = Constants.getTransactionHistoryURL + accNo + "/transactions/";
+            var uri = new Uri(string.Format(url));
+            client.DefaultRequestHeaders.Add("Authorization", "TOKEN " + user.key);
+            try
+            {
+                Debug.WriteLine("               TRYING TO GET TRANSACTION HISTORY");
+                var response = await client.GetAsync(uri);
+                if (response.IsSuccessStatusCode)
+                {
+                    var content = await response.Content.ReadAsStringAsync();
+                    tran = JsonConvert.DeserializeObject<List<TransactionItem>>(content);
+                    Debug.WriteLine("Succesful response for transactions");
+                }
+                else
+                {
+                    Debug.WriteLine("Unsuccesful response for transactions with response code " + response.StatusCode);
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(@"				ERROR {0}", ex.Message);
+            }
+            return tran;
+        }
     }
 }

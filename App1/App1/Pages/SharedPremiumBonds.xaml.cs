@@ -49,7 +49,10 @@ namespace App1.Pages
                     page = new UserManagement(user, acc);
                     break;
                 case "Have I Won?":
-                    page = new HaveIWonXaml();
+                    page = new HaveIwon();
+                    break;
+                case "Leave the group":
+                    page = new PremiumBondsXaml(master, user, acc);
                     break;
                 default:
                     page = new PremiumBondsXaml(master, user, acc);

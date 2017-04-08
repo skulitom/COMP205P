@@ -17,8 +17,20 @@ namespace App1.Pages {
     public partial class Transactions : global::Xamarin.Forms.ContentPage {
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.DatePicker startDate;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.DatePicker endDate;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.ListView listView;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private void InitializeComponent() {
             this.LoadFromXaml(typeof(Transactions));
+            startDate = this.FindByName<global::Xamarin.Forms.DatePicker>("startDate");
+            endDate = this.FindByName<global::Xamarin.Forms.DatePicker>("endDate");
+            listView = this.FindByName<global::Xamarin.Forms.ListView>("listView");
         }
     }
 }

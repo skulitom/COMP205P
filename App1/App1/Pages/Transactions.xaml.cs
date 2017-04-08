@@ -14,45 +14,24 @@ namespace App1.Pages
     {
         UserResponse user;
         Accounts acc;
+        RestService obj = new RestService();
         public Transactions(UserResponse user, Accounts acc)
         {
             InitializeComponent();
             this.user = user;
             this.acc = acc;
-            var settings = new List<Titles> {
-                new Titles ("Buy Bonds"),
-                new Titles ("Sell Bonds"),
-                new Titles ("Add/Delete a member"),
-                new Titles ("Have I Won?"),
-                new Titles ("What is my payout?"),
-                new Titles ("Account Details"),
-                new Titles ("Leave the group"),
-            };
+        }
+
+        protected async override void OnAppearing()
+        {
+            base.OnAppearing();
+            var task = obj.getTransactionsAsync(user, acc.id.ToString());
+            listView.ItemsSource = await task;
         }
 
         void OnItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            ContentPage page = null;
-            var options = e.SelectedItem as Titles;
-            switch (options.Name)
-            {
-                case "Buy Bonds":
-                    page = new BuyBonds(user, acc, true);
-                    break;
-                case "Sell Bonds":
-                    page = new SellBonds(user, acc, true);
-                    break;
-                case "Add/Delete a member":
-                    page = new UserManagement(user, acc);
-                    break;
-                case "Have I Won?":
-                    page = new HaveIWonXaml();
-                    break;
-                default:
-                    page = new HaveIWonXaml();
-                    break;
-            }
-            page.BindingContext = acc;
+            
         }
     }
 }

@@ -23,18 +23,15 @@ namespace App1.Pages
             this.user = user;
             this.Detail = new NavigationPage(new Pages.HomeXaml(this, user));
             this.Title = this.Detail.Title;
-            
-
         }
 
         protected async override void OnAppearing()
-        {
-            this.userDetails = await obj.getUserDetailsAsync(user);
-            BindingContext = userDetails;
-        }
+         {
+             this.userDetails = await obj.getUserDetailsAsync(user);
+             BindingContext = userDetails;
+         }
 
-
-        public void SettingsButton_Clicked(object sender, EventArgs e)
+    public void SettingsButton_Clicked(object sender, EventArgs e)
         {
 
             this.Detail = new NavigationPage(new Pages.SettingsXaml(this, user));

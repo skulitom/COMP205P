@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace App1.Pages
 {
-    class TransactionItem
+    public class TransactionItem
     {
-        public string id { get; set; }
+        public int id { get; set; }
         public string created { get; set; }
         public string kind { get; set; }
         public string amount { get; set; }
-        public string account { get; set; }
+        public int account { get; set; }
     }
 }

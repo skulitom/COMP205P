@@ -49,15 +49,15 @@
         </ResourceDictionary>
     </ContentPage.Resources>
     <Grid BackgroundColor="White" RowSpacing="0">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="200" />
-                <RowDefinition Height="*" />
-            </Grid.RowDefinitions>
-            <Image Source="Winter.jpg" Aspect="AspectFill" />
-            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-                <Label Style="{StaticResource TitleLabelStyle}" Text="Welcome Back"/>
-                <Label Style="{StaticResource TitleLabelStyle}" Text="{Binding username}"/>
-            </StackLayout>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="200" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Image Source="Winter.jpg" Aspect="AspectFill" />
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+            <Label Style="{StaticResource TitleLabelStyle}" Text="Welcome Back"/>
+            <Label Style="{StaticResource TitleLabelStyle}" Text="{Binding username}"/>
+        </StackLayout>
         <ScrollView Grid.Row="1">
             <ListView x:Name="listView" SeparatorVisibility="Default" SeparatorColor="Black" HasUnevenRows="true" ItemSelected="OnItemSelected">
                 <ListView.ItemTemplate>

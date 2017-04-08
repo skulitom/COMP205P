@@ -46,11 +46,11 @@ namespace App1.Pages
             switch (acc.info.name)
             {
                 case "Premium Bonds":
-                    page = new PremiumBondsXaml(this.master,user, acc);
+                    page = new PremiumBondsXaml(this.master, user, acc);
                     newTitle = "Premium Bonds";
                     break;
                 case "Direct Saver":
-                    page = new GeneralBondsXaml(this.master,user, acc);
+                    page = new GeneralBondsXaml(this.master, user, acc);
                     newTitle = "Direct Saver";
                     break;
                 case "Direct ISA":

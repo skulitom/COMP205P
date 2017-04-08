@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace App1.Pages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class HaveIWonXaml : ContentPage
+    public partial class HaveIwon : ContentPage
     {
-        public HaveIWonXaml()
+        public HaveIwon()
         {
             InitializeComponent();
         }

@@ -26,7 +26,6 @@ namespace App1.Pages
                 new Titles ("Deposit"),
                 new Titles ("Withdraw"),
                 new Titles ("Transfer"),
-                new Titles ("Account Details"),
             };
             this.acc = acc;
             listView.ItemsSource = options;

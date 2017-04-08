@@ -44,7 +44,7 @@ namespace App1.Pages
         protected async override void OnAppearing()
         {
             base.OnAppearing();
-            var members = obj.getSyndicateDetailsAsync(user, acc.id.ToString());
+            var members = obj.getSyndicateDetailsAsync(user,acc.id.ToString());
             User me = await obj.getUserDetailsAsync(user);
             binder = await members;
             foreach (Members temp in binder.members)

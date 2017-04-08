@@ -12,13 +12,12 @@ namespace App1.Pages
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class ProductsXaml : ContentPage
 	{
-        string temp;
         UserResponse user;
         MasterDetailPage master;
         RestService obj = new RestService();
         public ProductsXaml (MasterDetailPage master, UserResponse user)
 		{
-			InitializeComponent ();
+			InitializeComponent();
             this.user = user;
             this.master = master;
 
@@ -30,7 +29,7 @@ namespace App1.Pages
             var products = obj.RefreshProductsAsync(user);
             listView.ItemsSource = await products;
         }
-        void OnItemSelected(object sender, SelectedItemChangedEventArgs e)
+    void OnItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             var products = e.SelectedItem as Products;
 
@@ -38,13 +37,13 @@ namespace App1.Pages
             {
                 return;
             }
-
-            ContentPage page = new individualProducts(products, user);
+     
+            ContentPage page = new individualProducts(products,user);
             page.BindingContext = products;
             page.Title = products.name;
             this.master.Detail = new NavigationPage(page);
             this.master.Title = page.Title;
-
+            
         }
     }
 }
