@@ -20,6 +20,8 @@ namespace App1.Pages
             InitializeComponent();
             obj = new RestService();
             var settings = new List<Titles> {
+                new Titles ("Create new Syndicate"),
+                new Titles ("Leave Syndicate"),
                 new Titles ("Check total Winnings"),
                 new Titles ("Update my Balance"),
                 new Titles ("Change My Username"),
@@ -55,6 +57,12 @@ namespace App1.Pages
 
             switch (settings.Name)
             {
+                case "Create new Syndicate":
+                    page = new SyndicateCreation(user);
+                    break;
+                case "Leave Syndicate":
+                    page = new LeaveSyndicate(user);
+                    break;
                 case "Check total Winnings":
                     page = new TotalWinnings();
                     break;

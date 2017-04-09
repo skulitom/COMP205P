@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace App1.Pages
 {
-    class Syndicate
+    public class Syndicate
     {
         public string name  { get; set; }
 

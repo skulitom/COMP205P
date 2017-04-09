@@ -457,12 +457,47 @@ namespace App1.Pages
             return false;
         }
 
+        public async Task<string[]> createSyndicateAsync(UserResponse token, CreateSyndicate cs)
+        {
+            string[] y = new string[1];
+            HttpClient client = new HttpClient();
+            var uri = new Uri(string.Format(Constants.getSyndicatesURL));
+            Debug.WriteLine("               URI " + uri);
+            client.DefaultRequestHeaders.Add("Authorization", "TOKEN " + token.key);
+            try
+            {
+                Debug.WriteLine("               TRYING TO CREATE SYNDICATE " + cs.name);
+                var json = JsonConvert.SerializeObject(cs);
+                var content = new StringContent(json, Encoding.UTF8, "application/json");
+                Debug.WriteLine("                   JSON " + json);
+                HttpResponseMessage response = null;
+                response = await client.PostAsync(uri, content);
+                if (response.IsSuccessStatusCode)
+                {
+                    var contents = await response.Content.ReadAsStringAsync();
+                    SyndicateResponse temp = new SyndicateResponse();
+                    temp = JsonConvert.DeserializeObject<SyndicateResponse>(contents);
+                    Debug.WriteLine(@"				Syndicate creation successful: " + temp.emails_not_found);
+                    return temp.emails_not_found;
+                }
+                else
+                {
+                    Debug.WriteLine(@"				Syndicate creation failed with response code as " + response.StatusCode);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(@"				ERROR {0}", ex.Message);
+            }
+            return y;
+        }
+
         public async Task<List<TransactionItem>> getTransactionsAsync(UserResponse user, string accNo)
         {
             HttpClient client = new HttpClient();
             List<TransactionItem> tran = new List<TransactionItem>();
             string url = Constants.getTransactionHistoryURL + accNo + "/transactions/";
-            Debug.WriteLine("URL is: " + url);
             var uri = new Uri(string.Format(url));
             client.DefaultRequestHeaders.Add("Authorization", "TOKEN " + user.key);
             try
@@ -474,7 +509,6 @@ namespace App1.Pages
                     var content = await response.Content.ReadAsStringAsync();
                     tran = JsonConvert.DeserializeObject<List<TransactionItem>>(content);
                     Debug.WriteLine("Succesful response for transactions");
-                    
                 }
                 else
                 {
@@ -484,9 +518,6 @@ namespace App1.Pages
             catch (Exception ex)
             {
                 Debug.WriteLine(@"				ERROR {0}", ex.Message);
-            }
-            foreach(TransactionItem item in tran) {
-                Debug.WriteLine("Amount is: "+ item.amount);
             }
             return tran;
         }

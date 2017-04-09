@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App1.Pages.LeaveSyndicate"
+             Title="Leave Syndicate">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="TitleLabelStyle"
+               TargetType="Label">
+                <Setter Property="HorizontalTextAlignment"
+                    Value="Center"></Setter>
+                <Setter Property="VerticalTextAlignment"
+                    Value="Start"></Setter>
+                <Setter Property="FontSize"
+                    Value="22"></Setter>
+                <Setter Property="TextColor"
+                    Value="Black"></Setter>
+            </Style>
+
+            <Style x:Key="PrimaryCellLabel"
+               TargetType="Label">
+                <Setter Property="FontAttributes"
+                    Value="Bold"></Setter>
+                <Setter Property="TextColor"
+                    Value="Black"></Setter>
+                <Setter Property="FontSize"
+                    Value="Medium"></Setter>
+                <Setter Property="Margin"
+                    Value="5"></Setter>
+                <Setter Property="HorizontalOptions"
+                    Value="Start"></Setter>
+                <Setter Property="VerticalOptions"
+                    Value="Start"></Setter>
+            </Style>
+            <Style x:Key="SecondaryCellLabel"
+               TargetType="Label">
+                <Setter Property="FontAttributes"
+                    Value="Italic"></Setter>
+                <Setter Property="FontSize"
+                    Value="Small"></Setter>
+                <Setter Property="Margin"
+                    Value="5"></Setter>
+                <Setter Property="HorizontalOptions"
+                    Value="Start"></Setter>
+                <Setter Property="VerticalOptions"
+                    Value="Center"></Setter>
+            </Style>
+            <Style x:Key="AquaButtonStyle"
+                   TargetType="Button">
+                <Setter Property="BackgroundColor"
+                        Value="Aqua"></Setter>
+                <Setter Property="TextColor"
+                        Value="Black"></Setter>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <StackLayout HorizontalOptions="Center">
+        <ScrollView>
+            <StackLayout>
+                <ListView x:Name="listView" SeparatorVisibility="Default" SeparatorColor="Black" HasUnevenRows="true" ItemSelected="OnItemSelected">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout HorizontalOptions="FillAndExpand" Padding="10">
+                                    <Grid HorizontalOptions="FillAndExpand">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="1*" />
+                                            <RowDefinition Height="1*" />
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="3*" />
+                                            <ColumnDefinition Width="1*" />
+                                        </Grid.ColumnDefinitions>
+                                        <Label Text="{Binding name}" Style="{StaticResource PrimaryCellLabel}"/>
+                                    </Grid>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </ScrollView>
+
+    </StackLayout>
+</ContentPage>
