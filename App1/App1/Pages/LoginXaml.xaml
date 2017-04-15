@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xfg="clr-namespace:XFGloss;assembly=XFGloss"
              x:Class="App1.Pages.LoginXaml"
              Title="Login">
     <ContentPage.Resources>
@@ -12,13 +13,115 @@
                 <Setter Property="TextColor"
                         Value="Black"></Setter>
             </Style>
+            <Color x:Key="orangeLight">#f76d45</Color>
+            <Color x:Key="orangePrimary">#FF5722</Color>
+            <Color x:Key="orangeDark">#E64A19</Color>
+
+            <Color x:Key="pinkLight">#EA3874</Color>
+            <Color x:Key="pinkPrimary">#E91E63</Color>
+            <Color x:Key="pinkDark">#9C0A3C</Color>
+
+            <Color x:Key="asphaltLight">#6D8491</Color>
+            <Color x:Key="asphaltPrimary">#5c7d90</Color>
+            <Color x:Key="asphaltDark">#233743</Color>
+
+            <Color x:Key="blueLight">#71E5FF</Color>
+            <Color x:Key="bluePrimary">#4FCAE6</Color>
+            <Color x:Key="blueDark">#258499</Color>
+
+            <Color x:Key="indigoLight">#5362B6</Color>
+            <Color x:Key="indigoPrimary">#3F51B5</Color>
+            <Color x:Key="indigoDark">#172468</Color>
+
+            <Color x:Key="tealLight">#7AD5C9</Color>
+            <Color x:Key="tealPrimary">#6AB9AF</Color>
+            <Color x:Key="tealDark">#457972</Color>
+
+            <Color x:Key="purpleLight">#A38FCE</Color>
+            <Color x:Key="purplePrimary">#9378CD</Color>
+            <Color x:Key="purpleDark">#533D80</Color>
+
+            <Color x:Key="greenLight">#9FE168</Color>
+            <Color x:Key="greenPrimary">#91E04F</Color>
+            <Color x:Key="greenDark">#579325</Color>
+
+            <Color x:Key="redLight">#FF866D</Color>
+            <Color x:Key="redPrimary">#F56D50</Color>
+            <Color x:Key="redDark">#A83D26</Color>
+
+            <Color x:Key="yellowLight">#FFE45C</Color>
+            <Color x:Key="yellowPrimary">#F5D740</Color>
+            <Color x:Key="yellowDark">#D1B941</Color>
+
+            <Color x:Key="grayUltraLight">#FFFFFF</Color>
+            <Color x:Key="grayLight">#F2F2F2</Color>
+            <Color x:Key="grayPrimary">#B9B9B9</Color>
+            <Color x:Key="grayDark">#959595</Color>
+            <Color x:Key="grayMedium">#B9B9B9</Color>
+
+            <Style x:Key="defaultActivity" TargetType="ActivityIndicator">
+                <Setter Property="Scale">
+                    <Setter.Value>
+                        <OnPlatform x:TypeArguments="x:Double" iOS="2" Android="1" />
+                    </Setter.Value>
+                </Setter>
+            </Style>
+            <Style TargetType="ActivityIndicator" BasedOn="{StaticResource defaultActivity}" />
+
+            <Style x:Key="labelStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource asphaltPrimary}" />
+                <Setter Property="FontSize">
+                    <Setter.Value>
+                        <OnPlatform x:TypeArguments="x:Double" iOS="14" Android="12" />
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="FontFamily" Value="SegoeUI" />
+            </Style>
+            <Style x:Key="header" TargetType="Label" BasedOn="{StaticResource labelStyle}">
+                <Setter Property="FontFamily" Value="SegoeUI" />
+                <Setter Property="TextColor" Value="{StaticResource grayLight}" />
+            </Style>
+            <Style TargetType="Label" BasedOn="{StaticResource labelStyle}" />
+            <Style x:Key="whiteLabelStyle" TargetType="Label" BasedOn="{StaticResource labelStyle}">
+                <Setter Property="TextColor" Value="#FFFFFF" />
+            </Style>
+            <Style x:Key="sub" TargetType="Label" BasedOn="{StaticResource labelStyle}">
+                <Setter Property="TextColor" Value="{StaticResource grayDark}" />
+                <Setter Property="FontSize" Value="Small" />
+            </Style>
+
+            <Style x:Key="buttonStyle" TargetType="Button">
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="BorderRadius" Value="4" />
+                <Setter Property="HeightRequest" Value="50" />
+                <Setter Property="FontSize" Value="Medium" />
+                <Setter Property="BackgroundColor" Value="{StaticResource grayDark}" />
+            </Style>
+            <Style TargetType="Button" BasedOn="{StaticResource buttonStyle}" />
+            <Style x:Key="deleteButtonStyle" TargetType="Button" BasedOn="{StaticResource buttonStyle}">
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="BackgroundColor" Value="{StaticResource redPrimary}" />
+            </Style>
+
+            <Style x:Key="wizardButton" TargetType="Button" BasedOn="{StaticResource buttonStyle}">
+                <Setter Property="BackgroundColor" Value="#3FFF" />
+                <Setter Property="BorderColor" Value="#AFFF" />
+                <Setter Property="TextColor" Value="#CFFF" />
+                <Setter Property="BorderWidth" Value=".5" />
+            </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Sign Up" Clicked="OnSignUpButtonClicked" />
     </ContentPage.ToolbarItems>
-    <ContentPage.Content>
-        <Grid BackgroundColor="White">
+    <xfg:ContentPageGloss.BackgroundGradient>
+        <xfg:Gradient Rotation="270">
+            <xfg:GradientStep StepColor="#10C140" StepPercentage="0" />
+            <xfg:GradientStep StepColor="#00CC8E" StepPercentage="1" />
+        </xfg:Gradient>
+    </xfg:ContentPageGloss.BackgroundGradient>
+
+        <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="100"/>
                 <RowDefinition Height="300"/>
@@ -26,16 +129,15 @@
             </Grid.RowDefinitions>
             <Image Source="nsilogo.png"  Aspect="AspectFit"/>
             <StackLayout VerticalOptions="Center"
-            BackgroundColor="White"
             Padding="60"
             Grid.Row="1">
-                <Label Text="Username" />
-                <Entry x:Name="usernameEntry" Placeholder="username" />
-                <Label Text="Password" />
-                <Entry x:Name="passwordEntry" Placeholder="password" IsPassword="true" />
-                <Button Text="Login" Clicked="OnLoginButtonClicked" Style="{StaticResource AquaButtonStyle}"/>
+                <Label Text="Username" TextColor="White" />
+            <Entry x:Name="usernameEntry" Placeholder="username" PlaceholderColor="Black" TextColor="Black" />
+            <Label Text="Password" TextColor="White"/>
+            <Entry x:Name="passwordEntry" Placeholder="password" PlaceholderColor="Black" IsPassword="true" TextColor="Black" />
+                <Button Text="Login" Clicked="OnLoginButtonClicked" Style="{StaticResource wizardButton}"/>
                 <Label x:Name="messageLabel" />
             </StackLayout>
         </Grid>
-    </ContentPage.Content>
+
 </ContentPage>

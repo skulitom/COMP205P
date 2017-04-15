@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xfg="clr-namespace:XFGloss;assembly=XFGloss"
              x:Class="App1.Pages.ProductsXaml"
              Title="Products">
     <ContentPage.Resources>
@@ -10,7 +11,7 @@
                 <Setter Property="FontAttributes"
                     Value="Bold"></Setter>
                 <Setter Property="TextColor"
-                    Value="Black"></Setter>
+                    Value="White"></Setter>
                 <Setter Property="FontSize"
                     Value="Medium"></Setter>
                 <Setter Property="Margin"
@@ -24,6 +25,8 @@
                TargetType="Label">
                 <Setter Property="FontAttributes"
                     Value="Italic"></Setter>
+                <Setter Property="TextColor"
+                    Value="White"></Setter>
                 <Setter Property="FontSize"
                     Value="Small"></Setter>
                 <Setter Property="HorizontalOptions"
@@ -33,8 +36,14 @@
             </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
+    <xfg:ContentPageGloss.BackgroundGradient>
+        <xfg:Gradient Rotation="170">
+            <xfg:GradientStep StepColor="#9DCC5F" StepPercentage="0" />
+            <xfg:GradientStep StepColor="#00B0CD" StepPercentage="1" />
+        </xfg:Gradient>
+    </xfg:ContentPageGloss.BackgroundGradient>
     <StackLayout>
-        <ListView x:Name="listView" SeparatorVisibility="Default" SeparatorColor="Black" HasUnevenRows="true" ItemSelected="OnItemSelected">
+        <ListView x:Name="listView" SeparatorVisibility="Default" SeparatorColor="White" HasUnevenRows="true" ItemSelected="OnItemSelected">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
@@ -50,7 +59,7 @@
                                 </Grid.ColumnDefinitions>
                                 <Label Text="{Binding name}" Style="{StaticResource PrimaryCellLabel}"/>
                                 <Label Text="{Binding description}" Grid.Row="1" Grid.Column="0" Style="{StaticResource SecondaryCellLabel}"/>
-                                <Label Text=">" Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" HorizontalOptions="End" FontAttributes="Bold" FontSize="40" VerticalOptions="Center"/>
+                                <Label Text=">" Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" HorizontalOptions="End" TextColor="White" FontAttributes="Bold" FontSize="40" VerticalOptions="Center"/>
                             </Grid>
                         </StackLayout>
                     </ViewCell>

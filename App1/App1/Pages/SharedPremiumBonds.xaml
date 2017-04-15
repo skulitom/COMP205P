@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xfg="clr-namespace:XFGloss;assembly=XFGloss"
              x:Class="App1.Pages.SharedPremiumBonds">
     <ContentPage.Resources>
         <ResourceDictionary>
@@ -34,17 +35,23 @@
             </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
-    <Grid BackgroundColor="White" RowSpacing="0">
+    <xfg:ContentPageGloss.BackgroundGradient>
+        <xfg:Gradient Rotation="170">
+            <xfg:GradientStep StepColor="#9DCC5F" StepPercentage="0" />
+            <xfg:GradientStep StepColor="#00B0CD" StepPercentage="1" />
+        </xfg:Gradient>
+    </xfg:ContentPageGloss.BackgroundGradient>
+    <Grid  RowSpacing="0">
         <Grid.RowDefinitions>
             <RowDefinition Height="100" />
             <RowDefinition Height="70" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <StackLayout Grid.Row="0" BackgroundColor="#333333"  >
+        <StackLayout Grid.Row="0" BackgroundColor="Transparent"  >
             <Label Text="Account Balance" Style="{StaticResource TitleLabelStyle}" Margin="10" />
             <Label Text="{Binding balance}" Style="{StaticResource TitleLabelStyle}" Margin="0"/>
         </StackLayout>
-        <StackLayout Grid.Row="1" BackgroundColor="#444444"  Orientation="Horizontal" >
+        <StackLayout Grid.Row="1" BackgroundColor="Transparent"  Orientation="Horizontal" >
             <Grid ColumnSpacing="0" RowSpacing="0" HorizontalOptions="FillAndExpand">
                 <Grid.ColumnDefinitions >
                     <ColumnDefinition Width="*" />
@@ -52,7 +59,7 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <Label  Text="Interest" Style="{StaticResource TitleLabelStyle}" Grid.Column="0"/>
-                <StackLayout  BackgroundColor="Aqua" HorizontalOptions="CenterAndExpand" Grid.Column="1" >
+                <StackLayout  BackgroundColor="Transparent" HorizontalOptions="CenterAndExpand" Grid.Column="1" >
                     <Label Text="{Binding info.interest_rate}" Style="{StaticResource TitleLabelStyle}" TextColor="Black"/>
                 </StackLayout>
                 <Label Text="Rate" Style="{StaticResource TitleLabelStyle} " Grid.Column="2"/>
@@ -60,7 +67,7 @@
         </StackLayout>
         <ScrollView Grid.Row="2">
             <StackLayout>
-                <ListView x:Name="listView" SeparatorVisibility="Default" SeparatorColor="Black" HasUnevenRows="true" ItemSelected="OnItemSelected">
+                <ListView x:Name="listView" BackgroundColor="White" SeparatorVisibility="Default" SeparatorColor="Black" HasUnevenRows="true" ItemSelected="OnItemSelected">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>

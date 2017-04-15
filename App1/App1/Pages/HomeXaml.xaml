@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xfg="clr-namespace:XFGloss;assembly=XFGloss"
              x:Class="App1.Pages.HomeXaml"
              Padding="0"
              Title="Home Page">
@@ -15,7 +16,7 @@
                 <Setter Property="FontSize"
                     Value="22"></Setter>
                 <Setter Property="TextColor"
-                    Value="Black"></Setter>
+                    Value="White"></Setter>
             </Style>
 
             <Style x:Key="PrimaryCellLabel"
@@ -23,7 +24,7 @@
                 <Setter Property="FontAttributes"
                     Value="Bold"></Setter>
                 <Setter Property="TextColor"
-                    Value="Black"></Setter>
+                    Value="White"></Setter>
                 <Setter Property="FontSize"
                     Value="Medium"></Setter>
                 <Setter Property="Margin"
@@ -45,32 +46,40 @@
                     Value="Start"></Setter>
                 <Setter Property="VerticalOptions"
                     Value="Center"></Setter>
+                <Setter Property="TextColor"
+                    Value="White"></Setter>
             </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
-    <Grid BackgroundColor="White" RowSpacing="0">
+    <xfg:ContentPageGloss.BackgroundGradient>
+        <xfg:Gradient Rotation="150">
+            <xfg:GradientStep StepColor="#10C140" StepPercentage="0" />
+            <xfg:GradientStep StepColor="#00CC8E" StepPercentage="1" />
+        </xfg:Gradient>
+    </xfg:ContentPageGloss.BackgroundGradient>
+    <Grid RowSpacing="0">
         <Grid.RowDefinitions>
             <RowDefinition Height="200" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <Image Source="Winter.jpg" Aspect="AspectFill" />
-        <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-            <Label Style="{StaticResource TitleLabelStyle}" Text="Welcome Back"/>
+        <StackLayout Orientation="Vertical" HorizontalOptions="Center" Margin="150,80,0,0">
+            <Label Style="{StaticResource TitleLabelStyle}" Text="Welcome back,"/>
             <Label Style="{StaticResource TitleLabelStyle}" Text="{Binding username}"/>
         </StackLayout>
         <ScrollView Grid.Row="1">
-            <ListView x:Name="listView" SeparatorVisibility="Default" SeparatorColor="Black" HasUnevenRows="true" ItemSelected="OnItemSelected">
+            <ListView x:Name="listView" SeparatorVisibility="Default" BackgroundColor="Transparent" SeparatorColor="White" HasUnevenRows="true" ItemSelected="OnItemSelected">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <StackLayout HorizontalOptions="FillAndExpand" Padding="10">
+                            <StackLayout HorizontalOptions="FillAndExpand" Padding="10" BackgroundColor="Transparent">
                                 <Grid HorizontalOptions="FillAndExpand" RowSpacing="0">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="*" />
                                         <ColumnDefinition Width="Auto" />
                                     </Grid.ColumnDefinitions>
-                                    <Label x:Name="TextLabel" Grid.Column="0" Text="{Binding info.name}" Style="{StaticResource PrimaryCellLabel}"/>
-                                    <Label x:Name="RightTextLabel" Grid.Column="1" Text="{Binding balance}" Style="{StaticResource SecondaryCellLabel}"/>
+                                    <Label x:Name="TextLabel" Grid.Column="0" Text="{Binding info.name}" Style="{StaticResource PrimaryCellLabel}" BackgroundColor="Transparent"/>
+                                    <Label x:Name="RightTextLabel" Grid.Column="1" Text="{Binding balance}" Style="{StaticResource SecondaryCellLabel}" BackgroundColor="Transparent"/>
                                 </Grid>
                             </StackLayout>
                         </ViewCell>
