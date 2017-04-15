@@ -16,6 +16,8 @@ D:\DEV\COMP205P\App1\App1.Droid\obj\Debug\android\assets\Xamarin.Forms.Core.dll
 D:\DEV\COMP205P\App1\App1.Droid\obj\Debug\android\assets\Xamarin.Forms.Platform.Android.dll
 D:\DEV\COMP205P\App1\App1.Droid\obj\Debug\android\assets\Xamarin.Forms.Platform.dll
 D:\DEV\COMP205P\App1\App1.Droid\obj\Debug\android\assets\Xamarin.Forms.Xaml.dll
+D:\DEV\COMP205P\App1\App1.Droid\obj\Debug\android\assets\XFGloss.dll
+D:\DEV\COMP205P\App1\App1.Droid\obj\Debug\android\assets\XFGloss.Droid.dll
 D:\DEV\COMP205P\App1\App1.Droid\obj\Debug\android\assets\Java.Interop.dll
 D:\DEV\COMP205P\App1\App1.Droid\obj\Debug\android\assets\Mono.Android.dll
 D:\DEV\COMP205P\App1\App1.Droid\obj\Debug\android\assets\mscorlib.dll

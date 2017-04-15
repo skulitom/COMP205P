@@ -1,23 +1,66 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xfg="clr-namespace:XFGloss;assembly=XFGloss"
              x:Class="App1.Pages.ContactusXaml"
              Title="Contact Us">
+    <xfg:ContentPageGloss.BackgroundGradient>
+        <xfg:Gradient Rotation="170">
+            <xfg:GradientStep StepColor="#9DCC5F" StepPercentage="0" />
+            <xfg:GradientStep StepColor="#00B0CD" StepPercentage="1" />
+        </xfg:Gradient>
+    </xfg:ContentPageGloss.BackgroundGradient>
     <ScrollView>
-        <StackLayout Orientation="Vertical">
-            <Label Text="How do I get in touch?" TextColor="Black" HorizontalTextAlignment="Center" FontSize="30" FontAttributes="Bold" Margin="0,0,0,10"/>
-            <Label Text="Can't find what you're looking for? Get in touch and we'll be happy to help." Margin="0,0,0,5" />
-            <Label Text="Tweet us" TextColor="Black" FontSize="20" FontAttributes="Bold" Margin="0,0,0,10"/>
-            <Label Text="Find us on Twitter @nsandihelp." Margin="0,0,0,5" />
-            <Label Text="Tweet us for any general questions or comments about NS&amp;I and we'll aim to respond within the hour." Margin="0,0,0,5" />
-            <Label Text="For your security, don't use this for any specific queries about your own accounts or investments." Margin="0,0,0,5" />
-            <Label Text="Phone us" TextColor="Black" FontSize="20" FontAttributes="Bold" Margin="0,0,0,10"/>
-            <Label Text="Need a form?" FontSize="20" FontAttributes="Bold" Margin="0,0,0,10"/>
-            <Label Text="You can download and print our most popular forms from our website." Margin="0,0,0,5" />
-            <Label Text="Email us" TextColor="Black" FontSize="20" FontAttributes="Bold" Margin="0,0,0,10"/>
-            <Label Text="Use our contact form for any general questions or comments about NS&amp;I. We'll aim to email you a reply within 24 hours." Margin="0,0,0,5" />
-            <Label Text="For your security, don't use this form for any specific queries about your own accounts or investments." Margin="0,0,0,5" />
-            <Label Text="Write to us" TextColor="Black" FontSize="20" FontAttributes="Bold" Margin="0,0,0,10"/>
-        </StackLayout>
+
+        <Grid VerticalOptions="Fill" AutomationId="aboutPage">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <StackLayout Spacing="30" Padding="20,20,20,0" VerticalOptions="Center">
+                <StackLayout Spacing="6" VerticalOptions="Center">
+                    <Label Text="How do I get in touch?" FontSize="32" FontAttributes="Bold" TextColor="White"
+							XAlign="Center" HorizontalOptions="Center" />
+
+                    <Label Text="Can't find what you're looking for? Get in touch and we'll be happy to help." FontSize="Medium" XAlign="Center" HorizontalOptions="Center"
+							 TextColor="White" />
+                </StackLayout>
+
+                <StackLayout>
+                    <Label Text="Tweet us" FontSize="Medium" XAlign="Center" HorizontalOptions="Center"
+							TextColor="White"/>
+                    <Label Text="Find us on Twitter @nsandihelp." HorizontalOptions="Center" FontSize="11" TextColor="White"></Label>
+
+                    <Label Text="Tweet us for any general questions or comments about NS&amp;I and we'll aim to respond within the hour." HorizontalOptions="Center" FontSize="11" TextColor="White"></Label>
+
+                    <Label Text="For your security, don't use this for any specific queries about your own accounts or investments." HorizontalOptions="Center" FontSize="11" TextColor="White"></Label>
+
+                    <Label Text="Phone us" FontSize="Medium" XAlign="Center" HorizontalOptions="Center"
+							TextColor="White"/>
+
+                    <Label Text="08085 007 007" HorizontalOptions="Center" FontSize="11" TextColor="White"></Label>
+
+                    <Label Text="Outside the UK: +44 1253 832007" HorizontalOptions="Center" FontSize="11" TextColor="White"></Label>
+
+                    <Label Text="Minicom or textphone: 0800 056 0585" HorizontalOptions="Center" FontSize="11" TextColor="White"></Label>
+
+                    <Label Text="Need a form?" FontSize="Medium" XAlign="Center" HorizontalOptions="Center"
+							TextColor="White"/>
+
+                    <Label Text="You can download and print our most popular forms from our website." HorizontalOptions="Center" FontSize="11" TextColor="White"></Label>
+
+                    <Label Text="Email us" FontSize="Medium" XAlign="Center" HorizontalOptions="Center"
+							TextColor="White"/>
+                    <Label Text="Use our contact form for any general questions or comments about NS&amp;I. We'll aim to email you a reply within 24 hours." HorizontalOptions="Center" FontSize="11" TextColor="White"></Label>
+                    <Label Text="For your security, don't use this form for any specific queries about your own accounts or investments." HorizontalOptions="Center" FontSize="11" TextColor="White"></Label>
+
+                    <Label Text="Write to us" FontSize="Medium" XAlign="Center" HorizontalOptions="Center"
+							TextColor="White"/>
+                    <Label Text="Post a letter to NS&amp;I , Glasgow, G58 1SB" HorizontalOptions="Center" FontSize="11" TextColor="White"></Label>
+                </StackLayout>
+            </StackLayout>
+
+        </Grid>
     </ScrollView>
 </ContentPage>
