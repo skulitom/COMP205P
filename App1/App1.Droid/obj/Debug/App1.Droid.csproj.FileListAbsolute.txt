@@ -165,7 +165,6 @@ C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\COMP205P\App1\App1.Droid\o
 C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\COMP205P\App1\App1.Droid\obj\Debug\android\assets\Xamarin.Forms.Platform.Android.dll.mdb
 C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\COMP205P\App1\App1.Droid\obj\Debug\android\assets\Xamarin.Forms.Xaml.dll.mdb
 C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\COMP205P\App1\App1.Droid\obj\Debug\App1.Droid.dll.mdb
-D:\DEV\COMP205P\App1\App1.Droid\obj\Debug\App1.Droid.csprojResolveAssemblyReference.cache
 D:\DEV\COMP205P\App1\App1.Droid\bin\Debug\App1.Droid.dll.config
 D:\DEV\COMP205P\App1\App1.Droid\bin\Debug\App1.Droid.dll
 D:\DEV\COMP205P\App1\App1.Droid\bin\Debug\App1.Droid.pdb
@@ -206,6 +205,7 @@ D:\DEV\COMP205P\App1\App1.Droid\bin\Debug\Xamarin.Forms.Xaml.xml
 D:\DEV\COMP205P\App1\App1.Droid\bin\Debug\Xamarin.Forms.Xaml.dll.mdb
 D:\DEV\COMP205P\App1\App1.Droid\bin\Debug\XFGloss.xml
 D:\DEV\COMP205P\App1\App1.Droid\bin\Debug\XFGloss.Droid.xml
+D:\DEV\COMP205P\App1\App1.Droid\obj\Debug\App1.Droid.csprojResolveAssemblyReference.cache
 D:\DEV\COMP205P\App1\App1.Droid\obj\Debug\App1.Droid.dll
 D:\DEV\COMP205P\App1\App1.Droid\obj\Debug\App1.Droid.pdb
 D:\DEV\COMP205P\App1\App1.Droid\obj\Debug\android\bin\App1.Droid.apk
@@ -216,6 +216,10 @@ D:\DEV\COMP205P\App1\App1.Droid\obj\Debug\res\drawable-xxhdpi\icon.png
 D:\DEV\COMP205P\App1\App1.Droid\obj\Debug\res\layout\tabbar.xml
 D:\DEV\COMP205P\App1\App1.Droid\obj\Debug\res\layout\toolbar.xml
 D:\DEV\COMP205P\App1\App1.Droid\obj\Debug\res\values\styles.xml
+D:\DEV\COMP205P\App1\App1.Droid\obj\Debug\res\drawable\winter.jpeg
+D:\DEV\COMP205P\App1\App1.Droid\obj\Debug\res\drawable-hdpi\winter.jpeg
+D:\DEV\COMP205P\App1\App1.Droid\obj\Debug\res\drawable-xhdpi\winter.jpeg
+D:\DEV\COMP205P\App1\App1.Droid\obj\Debug\res\drawable-xxhdpi\winter.jpeg
 D:\DEV\COMP205P\App1\App1.Droid\obj\Debug\res\drawable\nsilogo.png
 D:\DEV\COMP205P\App1\App1.Droid\obj\Debug\res\drawable-hdpi\nsilogo.png
 D:\DEV\COMP205P\App1\App1.Droid\obj\Debug\res\drawable-xhdpi\nsilogo.png
@@ -258,9 +262,5 @@ D:\DEV\COMP205P\App1\App1.Droid\obj\Debug\android\assets\System.Xml.Linq.dll.mdb
 D:\DEV\COMP205P\App1\App1.Droid\obj\Debug\android\assets\Xamarin.Forms.Core.dll.mdb
 D:\DEV\COMP205P\App1\App1.Droid\obj\Debug\android\assets\Xamarin.Forms.Platform.Android.dll.mdb
 D:\DEV\COMP205P\App1\App1.Droid\obj\Debug\android\assets\Xamarin.Forms.Xaml.dll.mdb
-D:\DEV\COMP205P\App1\App1.Droid\obj\Debug\res\drawable\winter.jpeg
-D:\DEV\COMP205P\App1\App1.Droid\obj\Debug\res\drawable-hdpi\winter.jpeg
-D:\DEV\COMP205P\App1\App1.Droid\obj\Debug\res\drawable-xhdpi\winter.jpeg
-D:\DEV\COMP205P\App1\App1.Droid\obj\Debug\res\drawable-xxhdpi\winter.jpeg
 D:\DEV\COMP205P\App1\App1.Droid\obj\Debug\App1.Droid.dll.mdb
 D:\DEV\COMP205P\App1\App1.Droid\bin\Debug\App1.Droid.dll.mdb

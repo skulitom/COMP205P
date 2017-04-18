@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xfg="clr-namespace:XFGloss;assembly=XFGloss"
              x:Class="App1.Pages.Transactions"
              Title="Transactions">
     <ContentPage.Resources>
@@ -8,7 +9,7 @@
             <Style x:Key="TitleLabel"
                TargetType="Label">
                 <Setter Property="TextColor"
-                    Value="Black"></Setter>
+                    Value="White"></Setter>
                 <Setter Property="FontSize"
                     Value="25"></Setter>
                 <Setter Property="Margin"
@@ -22,6 +23,8 @@
                     Value="20"></Setter>
                 <Setter Property="Margin"
                     Value="0,0,0,10"></Setter>
+                <Setter Property="TextColor"
+                    Value="White"></Setter>
             </Style>
             <Style x:Key="AquaButtonStyle"
                    TargetType="Button">
@@ -37,7 +40,7 @@
                 <Setter Property="FontAttributes"
                     Value="Bold"></Setter>
                 <Setter Property="TextColor"
-                    Value="Black"></Setter>
+                    Value="White"></Setter>
                 <Setter Property="FontSize"
                     Value="Medium"></Setter>
                 <Setter Property="Margin"
@@ -60,6 +63,12 @@
             </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
+    <xfg:ContentPageGloss.BackgroundGradient>
+        <xfg:Gradient Rotation="150">
+            <xfg:GradientStep StepColor="#10C140" StepPercentage="0" />
+            <xfg:GradientStep StepColor="#00CC8E" StepPercentage="1" />
+        </xfg:Gradient>
+    </xfg:ContentPageGloss.BackgroundGradient>
     <ScrollView>
         <StackLayout HorizontalOptions="Center">
             <StackLayout HorizontalOptions="Center" Orientation="Horizontal" Margin="10">
@@ -73,7 +82,7 @@
                 </DatePicker>
             </StackLayout>
             <StackLayout>
-                <ListView x:Name="listView" SeparatorVisibility="Default" SeparatorColor="Black" HasUnevenRows="true" ItemSelected="OnItemSelected">
+                <ListView x:Name="listView" SeparatorVisibility="Default" SeparatorColor="White" HasUnevenRows="true" ItemSelected="OnItemSelected">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
