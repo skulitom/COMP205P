@@ -79,3 +79,9 @@ D:\DEV\COMP205P\App1\App1\obj\Debug\App1.dll
 D:\DEV\COMP205P\App1\App1\obj\Debug\App1.pdb
 D:\DEV\COMP205P\App1\App1\obj\Debug\App1.dll.mdb
 D:\DEV\COMP205P\App1\App1\bin\Debug\App1.dll.mdb
+D:\DEV\COMP205P\App1\App1\obj\Debug\App1.dll.mdb
+D:\DEV\COMP205P\App1\App1\bin\Debug\App1.dll.mdb
+D:\DEV\COMP205P\App1\App1\obj\Debug\App1.dll.mdb
+D:\DEV\COMP205P\App1\App1\bin\Debug\App1.dll.mdb
+D:\DEV\COMP205P\App1\App1\obj\Debug\App1.dll.mdb
+D:\DEV\COMP205P\App1\App1\bin\Debug\App1.dll.mdb

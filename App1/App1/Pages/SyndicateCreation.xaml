@@ -151,9 +151,9 @@
         </xfg:Gradient>
     </xfg:ContentPageGloss.BackgroundGradient>
     <StackLayout HorizontalOptions="Center">
-        <Label Text="Enter Syndicate name" />
+        <Label Text="Enter Syndicate name" TextColor="White" FontSize="20"/>
         <Entry x:Name="addSyndicateEntry"  Placeholder="Syndicate name"></Entry>
-        <Label Text="Enter users email" />
+        <Label Text="Enter users email"  TextColor="White" FontSize="20"/>
         <Entry x:Name="addUserEntry"  Placeholder="Add User"></Entry>
         <Button Text="Add User" Clicked="Button_Clicked" Style="{StaticResource wizardButton}" ></Button>
         <Label x:Name="messageLabel" />
